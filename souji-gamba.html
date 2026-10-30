@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>相似｜江原予備校 GAMBA 中学数学</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--r:#d62839;--b:#1565c0;--g:#138a36;--p:#7b2cbf;--o:#e07a00;--ink:#1f2933;--mut:#5b6773;--bg:#f2f6fa;--line:#d3dce6;--acc:#0b5ea8}
+*{box-sizing:border-box}
+body{margin:0;font-family:'BIZ UDGothic','BIZ UDPGothic','BIZ UDゴシック','BIZ UDPゴシック','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:17px}
+select,input,button,textarea{font-family:inherit;font-size:1rem}
+header{background:linear-gradient(135deg,#0b5ea8,#1b8fd1);color:#fff;padding:18px 16px 14px}
+header .in{max-width:1000px;margin:0 auto}
+header small{opacity:.9;letter-spacing:.08em}
+header h1{margin:2px 0 4px;font-size:1.6rem}
+header p{margin:0;font-size:.95rem;opacity:.95}
+nav.tabs{position:sticky;top:0;z-index:30;background:#fff;border-bottom:2px solid var(--line);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+nav.tabs .in{max-width:1000px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 10px}
+nav.tabs button{white-space:nowrap;border:2px solid var(--line);background:#fff;border-radius:999px;padding:5px 14px;cursor:pointer;color:var(--ink)}
+nav.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+nav.tabs .bd{display:inline-block;margin-left:6px;font-size:.78rem;background:#e8eef5;color:var(--mut);border-radius:999px;padding:0 7px}
+nav.tabs button.on .bd{background:rgba(255,255,255,.25);color:#fff}
+.wrap{max-width:1000px;margin:0 auto;padding:6px 12px 60px}
+.unit{display:none}.unit.on{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0}
+.hd{margin:0 0 8px;font-size:1.15rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{background:var(--acc);color:#fff;border-radius:8px;padding:1px 10px;font-size:.88rem;font-weight:700}
+.point{background:#fff8e1;border-left:6px solid #f2b705;border-radius:8px;padding:8px 14px;margin:8px 0}
+.point ul{margin:4px 0;padding-left:1.3em}
+.note{background:#eef6ff;border-left:6px solid #5aa9e6;border-radius:8px;padding:8px 14px;margin:8px 0}
+.warn{background:#fdeeee;border-left:6px solid var(--r);border-radius:8px;padding:8px 14px;margin:8px 0}
+.cr{color:var(--r);font-weight:700}.cb{color:var(--b);font-weight:700}.cg{color:var(--g);font-weight:700}.cp{color:var(--p);font-weight:700}.co{color:var(--o);font-weight:700}
+.ex-q{font-weight:700;margin:2px 0 8px}
+.fig{width:100%;height:auto;display:block;background:#fff}
+.figbox{border:1px solid var(--line);border-radius:12px;background:#fff;padding:4px;max-width:440px;width:100%}
+.figbox.wide{max-width:600px}
+svg text{paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}
+.hl-seg{animation:draw .55s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hl-fill{animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.pulse{animation:pulse 1.1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.pulse-dot{animation:pop .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1.5);opacity:.15}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+.demo{display:grid;grid-template-columns:minmax(260px,440px) 1fr;gap:16px;align-items:start}
+@media(max-width:760px){.demo{grid-template-columns:1fr}}
+.btn{border:0;background:var(--acc);color:#fff;border-radius:10px;padding:7px 16px;cursor:pointer;font-weight:700}
+.btn:hover{filter:brightness(1.1)}.btn:disabled{opacity:.4;cursor:default}
+.btn.sm{padding:4px 12px;font-size:.92rem}
+.btn.ghost{background:#fff;color:var(--acc);border:2px solid var(--acc)}
+.btn.hint{background:#fff;color:var(--ink);border:2px solid #f2b705}
+.btn.hint.on{background:#f2b705;color:#222}
+.pl{border:2px solid var(--line);border-radius:12px;padding:8px 12px;background:#fcfdff}
+.pl-log{min-height:92px;max-height:340px;overflow:auto}
+.pl-s{padding:5px 0;border-bottom:1px dashed var(--line);color:#6b7785}
+.pl-s.cur{color:var(--ink);background:#fffbe6;border-radius:8px;padding:6px 8px;border-bottom:0;font-weight:400}
+.pl-s.intro{color:var(--mut)}
+.pl-bar{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.pf{margin:6px 0 4px}
+.pf-top{display:grid;grid-template-columns:minmax(260px,440px) 1fr;gap:16px;align-items:start}
+@media(max-width:760px){.pf-top{grid-template-columns:1fr}}
+.pf-stem{font-weight:700;margin:2px 0 8px}
+.hbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.hint-intro{color:var(--mut);padding:6px 2px}
+.proof{border:2px solid #444;border-radius:10px;padding:10px 14px;margin-top:12px;background:#fff}
+.proof-h{font-weight:700;margin-bottom:4px}
+.pline{padding:3px 8px;border-radius:8px;margin:2px 0;transition:background .2s}
+.pline.flash{background:#fff3b0;box-shadow:0 0 0 2px #f2b705}
+select.blank{border:2px solid #7fa6cf;border-radius:8px;padding:1px 4px;background:#f3f9ff;margin:0 2px;max-width:100%}
+select.blank.ok{border-color:var(--g);background:#e9f8ee}
+select.blank.ng{border-color:var(--r);background:#fdeeee}
+.pbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.msg{font-weight:700}
+.msg.ok{color:var(--g)}.msg.ng{color:var(--r)}
+.qc{border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0;background:#fff}
+.qh{display:flex;gap:10px;align-items:center}
+.qn{background:var(--acc);color:#fff;border-radius:8px;padding:0 10px;font-weight:700}
+.qm{color:var(--g);font-weight:700}
+.qs{margin:6px 0;font-weight:700}
+.qa{margin:8px 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.qa .lbl{font-weight:700}
+input.num{width:7.5em;border:2px solid #7fa6cf;border-radius:8px;padding:3px 8px;background:#f3f9ff}
+.choices{display:grid;gap:6px;width:100%}
+.ch{text-align:left;border:2px solid var(--line);background:#fff;border-radius:10px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+.ch.sel{border-color:var(--acc);background:#e8f3fd;font-weight:700}
+.qbtn{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.fbk{margin-top:8px;border-radius:10px;padding:0}
+.fbk.ok{background:#e9f8ee;border:2px solid var(--g);padding:8px 12px}
+.fbk.ng{background:#fdeeee;border:2px solid var(--r);padding:8px 12px}
+.fbk .ex{margin-top:4px;font-weight:400}
+.hintbox{margin-top:8px;background:#fffbe6;border:2px solid #f2b705;border-radius:10px;padding:6px 12px;display:none}
+.bl{line-height:2.3}
+.ctl{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.ctl label{cursor:pointer}
+.ctl input[type=range]{width:200px;vertical-align:middle}
+.readout{background:#f6faff;border:2px solid #bcd7f2;border-radius:10px;padding:6px 12px;margin-top:8px}
+.tabs2{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tabs2 button{border:2px solid var(--acc);background:#fff;color:var(--acc);border-radius:10px;padding:5px 12px;cursor:pointer;font-weight:700}
+.tabs2 button.on{background:var(--acc);color:#fff}
+.timer{position:sticky;top:52px;z-index:20;background:#fff3cd;border:2px solid #f2b705;border-radius:10px;padding:6px 14px;font-weight:700;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.hidden{display:none}
+.res{font-size:1.2rem;font-weight:700;text-align:center;padding:14px}
+footer{text-align:center;color:var(--mut);font-size:.85rem;padding:18px}
+</style>
+</head>
+<body>
+<header><div class="in">
+<small>江原予備校　GAMBA</small>
+<h1>中学数学　図形　「相似」</h1>
+<p>ゆっくり、ていねいに。「ポイント → 解説 → 例題（ボタンで色が変わる）→ 練習」の順に進みましょう。</p>
+</div></header>
+<nav class="tabs"><div class="in" id="nav"></div></nav>
+<div class="wrap" id="main"></div>
+<footer>© 江原予備校　GAMBA　　　図は「正確な縮尺ではありません」。長さは数字の方を信じて考えましょう。</footer>
+
+<script>
+'use strict';
+/* ================= 基本ユーティリティ ================= */
+const NSV='http://www.w3.org/2000/svg';
+const h=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const k in attrs){const v=attrs[k];if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k.slice(0,2)==='on'&&typeof v==='function')e.addEventListener(k.slice(2),v);else e.setAttribute(k,v);}kids.flat().forEach(c=>{if(c==null||c===false)return;e.append(c.nodeType?c:document.createTextNode(c));});return e;};
+const sv=(tag,attrs={},parent)=>{const e=document.createElementNS(NSV,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;};
+const COL={r:'#d62839',b:'#1565c0',g:'#138a36',p:'#7b2cbf',o:'#e07a00',k:'#1f2933'};
+const cs=(c,t)=>`<span class="c${c}">${t}</span>`;
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]);
+const lerp=(p,q,t)=>[p[0]+(q[0]-p[0])*t,p[1]+(q[1]-p[1])*t];
+const unitv=(a,b)=>{const d=Math.hypot(a[0]-b[0],a[1]-b[1])||1;return [(a[0]-b[0])/d,(a[1]-b[1])/d];};
+const CONDS=['3組の辺の比がすべて等しい','2組の辺の比とその間の角がそれぞれ等しい','2組の角がそれぞれ等しい'];
+
+/* 学習の記録（この端末の中だけに保存） */
+const PROG={set:new Set(),tot:{},key:'gamba-soushi-v1',
+  load(){try{JSON.parse(localStorage.getItem(this.key)||'[]').forEach(x=>this.set.add(x));}catch(e){}},
+  save(){try{localStorage.setItem(this.key,JSON.stringify([...this.set]));}catch(e){}}};
+function updateBadges(){document.querySelectorAll('#nav button').forEach(b=>{const u=b.dataset.u;const tot=PROG.tot[u]||0;let d=0;PROG.set.forEach(id=>{if(id.startsWith(u+'-'))d++;});const bd=b.querySelector('.bd');if(bd)bd.textContent=tot?`${Math.min(d,tot)}/${tot}`:'';});}
+
+/* ================= 図のクラス ================= */
+class Fig{
+  constructor(host,W=380,H=250){
+    this.W=W;this.H=H;this.P={};this.lab={};this.cen=null;this.anim=true;
+    this.svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'fig',role:'img'});
+    host.appendChild(this.svg);
+    this.gL=sv('g',{},this.svg);this.gH=sv('g',{},this.svg);this.gT=sv('g',{},this.svg);
+  }
+  pt(n,x,y,show=true,dx,dy,cen){this.P[n]=[x,y];if(show)this.lab[n]={dx,dy,cen};return this;}
+  center(names){const a=(names||Object.keys(this.P)).map(k=>this.P[k]);this.cen=[a.reduce((s,p)=>s+p[0],0)/a.length,a.reduce((s,p)=>s+p[1],0)/a.length];return this;}
+  labPos(n){const [x,y]=this.P[n];const L=this.lab[n]||{};let {dx,dy,cen}=L;if(dx===undefined){const c=cen||this.cen||(this.center(),this.cen);const vx=x-c[0],vy=y-c[1],d=Math.hypot(vx,vy)||1;dx=vx/d*15;dy=vy/d*15;}return [x+dx,y+dy];}
+  fin(){if(!this.cen)this.center();for(const n in this.lab){const [x,y]=this.labPos(n);this.txt(x,y,n,{s:17,w:700});}return this;}
+  seg(a,b,o={}){const [x1,y1]=this.P[a],[x2,y2]=this.P[b];return sv('line',{x1,y1,x2,y2,stroke:o.c||'#1f2933','stroke-width':o.w||2,'stroke-linecap':'round','stroke-dasharray':o.d||'none'},this.gL);}
+  poly(ns,o){ns.forEach((n,i)=>this.seg(n,ns[(i+1)%ns.length],o));return this;}
+  dot(n,o={}){const [x,y]=this.P[n];sv('circle',{cx:x,cy:y,r:o.r||3.2,fill:o.c||'#1f2933'},this.gL);return this;}
+  txt(x,y,s,o={}){const t=sv('text',{x,y,'text-anchor':o.a||'middle','dominant-baseline':'central','font-size':o.s||15,'font-weight':o.w||400,fill:o.c||'#1f2933'},this.gT);t.textContent=s;return t;}
+  mid(a,b){return lerp(this.P[a],this.P[b],.5);}
+  len(a,b,s,o={}){
+    const p=this.P[a],q=this.P[b],m=lerp(p,q,o.at??.5);
+    let nx=-(q[1]-p[1]),ny=q[0]-p[0];const L=Math.hypot(nx,ny)||1;nx/=L;ny/=L;
+    const c=o.cen||this.cen||(this.center(),this.cen);
+    if(nx*(m[0]-c[0])+ny*(m[1]-c[1])<0){nx=-nx;ny=-ny;}
+    if((o.dir==='down'&&ny<0)||(o.dir==='up'&&ny>0)||(o.dir==='left'&&nx>0)||(o.dir==='right'&&nx<0)){nx=-nx;ny=-ny;}
+    const off=(o.off??15)*(o.side??1);
+    const isx=/x/.test(s);
+    return this.txt(m[0]+nx*off,m[1]+ny*off,s,{s:o.s||15,c:o.c||(isx?COL.r:undefined),w:o.w||(isx?700:400)});
+  }
+  par(a,b,n=1,at=.5){const p=this.P[a],q=this.P[b],m=lerp(p,q,at),L=dist(p,q)||1,ux=(q[0]-p[0])/L,uy=(q[1]-p[1])/L,nx=-uy,ny=ux;
+    for(let i=0;i<n;i++){const o=(i-(n-1)/2)*8,cx=m[0]+ux*o,cy=m[1]+uy*o;
+      sv('path',{d:`M${cx-ux*4+nx*5} ${cy-uy*4+ny*5}L${cx+ux*3} ${cy+uy*3}L${cx-ux*4-nx*5} ${cy-uy*4-ny*5}`,fill:'none',stroke:'#1f2933','stroke-width':1.7,'stroke-linecap':'round'},this.gL);}
+    return this;}
+  tick(a,b,n=1,at=.5){const p=this.P[a],q=this.P[b],m=lerp(p,q,at),L=dist(p,q)||1,ux=(q[0]-p[0])/L,uy=(q[1]-p[1])/L,nx=-uy,ny=ux;
+    for(let i=0;i<n;i++){const o=(i-(n-1)/2)*5,cx=m[0]+ux*o,cy=m[1]+uy*o;
+      sv('line',{x1:cx+nx*6,y1:cy+ny*6,x2:cx-nx*6,y2:cy-ny*6,stroke:'#1f2933','stroke-width':1.8,'stroke-linecap':'round'},this.gL);}
+    return this;}
+  _ang(v,p1,p2){const V=this.P[v],A=this.P[p1],B=this.P[p2];const a1=Math.atan2(A[1]-V[1],A[0]-V[0]),a2=Math.atan2(B[1]-V[1],B[0]-V[0]);let d=a2-a1;while(d>Math.PI)d-=2*Math.PI;while(d<=-Math.PI)d+=2*Math.PI;return {V,a1,d,sw:d>0?1:0};}
+  _ap(V,a,r){return [V[0]+r*Math.cos(a),V[1]+r*Math.sin(a)];}
+  arc(v,p1,p2,r=22,txt,o={}){const g=this._ang(v,p1,p2);const s=this._ap(g.V,g.a1,r),e=this._ap(g.V,g.a1+g.d,r);
+    sv('path',{d:`M${s[0]} ${s[1]}A${r} ${r} 0 0 ${g.sw} ${e[0]} ${e[1]}`,fill:'none',stroke:o.c||'#1f2933','stroke-width':o.w||1.8},this.gL);
+    if(txt){const t=this._ap(g.V,g.a1+g.d/2,r+(o.tr??16));this.txt(t[0],t[1],txt,{s:o.s||13,c:o.c});}
+    return this;}
+  right(v,p1,p2,s=13){const V=this.P[v],ua=unitv(this.P[p1],V),ub=unitv(this.P[p2],V);
+    const p=[V[0]+ua[0]*s,V[1]+ua[1]*s],r=[V[0]+ub[0]*s,V[1]+ub[1]*s],q=[p[0]+ub[0]*s,p[1]+ub[1]*s];
+    sv('path',{d:`M${p[0]} ${p[1]}L${q[0]} ${q[1]}L${r[0]} ${r[1]}`,fill:'none',stroke:'#1f2933','stroke-width':1.6},this.gL);return this;}
+  /* --- ハイライト（色つき） --- */
+  clear(){while(this.gH.firstChild)this.gH.removeChild(this.gH.firstChild);}
+  hSeg(a,b,c,w=5.5,op=1){const [x1,y1]=this.P[a],[x2,y2]=this.P[b];return this.hLn([x1,y1],[x2,y2],c,w,op);}
+  hLn(p,q,c,w=5.5,op=1,dash){const L=dist(p,q);const at={x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:c,'stroke-width':w,'stroke-linecap':'round','stroke-opacity':op};
+    if(dash)at['stroke-dasharray']=dash;else if(this.anim){at.class='hl-seg';at.style=`stroke-dasharray:${L};stroke-dashoffset:${L}`;}
+    return sv('line',at,this.gH);}
+  hTri(ns,c,a=.2){sv('polygon',{points:ns.map(n=>this.P[n].join(',')).join(' '),fill:c,'fill-opacity':a,stroke:c,'stroke-width':2.5,'stroke-linejoin':'round',class:this.anim?'hl-fill':''},this.gH);}
+  hPt(n,c,r=7){const [x,y]=this.P[n];sv('circle',{cx:x,cy:y,r:r+5,fill:c,'fill-opacity':.25,class:this.anim?'pulse':''},this.gH);sv('circle',{cx:x,cy:y,r,fill:c,stroke:'#fff','stroke-width':2},this.gH);}
+  hAng(v,p1,p2,r,c,dot=true){const g=this._ang(v,p1,p2);const s=this._ap(g.V,g.a1,r),e=this._ap(g.V,g.a1+g.d,r);
+    sv('path',{d:`M${g.V[0]} ${g.V[1]}L${s[0]} ${s[1]}A${r} ${r} 0 0 ${g.sw} ${e[0]} ${e[1]}Z`,fill:c,'fill-opacity':.3,stroke:c,'stroke-width':2.2,class:this.anim?'hl-fill':''},this.gH);
+    if(dot){const q=this._ap(g.V,g.a1+g.d/2,r*.62);sv('circle',{cx:q[0],cy:q[1],r:5.5,fill:c,stroke:'#fff','stroke-width':1.5,class:this.anim?'pulse-dot':''},this.gH);}}
+  hTxt(x,y,s,c,size=15){const t=sv('text',{x,y,'text-anchor':'middle','dominant-baseline':'central','font-size':size,'font-weight':700,fill:c,class:this.anim?'hl-fill':''},this.gH);t.textContent=s;}
+  hLab(n,c,dx,dy){let [x,y]=this.labPos(n);if(dx!==undefined){x=this.P[n][0]+dx;y=this.P[n][1]+dy;}this.hTxt(x,y,n,c,17);}
+}
+/* 対応する辺のペアに同じ色をつける。長い方をうすく下に、短い方を太く上に */
+function PH(f,list){list.forEach(([a1,a2,b1,b2,ck])=>{const c=COL[ck];const la=dist(f.P[a1],f.P[a2]),lb=dist(f.P[b1],f.P[b2]);
+  const [lg,sh]=la>=lb?[[a1,a2],[b1,b2]]:[[b1,b2],[a1,a2]];f.hSeg(lg[0],lg[1],c,4,.45);f.hSeg(sh[0],sh[1],c,7.5,1);});}
+
+/* ================= ステップ再生（ボタンで1つずつ） ================= */
+function Player(host,f,steps,o={}){
+  const box=h('div',{class:'pl'}),log=h('div',{class:'pl-log'}),bar=h('div',{class:'pl-bar'});
+  let i=-1;
+  const b1=h('button',{class:'btn sm ghost',type:'button'},'◀ もどる'),b2=h('button',{class:'btn sm',type:'button'},'つぎへ ▶'),b3=h('button',{class:'btn sm ghost',type:'button'},'ぜんぶ見る'),b4=h('button',{class:'btn sm ghost',type:'button'},'はじめから');
+  bar.append(b1,b2,b3,b4);box.append(log,bar);host.append(box);
+  function go(n){
+    i=Math.max(-1,Math.min(steps.length-1,n));
+    f.clear();let s0=0;for(let j=0;j<=i;j++)if(steps[j].reset)s0=j;
+    for(let j=s0;j<=i;j++){f.anim=(j===i);if(steps[j].hl)steps[j].hl(f);}
+    f.anim=true;
+    log.innerHTML='';
+    if(i<0)log.append(h('div',{class:'pl-s intro',html:o.intro||'「つぎへ」を押すと、1つずつ図に色がつきます。'}));
+    for(let j=0;j<=i;j++)log.append(h('div',{class:'pl-s'+(j===i?' cur':''),html:steps[j].text}));
+    b1.disabled=i<0;b2.disabled=i>=steps.length-1;b2.textContent=i>=steps.length-1?'おわり':'つぎへ ▶';
+    if(o.onStep)o.onStep(i>=0?steps[i]:null,i);
+    log.scrollTop=log.scrollHeight;
+  }
+  b1.onclick=()=>go(i-1);b2.onclick=()=>go(i+1);b3.onclick=()=>go(steps.length-1);b4.onclick=()=>go(-1);
+  go(o.start??-1);
+  return {go,get i(){return i;}};
+}
+function Demo(host,d){
+  const wrap=h('div',{class:'demo'}),fh=h('div',{class:'figbox'}),ph=h('div',{class:'demo-p'});wrap.append(fh,ph);host.append(wrap);
+  const f=new Fig(fh,...(d.size||[380,250]));d.fig(f);f.fin();
+  return Player(ph,f,d.steps,{intro:d.intro});
+}
+
+/* ================= 問題カード ================= */
+function numEq(s,a){let t=String(s).replace(/[０-９．－−／]/g,c=>({'．':'.','－':'-','−':'-','／':'/'}[c]||String.fromCharCode(c.charCodeAt(0)-0xFEE0))).replace(/cm|㎝|\s/g,'');if(t==='')return false;let v;if(t.includes('/')){const [x,y]=t.split('/');v=Number(x)/Number(y);}else v=Number(t);return Math.abs(v-a)<1e-6;}
+function QCard(uid,q,i){
+  const id=`${uid}-q${i}`;PROG.tot[uid]=(PROG.tot[uid]||0)+1;
+  const c=h('div',{class:'qc',id});
+  const mark=h('span',{class:'qm'},PROG.set.has(id)?'✔ できた':'');
+  c.append(h('div',{class:'qh'},h('span',{class:'qn'},`問${i+1}`),mark));
+  c.append(h('div',{class:'qs',html:q.stem}));
+  let f=null;
+  if(q.fig){const fb=h('div',{class:'figbox'});c.append(fb);f=new Fig(fb,...(q.size||[380,250]));q.fig(f);f.fin();}
+  const ctl=h('div',{class:'qa'});let getA;
+  if(q.type==='num'){
+    const ins=q.inputs.map(x=>({x,inp:h('input',{type:'text',inputmode:'decimal',class:'num',autocomplete:'off','aria-label':'答え'})}));
+    ins.forEach(({x,inp})=>ctl.append(h('span',{class:'lbl'},x.pre||''),inp,h('span',{class:'lbl'},x.suf||'')));
+    getA=()=>ins.every(({x,inp})=>numEq(inp.value,x.ans));
+  }else if(q.type==='choice'){
+    let sel=-1;const wrap=h('div',{class:'choices'});
+    q.choices.forEach((t,k)=>wrap.append(h('button',{type:'button',class:'ch',onclick:()=>{sel=k;[...wrap.children].forEach((e,j)=>e.classList.toggle('sel',j===k));}},t)));
+    ctl.append(wrap);getA=()=>sel===q.ans;
+  }else{
+    const sels=[];const line=h('div',{class:'bl'});
+    q.tokens.forEach(tk=>{if(typeof tk==='string')line.append(h('span',{html:tk}));else{const s=h('select',{class:'blank'},h('option',{value:''},'？'),...tk.o.map(o=>h('option',{value:o},o)));s._a=tk.a;sels.push(s);line.append(s);}});
+    ctl.append(line);
+    getA=()=>{let ok=true;sels.forEach(s=>{const g=s.value===s._a;s.classList.toggle('ok',g);s.classList.toggle('ng',!g);if(!g)ok=false;});return ok;};
+  }
+  c.append(ctl);
+  const fbk=h('div',{class:'fbk'}),hb=h('div',{class:'hintbox'});
+  const row=h('div',{class:'qbtn'});
+  let tries=0;
+  const bChk=h('button',{class:'btn',type:'button'},'答え合わせ');
+  bChk.onclick=()=>{const ok=getA();tries++;
+    fbk.className='fbk '+(ok?'ok':'ng');
+    fbk.innerHTML=ok?`<b>◎ 正解です！</b>${q.explain?'<div class="ex">'+q.explain+'</div>':''}`:`<b>おしい！もう一度考えてみましょう。</b>${tries>=2&&q.hint?'（「💡ヒント」を押してみましょう）':''}${tries>=3&&q.explain?'<div class="ex"><b>解説：</b>'+q.explain+'</div>':''}`;
+    if(ok){PROG.set.add(id);PROG.save();mark.textContent='✔ できた';updateBadges();}};
+  row.append(bChk);
+  if(q.hint){const bH=h('button',{class:'btn ghost',type:'button'},'💡 ヒント');
+    bH.onclick=()=>{hb.style.display='block';hb.innerHTML=q.hint.t;if(f){f.clear();f.anim=true;if(q.hint.hl)q.hint.hl(f);}};row.append(bH);}
+  c.append(row,hb,fbk);
+  return c;
+}
+function Quiz(root,uid,list){list.forEach((q,i)=>root.append(QCard(uid,q,i)));}
+const NQ=(stem,fig,size,ans,o={})=>({type:'num',stem,fig,size,inputs:[{pre:o.pre??'x ＝ ',ans,suf:o.suf??' cm'}],explain:o.ex,hint:o.hint});
+
+/* ================= 証明ビルダー（穴埋め＋ヒントで図に色） ================= */
+function ProofBuilder(host,uid,P){
+  const id=`${uid}-${P.id}`;PROG.tot[uid]=(PROG.tot[uid]||0)+1;
+  const wrap=h('div',{class:'pf'}),top=h('div',{class:'pf-top'}),fh=h('div',{class:'figbox'}),side=h('div',{class:'pf-side'});
+  const f=new Fig(fh,...(P.size||[380,250]));P.fig(f);f.fin();
+  side.append(h('div',{class:'pf-stem',html:P.stem}));
+  const hb=h('div',{class:'hbar'}),panel=h('div',{class:'hpanel'});
+  const lines=[];
+  const flash=keys=>{lines.forEach(l=>l.el.classList.remove('flash'));if(!keys)return;[].concat(keys).forEach(k=>lines.filter(l=>l.key===k).forEach(l=>l.el.classList.add('flash')));};
+  panel.append(h('div',{class:'hint-intro',html:'👆 ヒントのボタンを押すと、図に色や点がつきます。自分で考えたいときは、先に下の証明をうめてみましょう。'}));
+  const open=k=>{P.hints.forEach((x,j)=>x._b.classList.toggle('on',j===k));panel.innerHTML='';const pl=Player(panel,f,P.hints[k].steps,{onStep:st=>flash(st&&st.line)});pl.go(0);};
+  P.hints.forEach((ht,k)=>{ht._b=h('button',{class:'btn hint',type:'button',onclick:()=>open(k)},ht.title);hb.append(ht._b);});
+  side.append(hb,panel);top.append(fh,side);
+  const pr=h('div',{class:'proof'});pr.append(h('div',{class:'proof-h'},'〔証明〕'));
+  const sels=[];
+  P.lines.forEach(L=>{const el=h('div',{class:'pline'});L.t.forEach(tk=>{if(typeof tk==='string')el.append(h('span',{html:tk}));
+    else{const s=h('select',{class:'blank'},h('option',{value:''},'？'),...tk.o.map(o=>h('option',{value:o},o)));s._a=tk.a;sels.push(s);el.append(s);}});pr.append(el);lines.push({key:L.k,el});});
+  const msg=h('span',{class:'msg'});
+  const bC=h('button',{class:'btn',type:'button'},'答え合わせ');
+  const bA=h('button',{class:'btn ghost',type:'button'},'答えを見る');
+  const bR=h('button',{class:'btn ghost',type:'button'},'やり直す');
+  bC.onclick=()=>{let ok=true;sels.forEach(s=>{const g=s.value===s._a;s.classList.toggle('ok',g);s.classList.toggle('ng',!g);if(!g)ok=false;});
+    if(ok){msg.className='msg ok';msg.textContent='◎ 証明が完成しました！';PROG.set.add(id);PROG.save();updateBadges();open(P.hints.length-1);}
+    else{msg.className='msg ng';msg.textContent='赤いところがちがいます。ヒントを見て、もう一度。';}};
+  bA.onclick=()=>{sels.forEach(s=>{s.value=s._a;s.classList.add('ok');s.classList.remove('ng');});msg.className='msg';msg.textContent='これが完成した証明です。自分でも書いてみましょう。';};
+  bR.onclick=()=>{sels.forEach(s=>{s.value='';s.classList.remove('ok','ng');});msg.textContent='';flash(null);};
+  pr.append(h('div',{class:'pbtn'},bC,bA,bR,msg));
+  wrap.append(top,pr);host.append(wrap);
+}
+const ratioOpts=(a,b)=>{const g=gcd(a,b),x=a/g,y=b/g;const r=`${x}:${y}`;return {a:r,o:[...new Set([r,`${y}:${x}`,`${x}:${y+1}`,`${x+1}:${y}`,'1:1'])]};};
+const angOpts=(...v)=>v;
+/* 「2組の辺の比とその間の角」型 */
+function sasProof(o){
+  const [a1,b1,a2,b2]=[o.p1.a.join(''),o.p1.b.join(''),o.p2.a.join(''),o.p2.b.join('')];
+  const r1=ratioOpts(o.p1.la,o.p1.lb),r2=ratioOpts(o.p2.la,o.p2.lb);
+  const g=o.ang,vert=g.kind==='vertical';
+  const nm=vert?`${g.n1}と${g.n2}`:g.nm;
+  const lines=[
+    {k:'head',t:[`△${o.T1}と△${o.T2}で，`]},
+    {k:'r1',t:[`${a1}：${b1} ＝ ${o.p1.la}：${o.p1.lb} ＝ `,{a:r1.a,o:r1.o}]},
+    {k:'r2',t:[`${a2}：${b2} ＝ ${o.p2.la}：${o.p2.lb} ＝ `,{a:r2.a,o:r2.o}]},
+    {k:'r12',t:[`よって，${a1}：${b1} ＝ ${a2}：${b2} ……①`]},
+    vert?{k:'ang',t:[{a:g.n1,o:g.opts},'＝',{a:g.n2,o:g.opts},'（対頂角）……②']}:{k:'ang',t:[{a:g.nm,o:g.opts},'は共通 ……②']},
+    {k:'concl',t:['①，②より，',{a:CONDS[1],o:CONDS},'ので，']},
+    {k:'sim',t:[`△${o.T1}`,{a:'∽',o:['∽','＝','≡','≠']},`△${o.T2}といえる。`]}
+  ];
+  const pairHL=(f,list)=>PH(f,list);
+  const P1=[o.p1.a[0],o.p1.a[1],o.p1.b[0],o.p1.b[1],'r'],P2=[o.p2.a[0],o.p2.a[1],o.p2.b[0],o.p2.b[1],'b'];
+  const angHL=(f,dot=true)=>{if(vert){f.hAng(g.v,g.r1[0],g.r1[1],30,COL.g,dot);f.hAng(g.v,g.r2[0],g.r2[1],30,COL.g,dot);}
+    else{f.hAng(g.v,g.r2[0],g.r2[1],56,COL.g,false);f.hAng(g.v,g.r1[0],g.r1[1],34,COL.g,dot);}};
+  const triHL=f=>{f.hTri(o.t1,COL.o,.2);f.hTri(o.t2,COL.p,.14);};
+  const hints=[
+    {title:'ヒント1　辺の比に目をつけよう',steps:[
+      {text:`まず、2つの三角形を見つけます。${cs('o','△'+o.T1)}と${cs('p','△'+o.T2)}です。どの辺とどの辺が対応するかを調べます。`,hl:triHL,line:'head'},
+      {reset:true,text:`${cs('r','赤い辺')}：${a1}＝${o.p1.la}cm と ${b1}＝${o.p1.lb}cm${o.p1.note?'（'+o.p1.note+'）':''}。<br>${a1}：${b1}＝${o.p1.la}：${o.p1.lb}＝<b>${r1.a}</b>`,hl:f=>PH(f,[P1]),line:'r1'},
+      {text:`${cs('b','青い辺')}：${a2}＝${o.p2.la}cm と ${b2}＝${o.p2.lb}cm${o.p2.note?'（'+o.p2.note+'）':''}。<br>${a2}：${b2}＝${o.p2.la}：${o.p2.lb}＝<b>${r2.a}</b>`,hl:f=>PH(f,[P1,P2]),line:'r2'},
+      {text:`どちらの比も <b>${r1.a}</b>。つまり ${cs('r',a1+'：'+b1)}＝${cs('b',a2+'：'+b2)} が成り立ちます（証明の①）。`,hl:f=>PH(f,[P1,P2]),line:'r12'}]},
+    {title:'ヒント2　はさまれた角に目をつけよう',steps:[
+      {text:`比が等しい2組の辺（赤と青）を見ましょう。次に、この<b>2つの辺にはさまれた角</b>をさがします。`,hl:f=>PH(f,[P1,P2])},
+      {text:vert?`${cs('g','緑の点')}がついた2つの角、${g.n1}と${g.n2}は<b>対頂角</b>です。対頂角は等しいので ${g.n1}＝${g.n2}（証明の②）。`:`${cs('g','緑の点')}がついた角 ${g.nm} は、${cs('o','△'+o.T1)}にも${cs('p','△'+o.T2)}にもふくまれる<b>共通の角</b>です（証明の②）。`,hl:f=>{PH(f,[P1,P2]);angHL(f);},line:'ang'}]},
+    {title:'ヒント3　相似条件を決めよう',steps:[
+      {text:`①辺の比が2組とも等しい。②その間の角も等しい。<br>→ 相似条件「<b>2組の辺の比とその間の角がそれぞれ等しい</b>」が使えます（証明の下から2行目）。`,hl:f=>{PH(f,[P1,P2]);angHL(f);},line:'concl'},
+      {text:`最後に、対応する頂点を同じ順に書いて <b>△${o.T1}∽△${o.T2}</b> とまとめます。`,hl:f=>{triHL(f);},line:'sim'}]}
+  ];
+  return {id:o.id,stem:o.stem,size:o.size,fig:o.fig,lines,hints};
+}
+/* 「2組の角」型 */
+function aaProof(o){
+  const e=o.e1,c=o.c;
+  const lines=[
+    {k:'head',t:[`△${o.T1}と△${o.T2}で，`]},
+    {k:'a1',t:[`${e.n1} ＝ `,{a:e.n2,o:e.opts},` ＝ ${e.val} ……①`]},
+    {k:'a2',t:[{a:c.nm,o:c.opts},'は共通 ……②']},
+    {k:'concl',t:['①，②より，',{a:CONDS[2],o:CONDS},'ので，']},
+    {k:'sim',t:[`△${o.T1}`,{a:'∽',o:['∽','＝','≡','≠']},`△${o.T2}といえる。`]}
+  ];
+  const triHL=f=>{f.hTri(o.t1,COL.o,.2);f.hTri(o.t2,COL.p,.14);};
+  const e1HL=(f,dot=true)=>{f.hAng(e.v1,e.r1[0],e.r1[1],30,COL.r,dot);f.hAng(e.v2,e.r2[0],e.r2[1],30,COL.r,dot);};
+  const cHL=(f,dot=true)=>{f.hAng(c.v,c.r2[0],c.r2[1],56,COL.g,false);f.hAng(c.v,c.r1[0],c.r1[1],34,COL.g,dot);};
+  const hints=[
+    {title:'ヒント1　等しい角を1組みつけよう',steps:[
+      {text:`まず、2つの三角形を見つけます。${cs('o','△'+o.T1)}と${cs('p','△'+o.T2)}です。`,hl:triHL,line:'head'},
+      {reset:true,text:`図に印がある角を探します。${cs('r','赤い点')}の角、${e.n1}と${e.n2}は、どちらも <b>${e.val}</b> です（図の印）。だから ${e.n1}＝${e.n2}（証明の①）。`,hl:f=>e1HL(f),line:'a1'}]},
+    {title:'ヒント2　もう1組の角をさがそう',steps:[
+      {text:`1組目の角は${cs('r','赤')}です。あと1組、等しい角が見つかれば相似といえます。`,hl:f=>e1HL(f,false)},
+      {text:`${cs('g','緑の点')}の角 ${c.nm} は、${cs('o','△'+o.T1)}にも${cs('p','△'+o.T2)}にもふくまれる<b>共通の角</b>です（証明の②）。`,hl:f=>{e1HL(f,false);cHL(f);},line:'a2'}]},
+    {title:'ヒント3　相似条件を決めよう',steps:[
+      {text:`等しい角が<b>2組</b>見つかりました（赤と緑）。→ 相似条件「<b>2組の角がそれぞれ等しい</b>」が使えます。`,hl:f=>{e1HL(f,false);cHL(f,false);},line:'concl'},
+      {text:`最後に、対応する頂点を同じ順に書いて <b>△${o.T1}∽△${o.T2}</b> とまとめます。`,hl:triHL,line:'sim'}]}
+  ];
+  return {id:o.id,stem:o.stem,size:o.size,fig:o.fig,lines,hints};
+}
+
+/* ================= 図形ジェネレーター ================= */
+function triSSS(a,b,c){const x=(b*b+c*c-a*a)/(2*c),y=Math.sqrt(Math.max(0,b*b-x*x));return [[0,0],[c,0],[x,-y]];}
+function triSAS(c,b,A){const r=A*Math.PI/180;return [[0,0],[c,0],[b*Math.cos(r),-b*Math.sin(r)]];}
+function triAA(A,B,c){const C=180-A-B,r=A*Math.PI/180,b=c*Math.sin(B*Math.PI/180)/Math.sin(C*Math.PI/180);return [[0,0],[c,0],[b*Math.cos(r),-b*Math.sin(r)]];}
+const scp=(p,k)=>p.map(q=>[q[0]*k,q[1]*k]);
+function drawTri(f,names,p,ox,oy,sc,o={}){
+  const P=p.map(q=>[ox+q[0]*sc,oy+q[1]*sc]);
+  const cen=[(P[0][0]+P[1][0]+P[2][0])/3,(P[0][1]+P[1][1]+P[2][1])/3];
+  names.forEach((nm,i)=>f.pt(nm,P[i][0],P[i][1],!o.nolab,undefined,undefined,cen));
+  f.poly(names);
+  (o.s||[]).forEach((t,k)=>{if(t){const [i,j]=[[0,1],[1,2],[2,0]][k];f.len(names[i],names[j],t,{cen,off:15});}});
+  (o.a||[]).forEach((t,k)=>{if(t){const [v,p1,p2]=[[0,1,2],[1,2,0],[2,0,1]][k];f.arc(names[v],names[p1],names[p2],20,t,{tr:15});}});
+  return P;
+}
+/* 三角形ABCの辺AB,ACにD,E（DE//BC） */
+function figNest(f,o){
+  const n=o.n||['A','B','C','D','E'];
+  const [A,B,C]=o.tri||[[192,26],[46,222],[338,222]];const t=o.t;
+  const D=lerp(A,B,t),E=lerp(A,C,t);
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D).pt(n[4],...E);
+  f.center([n[0],n[1],n[2]]);
+  f.poly([n[0],n[1],n[2]]);f.seg(n[3],n[4]);f.dot(n[3]);f.dot(n[4]);
+  if(o.par!==false){f.par(n[3],n[4]);f.par(n[1],n[2]);}
+  const L=o.lab||{};
+  for(const k in L){const p=n['ABCDE'.indexOf(k[0])],q=n['ABCDE'.indexOf(k[1])];
+    f.len(p,q,L[k],{off:(k==='AB'||k==='AC')?38:15,side:k==='DE'?-1:1});}
+  (o.ang||[]).forEach(a=>f.arc(a[0],a[1],a[2],a[3]||22,a[4]));
+}
+/* 2直線が点Oで交わる図 */
+function figX(f,o){
+  const O=[185,118],s=22;f.cen=O;
+  f.pt('O',O[0],O[1],true,-17,0);
+  const dirs={UL:[-.76,-.65,'up'],DR:[.76,.65,'down'],UR:[.8,-.6,'up'],DL:[-.8,.6,'down']};
+  for(const k of ['UL','DR','UR','DL']){const [nm,l]=o[k];const d=dirs[k];f.pt(nm,O[0]+d[0]*l*s,O[1]+d[1]*l*s);}
+  for(const k of ['UL','DR','UR','DL']){const [nm,l]=o[k];f.seg('O',nm);f.dot(nm);f.len('O',nm,o.lab===false?'':`${l}cm`,{dir:dirs[k][2],off:14});}
+  f.dot('O');
+}
+/* 3本の平行線ℓ,m,nと2本の直線 */
+function figPar3(f,o){
+  const y0=34,tot=165,h1=tot*o.ra/(o.ra+o.rb),ys=[y0,y0+h1,y0+tot];
+  const x1=y=>78+.3*(y-y0),x2=y=>212-.2*(y-y0);
+  ['ℓ','m','n'].forEach((nm,i)=>{f.pt('L'+i+'a',20,ys[i],false).pt('L'+i+'b',336,ys[i],false);f.seg('L'+i+'a','L'+i+'b',{w:2});f.pt('Lp'+i+'a',255,ys[i],false).pt('Lp'+i+'b',325,ys[i],false);f.par('Lp'+i+'a','Lp'+i+'b');f.txt(354,ys[i],nm,{s:17,w:700});});
+  f.pt('T1a',x1(y0-18),y0-18,false).pt('T1b',x1(y0+tot+18),y0+tot+18,false);f.seg('T1a','T1b');
+  f.pt('T2a',x2(y0-18),y0-18,false).pt('T2b',x2(y0+tot+18),y0+tot+18,false);f.seg('T2a','T2b');
+  const nm1=['A','B','C'],nm2=['D','E','F'];
+  ys.forEach((y,i)=>{f.pt(nm1[i],x1(y),y,false).pt(nm2[i],x2(y),y,false);f.dot(nm1[i]);f.dot(nm2[i]);});
+  f.cen=[(x1(y0)+x2(y0))/2,y0+tot/2];
+  f.len('A','B',o.a,{dir:'left',off:15});f.len('B','C',o.b,{dir:'left',off:15});
+  f.len('D','E',o.c,{dir:'right',off:15});f.len('E','F',o.d,{dir:'right',off:15});
+}
+/* 台形ABCD（AD//BC）に EF//BC */
+function figTrapEF(f,o){
+  const n=o.n||['A','B','C','D','E','F','G','H'];
+  const bc=300,ad=bc*o.AD/o.BC;
+  const B=[40,208],C=[340,208],A=[B[0]+(bc-ad)*.32,44],D=[A[0]+ad,44];
+  const E=lerp(A,B,o.t),F=lerp(D,C,o.t),G=[B[0]+ad,208],H=[E[0]+ad,E[1]];
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D).pt(n[4],...E).pt(n[5],...F).pt(n[6],...G,false).pt(n[7],...H,false);
+  f.center([n[0],n[1],n[2],n[3]]);
+  f.poly([n[0],n[1],n[2],n[3]]);f.seg(n[4],n[5]);f.dot(n[4]);f.dot(n[5]);
+  f.par(n[0],n[3]);f.par(n[4],n[5]);f.par(n[1],n[2]);
+  const L=o.lab||{},idx=k=>n['ABCDEF'.indexOf(k)];
+  const dirs={AD:'up',BC:'down',EF:'down',AE:'left',EB:'left',DF:'right',FC:'right'};
+  for(const k in L)f.len(idx(k[0]),idx(k[1]),L[k],{dir:dirs[k],off:15});
+}
+/* 台形ABCD（AB//DC）で対角線の交点E、EF//AB */
+function figHour(f,o){
+  const n=o.n||['A','B','C','D','E','F'];
+  const mx=Math.max(o.AB,o.DC),wa=290*o.AB/mx,wd=290*o.DC/mx;
+  const A=[190-wa/2,48],B=[190+wa/2,48],D=[190-wd/2,208],C=[190+wd/2,208];
+  const r=o.AB/(o.AB+o.DC),E=lerp(A,C,r),F=lerp(B,C,r);
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D).pt(n[4],...E,true,-16,0).pt(n[5],...F);
+  f.center([n[0],n[1],n[2],n[3]]);
+  f.poly([n[0],n[1],n[2],n[3]]);f.seg(n[0],n[2]);f.seg(n[1],n[3]);f.seg(n[4],n[5]);f.dot(n[4]);f.dot(n[5]);
+  f.par(n[0],n[1]);f.par(n[3],n[2]);f.par(n[4],n[5]);
+  const L=o.lab||{};
+  if(L.AB)f.len(n[0],n[1],L.AB,{dir:'up',off:15});
+  if(L.DC)f.len(n[3],n[2],L.DC,{dir:'down',off:15});
+  if(L.EF)f.len(n[4],n[5],L.EF,{dir:'up',off:13});
+}
+/* 直角三角形（直角の頂点R、底辺の両端P,Q、垂線の足H） */
+function figAlt(f,o){
+  const [R,P,Q,H]=o.n;const th=112*Math.PI/180;
+  const Pp=[44,214],Qp=[336,214],Rp=[190+146*Math.cos(th),214-146*Math.sin(th)],Hp=[Rp[0],214];
+  f.pt(R,...Rp).pt(P,...Pp).pt(Q,...Qp).pt(H,...Hp,true,0,16);
+  f.center([R,P,Q]);
+  f.poly([R,P,Q]);f.seg(R,H);f.dot(H);
+  f.right(R,P,Q);f.right(H,R,Q);
+}
+/* 中点連結定理：三角形 */
+function figMid1(f,o){
+  const n=o.n||['A','B','C','D','E'];const A=[190,26],B=[52,214],C=[328,214];
+  const D=lerp(A,B,.5),E=lerp(A,C,.5);
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D).pt(n[4],...E);
+  f.center([n[0],n[1],n[2]]);
+  f.poly([n[0],n[1],n[2]]);f.seg(n[3],n[4]);f.dot(n[3]);f.dot(n[4]);
+  f.par(n[3],n[4]);f.par(n[1],n[2]);
+  f.tick(n[0],n[3],1);f.tick(n[3],n[1],1);f.tick(n[0],n[4],2);f.tick(n[4],n[2],2);
+  const L=o.lab||{};
+  if(L.BC)f.len(n[1],n[2],L.BC,{dir:'down',off:15});
+  if(L.DE)f.len(n[3],n[4],L.DE,{dir:'down',off:14});
+}
+/* 中点連結定理：三角形ABCと三角形HBC */
+function figMid2(f,o){
+  const A=[190,22],B=[70,118],C=[310,118],H=[190,232];
+  const D=lerp(A,B,.5),E=lerp(A,C,.5),F=lerp(B,H,.5),G=lerp(C,H,.5);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('H',...H).pt('D',...D).pt('E',...E).pt('F',...F).pt('G',...G);
+  f.center(['A','B','C','H']);
+  f.poly(['A','B','C']);f.seg('B','H');f.seg('H','C');f.seg('D','E');f.seg('F','G');
+  ['D','E','F','G'].forEach(k=>f.dot(k));
+  f.par('D','E');f.par('B','C');f.par('F','G');
+  f.tick('A','D',1);f.tick('D','B',1);f.tick('A','E',2);f.tick('E','C',2);f.tick('B','F',3);f.tick('F','H',3);f.tick('C','G',4);f.tick('G','H',4);
+  const L=o.lab||{};
+  if(L.DE)f.len('D','E',L.DE,{dir:'up',off:13});
+  if(L.BC)f.len('B','C',L.BC,{dir:'down',off:-13+26});
+  if(L.FG)f.len('F','G',L.FG,{dir:'down',off:13});
+}
+/* 中点連結定理：台形 */
+function figTrapMid(f,o){
+  const bc=300,ad=bc*o.AD/o.BC;
+  const B=[40,208],C=[340,208],A=[B[0]+(bc-ad)*.4,48],D=[A[0]+ad,48];
+  const M=lerp(A,B,.5),N=lerp(D,C,.5),O=lerp(B,D,.5);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D).pt('M',...M).pt('N',...N).pt('O',...O,o.showO!==false,-2,-14);
+  f.center(['A','B','C','D']);
+  f.poly(['A','B','C','D']);f.seg('M','N');if(o.diag!==false)f.seg('B','D',{d:'6 5',c:'#7a8794',w:1.6});
+  ['M','N','O'].forEach(k=>f.dot(k));
+  f.par('A','D');f.par('B','C');f.par('M','N');
+  f.tick('A','M',1);f.tick('M','B',1);f.tick('D','N',2);f.tick('N','C',2);
+  const L=o.lab||{};
+  if(L.AD)f.len('A','D',L.AD,{dir:'up',off:15});
+  if(L.BC)f.len('B','C',L.BC,{dir:'down',off:15});
+  if(L.MN)f.len('M','N',L.MN,{dir:'down',off:16});
+}
+/* 中点連結定理の証明用 */
+function figMidProof(f){
+  const A=[170,26],B=[44,210],C=[304,210];
+  const M=lerp(A,B,.5),N=lerp(A,C,.5),D=[2*N[0]-M[0],2*N[1]-M[1]];
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('M',...M).pt('N',...N).pt('D',...D,false);
+  f.center(['A','B','C']);
+  f.poly(['A','B','C']);f.seg('M','N');f.dot('M');f.dot('N');
+  f.tick('A','M',1);f.tick('M','B',1);f.tick('A','N',2);f.tick('N','C',2);
+}
+/* 三角形のペア（相似条件の練習） */
+function figPair(f,t1,t2){
+  const bb=p=>{const xs=p.map(q=>q[0]),ys=p.map(q=>q[1]);return [Math.min(...xs),Math.max(...xs),Math.min(...ys),Math.max(...ys)];};
+  const b1=bb(t1.p),b2=bb(t2.p);
+  const w=Math.max(b1[1]-b1[0],b2[1]-b2[0]),hh=Math.max(b1[3]-b1[2],b2[3]-b2[2]);
+  const sc=Math.min(150/w,128/hh);
+  drawTri(f,['A','B','C'],t1.p,26-b1[0]*sc,198-b1[3]*sc,sc,{s:t1.s,a:t1.a});
+  drawTri(f,['D','E','F'],t2.p,222-b2[0]*sc,198-b2[3]*sc,sc,{s:t2.s,a:t2.a});
+}
+
+/* ================= 画面部品 ================= */
+const card=(title,html,cls='')=>{const c=h('section',{class:'card '+cls});if(title)c.append(h('h3',{class:'hd',html:title}));if(html)c.append(h('div',{html}));return c;};
+const tagH=(t,s)=>`<span class="tag">${t}</span>${s||''}`;
+
+/* ===== 第1章 相似とは ===== */
+function Viewer(root){
+  const wrap=h('div',{class:'demo'}),fh=h('div',{class:'figbox wide'}),ph=h('div',{class:'demo-p'});wrap.append(fh,ph);root.append(wrap);
+  const base={A:[200,170],B:[190,222],C:[262,232],D:[272,182]};
+  const cent={in:[232,202],vtx:base.B,out:[110,262]};
+  let ck='out',k=2,show='none';
+  const ro=h('div',{class:'readout'});
+  const draw=()=>{
+    fh.innerHTML='';const f=new Fig(fh,540,360);const O=cent[ck];
+    const names=['A','B','C','D'];
+    names.forEach(n=>{const p=base[n];const im=[O[0]+k*(p[0]-O[0]),O[1]+k*(p[1]-O[1])];
+      const u=unitv(p,O);f.pt(n,...p,true,u[0]*14,u[1]*14);
+      if(!(ck==='vtx'&&n==='B'))f.pt(n+'′',...im,true,u[0]*16,u[1]*16);else f.pt('B′',...p,false);});
+    f.pt('O',...O,false);
+    names.forEach(n=>{const far=k>1?n+'′':n;if(!(ck==='vtx'&&n==='B'))f.seg('O',far,{c:'#8a97a5',d:'6 5',w:1.4});});
+    const q=sv('polygon',{points:names.map(n=>f.P[n+'′'].join(',')).join(' '),fill:COL.o,'fill-opacity':.12,stroke:COL.o,'stroke-width':2.4},f.gL);
+    f.poly(names);
+    if(ck==='vtx'){f.txt(O[0]-36,O[1]+22,'Bが中心',{s:14,c:COL.r,w:700});}
+    else{sv('circle',{cx:O[0],cy:O[1],r:5,fill:COL.r},f.gL);f.txt(O[0]-14,O[1]+14,'O',{s:18,c:COL.r,w:700});}
+    f.center(['A','B','C','D','A′','B′','C′','D′']);
+    f.fin();
+    if(show==='ang'){f.hAng('B','A','C',24,COL.g);f.hAng('B′','A′','C′',24*Math.min(1.6,Math.max(.8,k)),COL.g);}
+    if(show==='side'){f.hSeg('A','B',COL.r);f.hSeg('A′','B′',COL.r);f.hSeg('B','C',COL.b);f.hSeg('B′','C′',COL.b);}
+    const kk=k;
+    ro.innerHTML=`<b>相似の中心：${ck==='in'?'図形の中':ck==='vtx'?'頂点B':'図形の外'}</b>　　拡大・縮小の倍率：<b>${kk}倍</b><br>OA′：OA ＝ <b>${kk}：1</b>（OB′：OB も OC′：OC も同じ！）`+
+      (show==='ang'?`<br>${cs('g','緑')}の角 ∠ABC と ∠A′B′C′ は <b>大きさが同じ</b>です。`:'')+
+      (show==='side'?`<br>${cs('r','赤')}の辺 AB：A′B′ ＝ 1：${kk}、${cs('b','青')}の辺 BC：B′C′ ＝ 1：${kk}。<b>辺の比はすべて同じ</b>です。`:'');
+  };
+  const rad=(v,t)=>h('label',{},h('input',{type:'radio',name:'cent',value:v,checked:v===ck?'':null,onchange:()=>{ck=v;draw();}}),' '+t);
+  const rg=h('input',{type:'range',min:'0.5',max:'2.5',step:'0.5',value:String(k)});
+  const kv=h('b',{},`${k}倍`);
+  rg.addEventListener('input',()=>{k=Number(rg.value);kv.textContent=`${k}倍`;draw();});
+  const sh=(t,v)=>h('button',{class:'btn sm ghost',type:'button',onclick:()=>{show=(show===v?'none':v);draw();}},t);
+  ph.append(h('div',{class:'ctl'},h('b',{},'① 相似の中心Oの場所：'),rad('out','図形の外'),rad('vtx','頂点B'),rad('in','図形の中')),
+    h('div',{class:'ctl'},h('b',{},'② 倍率：'),rg,kv),
+    h('div',{class:'ctl'},h('b',{},'③ くらべてみる：'),sh('対応する角','ang'),sh('対応する辺','side')),ro);
+  draw();
+}
+function ConstructTask(root,cfg){
+  const box=h('div',{class:'qc'});PROG.tot.u1=(PROG.tot.u1||0)+1;
+  const id=`u1-c${cfg.no}`;
+  const mark=h('span',{class:'qm'},PROG.set.has(id)?'✔ できた':'');
+  box.append(h('div',{class:'qh'},h('span',{class:'qn'},`作図${cfg.no}`),mark),h('div',{class:'qs',html:cfg.title}));
+  const fh=h('div',{class:'figbox wide'});box.append(fh);
+  const f=new Fig(fh,520,320);
+  const O=cfg.O,P=cfg.P,names=['A','B','C','D'];
+  names.forEach(n=>f.pt(n,...P[n]));f.poly(names);
+  if(cfg.vertex){f.txt(O[0]-30,O[1]+18,'Bが中心',{s:14,c:COL.r,w:700});}
+  else{sv('circle',{cx:O[0],cy:O[1],r:5,fill:COL.r},f.gL);f.txt(O[0]-14,O[1]+14,'O',{s:18,c:COL.r,w:700});}
+  const target={};names.forEach(n=>{target[n]=[O[0]+2*(P[n][0]-O[0]),O[1]+2*(P[n][1]-O[1])];});
+  const order=cfg.vertex?['A','C','D']:names;
+  names.forEach(n=>{if(cfg.vertex&&n==='B')return;const u=unitv(P[n],O);const far=[O[0]+(P[n][0]-O[0])*2.2,O[1]+(P[n][1]-O[1])*2.2];
+    sv('line',{x1:O[0],y1:O[1],x2:far[0],y2:far[1],stroke:'#aab4bf','stroke-width':1.3,'stroke-dasharray':'5 5'},f.gL);});
+  f.center(names);f.fin();
+  const placed={};let idx=0,miss=0;
+  const msg=h('div',{class:'msg'});
+  const prompt=()=>{msg.className='msg';msg.textContent=idx<order.length?`👆 ${order[idx]}′ の場所をクリックしましょう（OA′＝2OA の位置）`:'';};
+  const finish=()=>{const nm=names.map(n=>cfg.vertex&&n==='B'?'B':n+'′');const pts=nm.map((m,i)=>cfg.vertex&&names[i]==='B'?P.B:target[names[i]]);
+    sv('polygon',{points:pts.map(p=>p.join(',')).join(' '),fill:COL.o,'fill-opacity':.15,stroke:COL.o,'stroke-width':2.5},f.gL);
+    msg.className='msg ok';msg.textContent='◎ できました！2倍の拡大図の完成です。';PROG.set.add(id);PROG.save();mark.textContent='✔ できた';updateBadges();};
+  f.svg.addEventListener('click',ev=>{
+    if(idx>=order.length)return;
+    const r=f.svg.getBoundingClientRect();const x=(ev.clientX-r.left)*f.W/r.width,y=(ev.clientY-r.top)*f.H/r.height;
+    const n=order[idx],t=target[n];
+    if(Math.hypot(x-t[0],y-t[1])<=18){
+      sv('circle',{cx:t[0],cy:t[1],r:6,fill:COL.o,stroke:'#fff','stroke-width':2},f.gT);
+      const u=unitv(t,O);f.txt(t[0]+u[0]*16,t[1]+u[1]*16,n+'′',{s:17,w:700,c:COL.o});
+      sv('line',{x1:O[0],y1:O[1],x2:t[0],y2:t[1],stroke:COL.o,'stroke-width':2.2},f.gL);
+      idx++;miss=0;if(idx>=order.length)finish();else prompt();
+    }else{miss++;msg.className='msg ng';msg.textContent=miss>=2?'おしい！ O から '+n+' までの長さを、同じ向きにもう1回ぶん進んだ位置です。「💡ヒント」も見てみましょう。':'ちがうようです。もう一度クリックしてみましょう。';}
+  });
+  const hb=h('div',{class:'hintbox'});
+  const bH=h('button',{class:'btn ghost',type:'button'},'💡 ヒント');
+  bH.onclick=()=>{if(idx>=order.length)return;const n=order[idx];f.clear();const t=target[n];
+    f.hLn(O,P[n],COL.r,6);f.hLn(P[n],t,COL.o,6);
+    hb.style.display='block';hb.innerHTML=`${cs('r','赤い線')}（O→${n}）と同じ長さを、${cs('o','オレンジの線')}でもう1回ぶん延ばします。その先が ${n}′ です。<br>（OA′＝2OA は「OからAまでの長さを2回ぶん」という意味です）`;};
+  const bR=h('button',{class:'btn ghost',type:'button',onclick:()=>{f.clear();}},'色を消す');
+  box.append(h('div',{class:'qbtn'},bH,bR),hb,msg);root.append(box);prompt();
+}
+function buildU1(r){
+  r.append(card(tagH('ポイント'),`<div class="point"><ul>
+   <li>形を変えずに、全体を同じ割合で<b>拡大・縮小</b>した図形どうしを「<b>相似</b>」といいます。（コピー機で 200％ に拡大するイメージです）</li>
+   <li>相似な図形では、<br>① 対応する<b>角</b>の大きさは<b>等しい</b>　② 対応する<b>線分の比</b>は<b>すべて等しい</b></li>
+   <li>相似な図形のかき方：まず中心になる点O（<b>相似の中心</b>）を決め、<b>OA′＝2OA、OB′＝2OB…</b>となる点をとります。</li></ul></div>`));
+  r.append(card(tagH('解説','　相似ってなに？'),`
+   <p>写真をコピー機で拡大しても、写っているものの<b>形</b>は変わりません。変わるのは<b>大きさ</b>だけです。このように、形がそっくりで大きさだけがちがう図形を「相似」といいます。</p>
+   <p>拡大図は、1つの点Oから、各頂点に向かって<b>放射状</b>に線をのばしてかきます。Oから頂点Aまでの長さの<b>2倍</b>のところにA′をとる。これを全部の頂点でくり返すと、2倍の拡大図の完成です。この点Oを「<b>相似の中心</b>」といいます。</p>
+   <div class="note">相似の中心は、<b>図形の外</b>・<b>頂点</b>・<b>図形の中</b>のどこにおいてもかけます。場所がちがうだけで、できる図形の形は同じです。下の体験で確かめましょう。</div>`));
+  const c2=card(tagH('例題','　拡大・縮小ビューア'));c2.append(h('p',{class:'ex-q',html:'相似の中心の場所と倍率を変えて、図形がどう変わるか観察しましょう。'}));Viewer(c2);r.append(c2);
+  const c3=card(tagH('練習','　拡大図をかこう（図の上をクリック）'));
+  c3.append(h('p',{html:'四角形ABCDを<b>2倍に拡大</b>した図を、頂点の場所をクリックして作りましょう。うす線は、Oから各頂点をのばした線です。'}));
+  const mk=(O,P,vertex)=>({O,P,vertex});
+  ConstructTask(c3,{no:1,title:'(1) 点Oを相似の中心として、2倍に拡大した図をかきましょう。（Oは図形の中）',...mk([200,170],{A:[150,120],B:[140,215],C:[250,215],D:[255,125]},false)});
+  ConstructTask(c3,{no:2,title:'(2) 頂点Bを相似の中心として、2倍に拡大した図をかきましょう。（A′・C′・D′をかく。B′はBと同じ点です）',...mk([110,260],{A:[80,160],B:[110,260],C:[210,245],D:[190,150]},true)});
+  ConstructTask(c3,{no:3,title:'(3) 図形の外の点Oを相似の中心として、2倍に拡大した図をかきましょう。',...mk([40,280],{A:[120,200],B:[130,250],C:[190,245],D:[180,195]},false)});
+  r.append(c3);
+  const c4=card(tagH('練習','　ことばと計算の確認'));
+  Quiz(c4,'u1',[
+    {type:'choice',stem:'四角形ABCDを、点Oを相似の中心として2倍に拡大して四角形A′B′C′D′をつくります。OA′はOAの何倍ですか。',choices:['1倍','2倍','3倍','4倍'],ans:1,explain:'「2倍の拡大」なので OA′＝2OA です。'},
+    NQ('2倍に拡大した図で、OB＝4cm のとき、OB′ の長さは何cmですか。',null,null,8,{pre:'OB′ ＝ ',ex:'OB′＝2×OB＝2×4＝8cm です。'}),
+    NQ('2倍に拡大した図で、OC′＝10cm でした。もとの図の OC は何cmですか。',null,null,5,{pre:'OC ＝ ',ex:'OC′＝2×OC なので、OC＝10÷2＝5cm です。'}),
+    NQ('AB＝6cm の図形を、相似の中心Oから<b>半分（1/2倍）に縮小</b>しました。対応する辺 A′B′ は何cmですか。',null,null,3,{pre:'A′B′ ＝ ',ex:'縮小でも、辺の長さはすべて同じ割合（1/2）になります。6×1/2＝3cm。'}),
+    {type:'choice',stem:'相似な図形について、正しいものを1つ選びましょう。',choices:['対応する角の大きさは等しく、対応する線分の比はすべて等しい','対応する角の大きさは、拡大した分だけ大きくなる','対応する辺の長さは、すべて等しい','辺の長さが変わるので、角の大きさもばらばらになる'],ans:0,explain:'相似では「角は変わらない」「辺の比は全部同じ」の2つが大切です。'}
+  ]);
+  r.append(c4);
+}
+
+/* ===== 第2章 三角形の相似条件 ===== */
+function condDef(k){
+  const S={sss:{p:triSSS(5,3,4),s:['4cm','5cm','3cm'],a:[]},sas:{p:triSAS(3,4,50),s:['3cm',null,'4cm'],a:['50°']},aa:{p:triAA(60,45,3.5),s:[],a:['60°','45°']}}[k];
+  const big={sss:{s:['8cm','10cm','6cm'],a:[]},sas:{s:['6cm',null,'8cm'],a:['50°']},aa:{s:[],a:['60°','45°']}}[k];
+  const fig=f=>{const sc=22,b1=S.p,b2=scp(S.p,2);const mxh=Math.max(...b2.map(q=>-q[1]));
+    drawTri(f,['A','B','C'],b1,26,206,sc,{s:S.s,a:S.a});drawTri(f,['D','E','F'],b2,175,206,sc,{s:big.s,a:big.a});};
+  const tri=(f)=>{f.hTri(['A','B','C'],COL.o,.2);f.hTri(['D','E','F'],COL.p,.16);};
+  let steps;
+  if(k==='sss')steps=[
+    {text:'小さい△ABCと大きい△DEFがあります。<b>3組の辺の比</b>を順に調べましょう。',hl:tri},
+    {reset:true,text:`${cs('r','赤い辺')}：AB＝4cm と DE＝8cm。DE：AB＝8：4＝<b>2</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);}},
+    {text:`${cs('b','青い辺')}：BC＝5cm と EF＝10cm。EF：BC＝10：5＝<b>2</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}},
+    {text:`${cs('g','緑の辺')}：CA＝3cm と FD＝6cm。FD：CA＝6：3＝<b>2</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);f.hSeg('C','A',COL.g);f.hSeg('F','D',COL.g);}},
+    {text:'<b>3組の辺の比がすべて等しい</b>（どれも2）。だから △ABC∽△DEF といえます。',hl:f=>{tri(f);}}];
+  else if(k==='sas')steps=[
+    {text:'小さい△ABCと大きい△DEFです。<b>2組の辺の比</b>と、<b>その間の角</b>を調べましょう。',hl:tri},
+    {reset:true,text:`${cs('r','赤い辺')}：AB＝3cm と DE＝6cm。DE：AB＝6：3＝<b>2</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);}},
+    {text:`${cs('b','青い辺')}：AC＝4cm と DF＝8cm。DF：AC＝8：4＝<b>2</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('A','C',COL.b);f.hSeg('D','F',COL.b);}},
+    {text:`この赤と青の辺に<b>はさまれた角</b>は ∠A と ∠D。${cs('g','緑の点')}の角です。どちらも <b>50°</b> で等しい。`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('A','C',COL.b);f.hSeg('D','F',COL.b);f.hAng('A','B','C',30,COL.g);f.hAng('D','E','F',30,COL.g);}},
+    {text:'<b>2組の辺の比とその間の角がそれぞれ等しい</b>ので、△ABC∽△DEF といえます。<br><span class="cr">注意：</span>角が「間」でないと、この条件は使えません。',hl:tri}];
+  else steps=[
+    {text:'小さい△ABCと大きい△DEFです。<b>角</b>に注目しましょう。（辺の長さは調べなくてOK）',hl:tri},
+    {reset:true,text:`${cs('r','赤い点')}の角：∠A＝60° と ∠D＝60°。等しい！`,hl:f=>{f.hAng('A','B','C',28,COL.r);f.hAng('D','E','F',28,COL.r);}},
+    {text:`${cs('b','青い点')}の角：∠B＝45° と ∠E＝45°。これも等しい！`,hl:f=>{f.hAng('A','B','C',28,COL.r,false);f.hAng('D','E','F',28,COL.r,false);f.hAng('B','C','A',28,COL.b);f.hAng('E','F','D',28,COL.b);}},
+    {text:`<b>2組の角</b>が等しければ、残りの角（${cs('g','緑の点')}）も 180°−60°−45°＝75° で自動的に等しくなります。`,hl:f=>{f.hAng('A','B','C',28,COL.r,false);f.hAng('D','E','F',28,COL.r,false);f.hAng('B','C','A',28,COL.b,false);f.hAng('E','F','D',28,COL.b,false);f.hAng('C','A','B',28,COL.g);f.hAng('F','D','E',28,COL.g);}},
+    {text:'<b>2組の角がそれぞれ等しい</b>ので、△ABC∽△DEF といえます。',hl:tri}];
+  return {size:[400,240],fig,steps};
+}
+function CondTabs(root){
+  const tabs=h('div',{class:'tabs2'}),area=h('div');root.append(tabs,area);
+  const defs=[['① 3組の辺の比','sss'],['② 2組の辺の比とその間の角','sas'],['③ 2組の角','aa']];
+  const bs=defs.map(([t,k],i)=>h('button',{type:'button',onclick:()=>show(i)},t));bs.forEach(b=>tabs.append(b));
+  function show(i){bs.forEach((b,j)=>b.classList.toggle('on',i===j));area.innerHTML='';Demo(area,condDef(defs[i][1]));}
+  show(0);
+}
+function pairQ(stem,t1,t2,ans,ex){return {type:'choice',stem,size:[400,230],fig:f=>figPair(f,t1,t2),choices:[...CONDS,'相似とはいえない'],ans,explain:ex};}
+function figSix(f){
+  const sc=14,col=i=>20+(i%3)*145,row=i=>i<3?118:253;
+  const defs=[
+    ['a',triSSS(5,3,4),['4cm','5cm','3cm'],[]],['e',triSAS(6,9,40),['6cm',null,'9cm'],['40°']],['f',triAA(50,70,4.5),[],['50°','70°']],
+    ['b',triSAS(4,6,40),['4cm',null,'6cm'],['40°']],['c',triAA(50,70,3),[],['50°','70°']],['d',scp(triSSS(5,3,4),2),['8cm','10cm','6cm'],[]]];
+  defs.forEach(([nm,p,s,a],i)=>{drawTri(f,[nm+'1',nm+'2',nm+'3'],p,col(i)+4,row(i),sc,{s,a,nolab:true});f.txt(col(i)+2,row(i)-86,nm,{s:22,w:700,c:COL.b});});
+  f.cen=[220,150];
+}
+function buildU2(r){
+  r.append(card(tagH('ポイント'),`<div class="point"><ul>
+   <li>相似な図形の性質：<b>対応する辺の比はすべて等しく</b>、<b>対応する角はそれぞれ等しい</b>。</li>
+   <li>「△ABCと△DEFは相似」を記号で <b>△ABC∽△DEF</b> と書きます。<span class="cr">対応する頂点を、同じ順に</span>書くのが決まりです。</li>
+   <li><b>三角形の相似条件</b>（このどれか1つが言えれば相似！）<br>
+   ① <b>3組の辺の比</b>がすべて等しい<br>② <b>2組の辺の比</b>とその<b>間の角</b>がそれぞれ等しい<br>③ <b>2組の角</b>がそれぞれ等しい</li></ul></div>`));
+  r.append(card(tagH('解説','　どうして3つで十分なの？'),`
+   <p>三角形は、「3つの辺」か「2つの辺とその間の角」か「2つの角」がきまると、形が1つにきまります。だから、この3つのどれかが等しければ、2つの三角形は<b>形がそっくり</b>＝相似だとわかるのです。</p>
+   <div class="warn"><b>書き方の注意：</b>△ABC∽△DEF のとき、A↔D、B↔E、C↔F が対応します。「∽」の左右で<b>文字の順番</b>をそろえましょう。</div>`));
+  const c3=card(tagH('例題','　3つの相似条件を体験しよう'));c3.append(h('p',{class:'ex-q',html:'タブを選んで「つぎへ」を押すと、対応する辺や角に<b>同じ色</b>がついていきます。'}));CondTabs(c3);r.append(c3);
+  const c4=card(tagH('練習','　相似条件の確認'));
+  const A1=[{a:'3',o:['1','2','3','4']},{a:'比',o:['長さ','比','角','和']}];
+  Quiz(c4,'u2',[
+    {type:'blanks',stem:'三角形の相似条件を、□をえらんで完成させましょう。',tokens:[
+      '① ',{a:'3',o:['1','2','3','4']},'組の辺の',{a:'比',o:['長さ','比','角','和']},'がすべて等しい<br>② ',{a:'2',o:['1','2','3','4']},'組の辺の',{a:'比',o:['長さ','比','角','和']},'とその間の',{a:'角',o:['長さ','比','角','和']},'がそれぞれ等しい<br>③ ',{a:'2',o:['1','2','3','4']},'組の',{a:'角',o:['長さ','比','角','和']},'がそれぞれ等しい'],
+     explain:'3つの相似条件は「3組の辺の比」「2組の辺の比とその間の角」「2組の角」です。'},
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',
+      {p:triSSS(5,3,4),s:['4cm','5cm','3cm'],a:[]},{p:scp(triSSS(5,3,4),2),s:['8cm','10cm','6cm'],a:[]},0,'4：8、5：10、3：6 はどれも 1：2。3組の辺の比がすべて等しいので相似です。'),
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',
+      {p:triSAS(3,5,50),s:['3cm',null,'5cm'],a:['50°']},{p:triSAS(6,10,50),s:['6cm',null,'10cm'],a:['50°']},1,'AB：DE＝3：6、AC：DF＝5：10 はどちらも 1：2。その間の角 ∠A＝∠D＝50°。2組の辺の比とその間の角がそれぞれ等しいので相似です。'),
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',
+      {p:triAA(65,55,4),s:[],a:['65°','55°']},{p:triAA(65,55,6),s:[],a:['65°','55°']},2,'∠A＝∠D＝65°、∠B＝∠E＝55°。2組の角がそれぞれ等しいので相似です。'),
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',
+      {p:triSSS(5,6,4),s:['4cm','5cm','6cm'],a:[]},{p:triSSS(10,13,8),s:['8cm','10cm','13cm'],a:[]},3,'4：8＝1：2、5：10＝1：2 ですが、6：13 は 1：2 ではありません。3組の辺の比が等しくないので、相似とはいえません。'),
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。（∠Eの大きさは、図にかかれていません）',
+      {p:triAA(90,30,4),s:[],a:['90°','30°']},{p:triAA(90,30,6),s:[],a:['90°',null,'60°']},2,'△DEFの角は 90°・？・60° なので ∠E＝180°−90°−60°＝30°。∠A＝∠D＝90°、∠B＝∠E＝30° なので、2組の角がそれぞれ等しく相似です。'),
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',
+      {p:triSAS(3,4,50),s:['3cm',null,'4cm'],a:['50°']},{p:triSAS(6,9,50),s:['6cm',null,'9cm'],a:['50°']},3,'AB：DE＝3：6＝1：2 ですが、AC：DF＝4：9 は 1：2 ではありません。2組の辺の比が等しくないので、相似とはいえません。'),
+    {type:'blanks',stem:'下の6つの三角形から、相似な組を3組見つけましょう。そのときの相似条件もえらびます。',size:[440,280],fig:figSix,tokens:[
+      'a ∽ ',{a:'d',o:['a','b','c','d','e','f']},'　条件：',{a:CONDS[0],o:CONDS},'<br>b ∽ ',{a:'e',o:['a','b','c','d','e','f']},'　条件：',{a:CONDS[1],o:CONDS},'<br>c ∽ ',{a:'f',o:['a','b','c','d','e','f']},'　条件：',{a:CONDS[2],o:CONDS}],
+     explain:'a（3-4-5）と d（6-8-10）は3組の辺の比が等しい。b（4cmと6cm、間の角40°）と e（6cmと9cm、間の角40°）は 4：6＝6：9 で、2組の辺の比とその間の角が等しい。c と f は角が 50°・70° で2組の角が等しい。'},
+    NQ('△ABC∽△DEF で、AB＝6cm、DE＝9cm、BC＝8cm のとき、EF の長さは何cmですか。',null,null,12,{pre:'EF ＝ ',ex:'AB：DE＝BC：EF なので 6：9＝8：EF。6×EF＝9×8＝72 より EF＝12cm。（DEはABの 1.5倍なので、EFもBCの 1.5倍で 8×1.5＝12 でもOK）'}),
+    {type:'choice',stem:'∠A＝∠E、∠B＝∠F、∠C＝∠D のとき、相似を正しく表しているのはどれですか。',choices:['△ABC∽△DEF','△ABC∽△EFD','△ABC∽△FDE','△ABC∽△DFE'],ans:1,explain:'対応する頂点を同じ順にならべます。A↔E、B↔F、C↔D なので △ABC∽△EFD です。'}
+  ]);
+  r.append(c4);
+}
+
+/* ===== 第3・4章 証明 ===== */
+const nestArgs=(t,lab,ang)=>f=>figNest(f,{t,par:false,lab,ang});
+function buildU3(r){
+  r.append(card(tagH('ポイント','　相似の証明（その1）　2組の辺の比とその間の角'),`<div class="point">
+   <b>証明の「型」</b>（この順に書けば大丈夫です）
+   <ol style="margin:4px 0;padding-left:1.4em"><li>〔証明〕△○○と△××で，　←まず2つの三角形を書く</li>
+   <li><b>辺の比</b>が等しいことを2つ書く　……①</li>
+   <li>その<b>間の角</b>が等しいことを書く　……②（共通の角・対頂角など）</li>
+   <li>①，②より，<b>2組の辺の比とその間の角がそれぞれ等しい</b>ので，△○○∽△××といえる。</li></ol></div>`));
+  r.append(card(tagH('解説','　どこに目をつければいいの？'),`
+   <p>証明で一番むずかしいのは、「どこを見るか」です。次の順番で見ていくとスムーズです。</p>
+   <ol><li><b>辺の比</b>を2組そろえる（同じ頂点から出ている辺どうしをくらべます）</li><li>その2つの辺に<b>はさまれた角</b>を見つける</li><li>その角が<b>共通の角</b>（重なっている角）か<b>対頂角</b>（×の形の角）なら、等しいと言える</li></ol>
+   <div class="note">下の例題では、<b>「ヒント1」「ヒント2」「ヒント3」</b>のボタンを押すと、目をつけるところに<b>色つきの点や線</b>がつきます。</div>`));
+  const e=card(tagH('例題1','　重なった三角形'));
+  ProofBuilder(e,'u3',sasProof({id:'e1',stem:'【例題1】右の図で、△ADE∽△ABC となることを証明しなさい。',size:[380,250],
+    fig:nestArgs(.5,{AD:'3cm',DB:'3cm',AE:'4cm',EC:'4cm'}),T1:'ADE',T2:'ABC',t1:['A','D','E'],t2:['A','B','C'],
+    p1:{a:['A','D'],b:['A','B'],la:3,lb:6,note:'AB＝3＋3＝6'},p2:{a:['A','E'],b:['A','C'],la:4,lb:8,note:'AC＝4＋4＝8'},
+    ang:{kind:'common',v:'A',r1:['D','E'],r2:['B','C'],nm:'∠A',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  r.append(e);
+  const e2=card(tagH('例題2','　×の形（対頂角）'));
+  ProofBuilder(e2,'u3',sasProof({id:'e2',stem:'【例題2】右の図で、△ABO∽△CDO となることを証明しなさい。',size:[380,250],
+    fig:f=>figX(f,{UL:['A',3],DR:['C',6],UR:['B',4],DL:['D',8]}),T1:'ABO',T2:'CDO',t1:['A','B','O'],t2:['C','D','O'],
+    p1:{a:['A','O'],b:['C','O'],la:3,lb:6},p2:{a:['B','O'],b:['D','O'],la:4,lb:8},
+    ang:{kind:'vertical',v:'O',r1:['A','B'],r2:['C','D'],n1:'∠AOB',n2:'∠COD',opts:['∠AOB','∠COD','∠BOC','∠AOD']}}));
+  r.append(e2);
+  const p=card(tagH('練習','　自分で証明を完成させよう'));p.append(h('p',{html:'□を選んで証明を完成させましょう。迷ったら「ヒント」を押して、図に色をつけてみましょう。'}));
+  ProofBuilder(p,'u3',sasProof({id:'p1',stem:'(1) 右の図で、△ADE∽△ABC となることを証明しなさい。',size:[380,250],
+    fig:nestArgs(.5,{AD:'4cm',DB:'4cm',AE:'5cm',EC:'5cm'}),T1:'ADE',T2:'ABC',t1:['A','D','E'],t2:['A','B','C'],
+    p1:{a:['A','D'],b:['A','B'],la:4,lb:8,note:'AB＝4＋4＝8'},p2:{a:['A','E'],b:['A','C'],la:5,lb:10,note:'AC＝5＋5＝10'},
+    ang:{kind:'common',v:'A',r1:['D','E'],r2:['B','C'],nm:'∠A',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  ProofBuilder(p,'u3',sasProof({id:'p2',stem:'(2) 右の図で、△ABO∽△DCO となることを証明しなさい。',size:[380,250],
+    fig:f=>figX(f,{UL:['A',3],DR:['D',6],UR:['B',4],DL:['C',8]}),T1:'ABO',T2:'DCO',t1:['A','B','O'],t2:['D','C','O'],
+    p1:{a:['A','O'],b:['D','O'],la:3,lb:6},p2:{a:['B','O'],b:['C','O'],la:4,lb:8},
+    ang:{kind:'vertical',v:'O',r1:['A','B'],r2:['D','C'],n1:'∠AOB',n2:'∠DOC',opts:['∠AOB','∠DOC','∠BOC','∠AOD']}}));
+  ProofBuilder(p,'u3',sasProof({id:'p3',stem:'(3) 右の図で、△BED∽△BAC となることを証明しなさい。（頂点Bが共通です）',size:[380,250],
+    fig:f=>figNest(f,{n:['B','A','C','E','D'],tri:[[34,125],[342,36],[342,214]],t:1/3,par:false,lab:{AD:'2cm',DB:'4cm',AE:'3cm',EC:'6cm'}}),
+    T1:'BED',T2:'BAC',t1:['B','E','D'],t2:['B','A','C'],
+    p1:{a:['B','E'],b:['B','A'],la:2,lb:6,note:'BA＝2＋4＝6'},p2:{a:['B','D'],b:['B','C'],la:3,lb:9,note:'BC＝3＋6＝9'},
+    ang:{kind:'common',v:'B',r1:['E','D'],r2:['A','C'],nm:'∠B',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  r.append(p);
+}
+function buildU4(r){
+  r.append(card(tagH('ポイント','　相似の証明（その2）　2組の角'),`<div class="point">
+   「<b>2組の角がそれぞれ等しい</b>」を使う証明では、角を<b>2組</b>見つけます。
+   <ol style="margin:4px 0;padding-left:1.4em"><li>〔証明〕△○○と△××で，</li><li>1組目の角が等しい（図の印・直角・平行線の角など）……①</li><li>2組目の角が等しい（<b>共通の角</b>など）……②</li><li>①，②より，<b>2組の角がそれぞれ等しい</b>ので，△○○∽△××といえる。</li></ol></div>`));
+  r.append(card(tagH('解説','　等しい角の見つけ方'),`
+   <p>角が等しいとわかる代表的な場面は4つです。</p>
+   <ul><li><b>共通の角</b>：2つの三角形が重なっていて、同じ角をふくむとき</li><li><b>対頂角</b>：×の形でむかい合う角</li><li><b>平行線の同位角・錯角</b>：DE//BC なら ∠ADE＝∠ABC など</li><li><b>直角</b>：どちらも 90° のとき（垂線をひいたときによく出ます）</li></ul>
+   <div class="note">直角三角形に垂線をひく問題では、<b>「どちらも90°」＋「共通の角」</b>の組み合わせがとても多いです。</div>`));
+  const e=card(tagH('例題3','　平行線と共通の角'));
+  ProofBuilder(e,'u4',aaProof({id:'e3',stem:'【例題3】右の図で、△ADE∽△ABC となることを証明しなさい。（∠ADE＝∠ABC＝52°）',size:[380,250],
+    fig:nestArgs(.5,{},[['D','A','E',22,'52°'],['B','A','C',22,'52°']]),T1:'ADE',T2:'ABC',t1:['A','D','E'],t2:['A','B','C'],
+    e1:{v1:'D',r1:['A','E'],v2:'B',r2:['A','C'],n1:'∠ADE',n2:'∠ABC',val:'52°',opts:['∠ABC','∠ACB','∠BAC','∠AED']},
+    c:{v:'A',r1:['D','E'],r2:['B','C'],nm:'∠A',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  r.append(e);
+  const e2=card(tagH('例題4','　直角三角形に垂線'));
+  ProofBuilder(e2,'u4',aaProof({id:'e4',stem:'【例題4】∠BAC＝90°の直角三角形ABCで、Aから辺BCに垂線AHをひきます。△HBA∽△ABC となることを証明しなさい。',size:[380,250],
+    fig:f=>figAlt(f,{n:['A','B','C','H']}),T1:'HBA',T2:'ABC',t1:['H','B','A'],t2:['A','B','C'],
+    e1:{v1:'H',r1:['A','B'],v2:'A',r2:['C','B'],n1:'∠AHB',n2:'∠CAB',val:'90°',opts:['∠CAB','∠ABC','∠ACB','∠HAB']},
+    c:{v:'B',r1:['H','A'],r2:['C','A'],nm:'∠B',opts:['∠A','∠B','∠C','∠H']}}));
+  r.append(e2);
+  const p=card(tagH('練習','　自分で証明を完成させよう'));
+  ProofBuilder(p,'u4',aaProof({id:'p1',stem:'(1) 右の図で、△ADE∽△ABC となることを証明しなさい。（∠AED＝∠ACB＝38°）',size:[380,250],
+    fig:f=>figNest(f,{t:.4,par:false,ang:[['E','A','D',22,'38°'],['C','A','B',22,'38°']]}),T1:'ADE',T2:'ABC',t1:['A','D','E'],t2:['A','B','C'],
+    e1:{v1:'E',r1:['A','D'],v2:'C',r2:['A','B'],n1:'∠AED',n2:'∠ACB',val:'38°',opts:['∠ABC','∠ACB','∠BAC','∠ADE']},
+    c:{v:'A',r1:['D','E'],r2:['B','C'],nm:'∠A',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  ProofBuilder(p,'u4',aaProof({id:'p2',stem:'(2) ∠BAC＝90°の直角三角形ABCで、Aから辺BCに垂線ADをひきます。△ABD∽△CBA となることを証明しなさい。',size:[380,250],
+    fig:f=>figAlt(f,{n:['A','B','C','D']}),T1:'ABD',T2:'CBA',t1:['A','B','D'],t2:['C','B','A'],
+    e1:{v1:'D',r1:['A','B'],v2:'A',r2:['C','B'],n1:'∠ADB',n2:'∠CAB',val:'90°',opts:['∠CAB','∠ABC','∠ACB','∠BAD']},
+    c:{v:'B',r1:['A','D'],r2:['C','A'],nm:'∠B',opts:['∠A','∠B','∠C','∠D']}}));
+  ProofBuilder(p,'u4',aaProof({id:'p3',stem:'(3) ∠BAC＝90°の直角三角形ABCで、Aから辺BCに垂線ADをひきます。△ADC∽△BAC となることを証明しなさい。',size:[380,250],
+    fig:f=>figAlt(f,{n:['A','B','C','D']}),T1:'ADC',T2:'BAC',t1:['A','D','C'],t2:['B','A','C'],
+    e1:{v1:'D',r1:['A','C'],v2:'A',r2:['B','C'],n1:'∠ADC',n2:'∠BAC',val:'90°',opts:['∠BAC','∠ABC','∠ACB','∠CAD']},
+    c:{v:'C',r1:['A','D'],r2:['B','A'],nm:'∠C',opts:['∠A','∠B','∠C','∠D']}}));
+  ProofBuilder(p,'u4',aaProof({id:'p4',stem:'(4) ∠ABC＝90°の直角三角形ABCで、Bから辺ACに垂線BDをひきます。△ABD∽△ACB となることを証明しなさい。',size:[380,250],
+    fig:f=>figAlt(f,{n:['B','A','C','D']}),T1:'ABD',T2:'ACB',t1:['A','B','D'],t2:['A','C','B'],
+    e1:{v1:'D',r1:['A','B'],v2:'B',r2:['A','C'],n1:'∠ADB',n2:'∠ABC',val:'90°',opts:['∠ABC','∠BAC','∠ACB','∠CBD']},
+    c:{v:'A',r1:['B','D'],r2:['C','B'],nm:'∠A',opts:['∠A','∠B','∠C','∠D']}}));
+  r.append(p);
+}
+
+/* ===== 第5章 相似を使って長さを求める（1） ===== */
+const hintPH=(txt,list)=>({t:txt,hl:f=>PH(f,list)});
+function buildU5(r){
+  r.append(card(tagH('ポイント','　比の計算と DE//BC'),`<div class="point"><ul>
+   <li><b>比の計算</b>：a：b＝c：d のとき、<b>内側の項の積＝外側の項の積</b>。つまり <b>b×c＝a×d</b></li>
+   <li>△ABC で DE//BC のとき、<b>△ADE∽△ABC</b>（同位角が等しいので）。</li>
+   <li>相似な三角形では<b>対応する辺の比が等しい</b>ので、<b>AD：AB＝DE：BC</b> が使えます。</li></ul></div>`));
+  const rc=card(tagH('復習','　比の計算'),`<p>2：3＝4：6 のとき、${cs('b','内側の項（3と4）')}をかけた値と、${cs('r','外側の項（2と6）')}をかけた値は等しくなります。<br>
+   <b>${cs('r','2')}：${cs('b','3')}＝${cs('b','4')}：${cs('r','6')}　→　${cs('b','3×4')}＝${cs('r','2×6')}（どちらも12）</b></p>`);
+  Quiz(rc,'u5r',[
+    NQ('3：4＝x：12 のとき、x を求めなさい。',null,null,9,{ex:'4×x＝3×12 より 4x＝36、x＝9。'}),
+    NQ('2：6＝x：15 のとき、x を求めなさい。',null,null,5,{ex:'6×x＝2×15 より 6x＝30、x＝5。'}),
+    NQ('4：3＝8：x のとき、x を求めなさい。',null,null,6,{ex:'4×x＝3×8 より 4x＝24、x＝6。'})
+  ]);
+  r.append(rc);
+  const e1=card(tagH('例題1','　DE//BC のとき DE の長さ'));
+  e1.append(h('p',{class:'ex-q',html:'DE//BC のとき、DE の長さ x を求めなさい。（AD＝8cm、AB＝12cm、BC＝6cm）'}));
+  const PR=(f)=>PH(f,[['A','D','A','B','r'],['D','E','B','C','b']]);
+  Demo(e1,{size:[380,250],fig:f=>figNest(f,{t:2/3,lab:{AD:'8cm',AB:'12cm',BC:'6cm',DE:'x cm'}}),steps:[
+    {text:`DE//BC のとき、${cs('o','△ADE')}と${cs('p','△ABC')}は<b>相似</b>になります。`,hl:f=>{f.hTri(['A','D','E'],COL.o,.2);f.hTri(['A','B','C'],COL.p,.14);}},
+    {reset:true,text:`なぜ？ DE//BC なので<b>同位角</b>が等しくなります。${cs('r','∠ADE＝∠ABC')}、${cs('b','∠AED＝∠ACB')}、さらに${cs('g','∠A は共通')}。2組の角が等しいので相似です。`,hl:f=>{f.hAng('D','A','E',26,COL.r);f.hAng('B','A','C',26,COL.r);f.hAng('E','A','D',26,COL.b);f.hAng('C','A','B',26,COL.b);f.hAng('A','D','E',34,COL.g,false);f.hAng('A','B','C',52,COL.g);}},
+    {reset:true,text:`対応する辺を見つけます。<b>同じ色が対応</b>です。<br>${cs('r','AD と AB')}　${cs('b','DE と BC')}`,hl:PR},
+    {text:`比の式をつくります（対応する順に書く）：<br><b>${cs('r','AD')}：${cs('r','AB')}＝${cs('b','DE')}：${cs('b','BC')}</b>`,hl:PR},
+    {text:`数字を入れて計算します。<br><b>${cs('r','8')}：${cs('r','12')}＝${cs('b','x')}：${cs('b','6')}</b><br>12x＝8×6、12x＝48、<b>x＝4（cm）</b>`,hl:PR}]});
+  r.append(e1);
+  const e2=card(tagH('例題2','　3つの比のうち、使うのはどれ？'));
+  e2.append(h('p',{class:'ex-q',html:'DE//BC のとき、DE の長さ x を求めなさい。（AD＝6cm、AB＝12cm、AE＝5cm、AC＝10cm、BC＝8cm）'}));
+  Demo(e2,{size:[380,250],fig:f=>figNest(f,{t:.5,lab:{AD:'6cm',AB:'12cm',AE:'5cm',AC:'10cm',BC:'8cm',DE:'x cm'}}),steps:[
+    {text:`△ADE∽△ABC です。相似なので、<b>3つの辺の比がすべて等しく</b>なります。<br>${cs('r','AD：AB')}＝${cs('g','AE：AC')}＝${cs('b','DE：BC')}`,hl:f=>PH(f,[['A','D','A','B','r'],['A','E','A','C','g'],['D','E','B','C','b']])},
+    {reset:true,text:`ほしいのは <b>DE（x）</b>。DE をふくむ比は ${cs('b','DE：BC')}。これとペアにするのは、<b>数字が2つそろっている比</b>の ${cs('r','AD：AB')}（6と12）です。<br>${cs('g','AE：AC')} は今回は使いません。`,hl:f=>{PH(f,[['A','D','A','B','r'],['D','E','B','C','b']]);}},
+    {text:`<b>${cs('r','6')}：${cs('r','12')}＝${cs('b','x')}：${cs('b','8')}</b>　12x＝48　<b>x＝4（cm）</b>`,hl:f=>PH(f,[['A','D','A','B','r'],['D','E','B','C','b']])}]});
+  r.append(e2);
+  const pc=card(tagH('練習','　DE//BC のとき x を求めよう'));
+  const H5='△ADE∽△ABC なので、<b>AD：AB＝DE：BC</b> の形に数字を入れましょう。同じ色の辺が対応しています。';
+  const hp=[['A','D','A','B','r'],['D','E','B','C','b']];
+  Quiz(pc,'u5',[
+    NQ('DE//BC のとき、BC の長さ x を求めなさい。',f=>figNest(f,{t:2/3,lab:{AD:'6cm',AB:'9cm',DE:'4cm',BC:'x cm'}}),[380,250],6,{ex:'AD：AB＝DE：BC より 6：9＝4：x。6x＝36、x＝6。',hint:hintPH(H5,hp)}),
+    NQ('DE//BC のとき、DE の長さ x を求めなさい。',f=>figNest(f,{t:.5,lab:{AD:'5cm',AB:'10cm',BC:'6cm',DE:'x cm'}}),[380,250],3,{ex:'AD：AB＝DE：BC より 5：10＝x：6。10x＝30、x＝3。',hint:hintPH(H5,hp)}),
+    NQ('DE//BC のとき、DE の長さ x を求めなさい。',f=>figNest(f,{t:.5,lab:{AD:'4.6cm',AB:'9.2cm',BC:'6.8cm',DE:'x cm'}}),[380,250],3.4,{ex:'4.6：9.2＝x：6.8。4.6：9.2 は 1：2 と約分できるので 1：2＝x：6.8。2x＝6.8、x＝3.4。',hint:hintPH(H5+'（小数でも同じです。先に 4.6：9.2 を約分すると楽です）',hp)}),
+    NQ('DE//BC のとき、DE の長さ x を求めなさい。',f=>figNest(f,{t:2/3,lab:{AD:'8cm',AB:'12cm',BC:'9cm',DE:'x cm'}}),[380,250],6,{ex:'8：12＝x：9。12x＝72、x＝6。',hint:hintPH(H5,hp)}),
+    NQ('DE//BC のとき、BC の長さ x を求めなさい。',f=>figNest(f,{t:.375,lab:{AD:'3cm',AB:'8cm',DE:'4.5cm',BC:'x cm'}}),[380,250],12,{ex:'AD：AB＝DE：BC より 3：8＝4.5：x。3x＝36、x＝12。',hint:hintPH(H5,hp)})
+  ]);
+  r.append(pc);
+}
+
+/* ===== 第6章 相似を使って長さを求める（2） ===== */
+function buildU6(r){
+  r.append(card(tagH('ポイント','　全体の長さに注意！　平行線と比'),`<div class="point"><ul>
+   <li>x が「ADの下の部分DB」のときは、比にはいる <b>AB は AD＋DB（全体）</b>。<span class="cr">DB だけを入れてはいけません！</span></li>
+   <li><b>平行線と比</b>：ℓ//m//n のとき、2本の直線を切る線分の比は等しい。<br><b>a：b＝c：d</b>（上の図の a,b,c,d）</li></ul></div>`));
+  const e1=card(tagH('例題1','　全体の長さ AB＝4＋x'));
+  e1.append(h('p',{class:'ex-q',html:'DE//BC のとき、DB の長さ x を求めなさい。（AD＝4cm、DE＝6cm、BC＝9cm）'}));
+  const PR=f=>PH(f,[['A','D','A','B','r'],['D','E','B','C','b']]);
+  Demo(e1,{size:[380,250],fig:f=>figNest(f,{t:.4,lab:{AD:'4cm',DB:'x cm',DE:'6cm',BC:'9cm'}}),steps:[
+    {text:`DE//BC なので △ADE∽△ABC。対応する辺の比は ${cs('r','AD：AB')}＝${cs('b','DE：BC')} です。`,hl:PR},
+    {reset:true,text:`注意！ ${cs('r','AB')}は、${cs('r','AD')}と${cs('o','DB（＝x）')}をあわせた<b>全体</b>です。<br>だから <b>AB＝4＋x</b>。`,hl:f=>{PH(f,[['A','D','A','B','r']]);f.hSeg('D','B',COL.o,7.5);}},
+    {text:`式：<b>${cs('r','4')}：${cs('r','(4＋x)')}＝${cs('b','6')}：${cs('b','9')}</b><br>6(4＋x)＝9×4、24＋6x＝36、6x＝12、<b>x＝2（cm）</b>`,hl:f=>{PR(f);f.hSeg('D','B',COL.o,7.5);}},
+    {text:`<span class="cr">チェック：</span>x は DB の長さなので、答えは AB（＝6）ではなく <b>DB＝2cm</b> です。AB＝4＋2＝6 とも合っています。`,hl:f=>{PR(f);f.hSeg('D','B',COL.o,7.5);}}]});
+  r.append(e1);
+  const e2=card(tagH('例題2','　3本の平行線 ℓ//m//n'));
+  e2.append(h('p',{class:'ex-q',html:'ℓ//m//n のとき、x の長さを求めなさい。（左の直線で 6cm と 4cm、右の直線で x cm と 8cm）'}));
+  const par3=f=>figPar3(f,{ra:6,rb:4,a:'6cm',b:'4cm',c:'x cm',d:'8cm'});
+  Demo(e2,{size:[390,250],fig:par3,steps:[
+    {text:`平行線で切られた線分の比は等しくなります。${cs('r','上の線分どうし（6 と x）')}、${cs('b','下の線分どうし（4 と 8）')}が対応です。<br><b>a：b＝c：d</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}},
+    {reset:true,text:`なぜ？ 右の直線を<b>平行移動</b>して、点Dを点Aに重ねてみます。${cs('g','緑の点線')}が移動した直線です。`,hl:f=>{const A=f.P.A,D=f.P.D,E=f.P.E,F=f.P.F;const E2=[A[0]+E[0]-D[0],A[1]+E[1]-D[1]],F2=[A[0]+F[0]-D[0],A[1]+F[1]-D[1]];
+      f.hLn(A,F2,COL.g,3.5,1,'7 5');sv('circle',{cx:E2[0],cy:E2[1],r:6,fill:COL.g,stroke:'#fff','stroke-width':2},f.gH);sv('circle',{cx:F2[0],cy:F2[1],r:6,fill:COL.g,stroke:'#fff','stroke-width':2},f.gH);f.hTxt(E2[0]-13,E2[1]-12,'E′',COL.g,15);f.hTxt(F2[0]-13,F2[1]-12,'F′',COL.g,15);}},
+    {text:`すると、BE′//CF′ なので <b>△ABE′∽△ACF′</b>（DE//BC のときと同じ形！）。だから AB：AC＝AE′：AF′ となり、整理すると <b>a：b＝c：d</b> になります。`,hl:f=>{const A=f.P.A,D=f.P.D,E=f.P.E,F=f.P.F;const E2=[A[0]+E[0]-D[0],A[1]+E[1]-D[1]],F2=[A[0]+F[0]-D[0],A[1]+F[1]-D[1]];
+      f.hLn(A,F2,COL.g,3.5,1,'7 5');f.hSeg('A','B',COL.r);f.hSeg('B','C',COL.b);f.hLn(A,E2,COL.r,5,.9);f.hLn(E2,F2,COL.b,5,.9);}},
+    {text:`式：<b>${cs('r','6')}：${cs('b','4')}＝${cs('r','x')}：${cs('b','8')}</b>　4x＝6×8、4x＝48、<b>x＝12（cm）</b>`,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}}]});
+  r.append(e2);
+  const pc=card(tagH('練習','　x を求めよう'));
+  const hpNest=hintPH('△ADE∽△ABC。<b>AD：AB＝DE：BC</b>。AB は <b>AD＋DB（全体）</b> に注意しましょう。',[['A','D','A','B','r'],['D','E','B','C','b']]);
+  const mkPar=(ra,rb,a,b,c,d)=>f=>figPar3(f,{ra,rb,a,b,c,d});
+  const hpPar=(t,ab,cd)=>({t,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}});
+  const hpt='ℓ//m//n のとき <b>a：b＝c：d</b>。同じ色の線分（赤どうし、青どうし）が対応しています。';
+  Quiz(pc,'u6',[
+    NQ('DE//BC のとき、DB の長さ x を求めなさい。',f=>figNest(f,{t:.75,lab:{AD:'3cm',DB:'x cm',DE:'6cm',BC:'8cm'}}),[380,250],1,{ex:'AD：AB＝DE：BC で、AB＝3＋x。3：(3＋x)＝6：8。6(3＋x)＝24、3＋x＝4、x＝1。',hint:hpNest}),
+    NQ('DE//BC のとき、AB の長さ x を求めなさい。（DB＝4cm）',f=>figNest(f,{t:2/3,lab:{DB:'4cm',AB:'x cm',DE:'10cm',BC:'15cm'}}),[380,250],12,{ex:'AD＝x−4 です。(x−4)：x＝10：15。15(x−4)＝10x、15x−60＝10x、5x＝60、x＝12。',hint:hpNest}),
+    NQ('ℓ//m//n のとき、x を求めなさい。',mkPar(4.8,3.2,'4.8cm','x cm','3.6cm','2.4cm'),[390,250],3.2,{ex:'4.8：x＝3.6：2.4。3.6x＝4.8×2.4＝11.52、x＝3.2。（3.6：2.4＝3：2 と約分すると、3x＝9.6 でもOK）',hint:{t:hpt,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}}}),
+    NQ('ℓ//m//n のとき、x を求めなさい。',mkPar(6,5,'6cm','5cm','x cm','7.5cm'),[390,250],9,{ex:'6：5＝x：7.5。5x＝6×7.5＝45、x＝9。',hint:{t:hpt,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}}}),
+    NQ('ℓ//m//n のとき、x を求めなさい。',mkPar(2.8,4.2,'2.8cm','x cm','2.4cm','3.6cm'),[390,250],4.2,{ex:'2.8：x＝2.4：3.6。2.4x＝2.8×3.6＝10.08、x＝4.2。（2.4：3.6＝2：3 と約分すると、2x＝8.4 でもOK）',hint:{t:hpt,hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}}})
+  ]);
+  r.append(pc);
+}
+
+/* ===== 第7章 相似を使って長さを求める（3） ===== */
+function buildU7(r){
+  r.append(card(tagH('ポイント','　台形の中の線分　EF の長さ'),`<div class="point"><ul>
+   <li>台形で AD//EF//BC のとき、<b>補助線</b>をひいて、相似な三角形をつくります。</li>
+   <li>台形ABCD（AB//DC）で、対角線の交点をE、EF//AB のとき、<b>2回の相似</b>を使います。<br>① △ABE∽△CDE　→ AE：EC＝AB：DC　　② △CEF∽△CAB　→ CE：CA＝EF：AB</li></ul></div>`));
+  const e1=card(tagH('例題1','　補助線をひいて EF を求める（台形・その1）'));
+  e1.append(h('p',{class:'ex-q',html:'台形ABCDで AD//EF//BC のとき、EF の長さ x を求めなさい。（AD＝6cm、BC＝9cm、AE＝2cm、EB＝4cm）'}));
+  const tf=f=>figTrapEF(f,{AD:6,BC:9,t:1/3,lab:{AD:'6cm',BC:'9cm',AE:'2cm',EB:'4cm',EF:'x cm'}});
+  Demo(e1,{size:[380,250],fig:tf,steps:[
+    {text:`EF をふくむ三角形がありません。こういうときは<b>補助線</b>をひいて、相似な三角形をつくります。`,hl:f=>{f.hSeg('E','F',COL.r);}},
+    {reset:true,text:`点Dから AB に<b>平行な線 DG</b> をひきます（${cs('o','オレンジの点線')}）。EF との交点を H とします。`,hl:f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hLab('G',COL.o);f.hLab('H',COL.o);}},
+    {text:`四角形ABGD と AEHD は<b>平行四辺形</b>。だから ${cs('r','EH＝AD＝6cm')}、${cs('r','BG＝AD＝6cm')}。すると ${cs('b','GC＝9−6＝3cm')} です。`,hl:f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hLab('G',COL.o);f.hLab('H',COL.o);f.hSeg('E','H',COL.r,6);f.hSeg('A','D',COL.r,6);f.hSeg('B','G',COL.r,6);f.hSeg('G','C',COL.b,6);}},
+    {reset:true,text:`HF//GC なので <b>△DHF∽△DGC</b>。${cs('r','DH＝AE＝2cm')}、${cs('r','DG＝AB＝6cm')}（平行四辺形の対辺）です。`,hl:f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hLab('G',COL.o);f.hLab('H',COL.o);f.hTri(['D','H','F'],COL.o,.25);f.hTri(['D','G','C'],COL.p,.15);}},
+    {text:`DH：DG＝HF：GC より、<b>${cs('r','2')}：${cs('r','6')}＝${cs('b','HF')}：${cs('b','3')}</b>。6HF＝6、<b>HF＝1cm</b>。`,hl:f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hTri(['D','H','F'],COL.o,.25);f.hTri(['D','G','C'],COL.p,.15);f.hSeg('H','F',COL.b,6);f.hSeg('G','C',COL.b,6);}},
+    {text:`EF＝EH＋HF＝<b>${cs('r','6')}＋${cs('b','1')}＝7（cm）</b>`,hl:f=>{f.hSeg('E','H',COL.r,6);f.hSeg('H','F',COL.b,6);}}]});
+  r.append(e1);
+  const e2=card(tagH('例題2','　砂時計の形（台形・その2）'));
+  e2.append(h('p',{class:'ex-q',html:'AB//EF//DC のとき、EF の長さ x を求めなさい。（AB＝15cm、DC＝10cm。E は対角線の交点）'}));
+  const hf=f=>figHour(f,{AB:15,DC:10,lab:{AB:'15cm',DC:'10cm',EF:'x cm'}});
+  Demo(e2,{size:[380,250],fig:hf,steps:[
+    {text:`図に、2つの対角線でできた<b>砂時計の形</b>の三角形（${cs('o','△ABE')}と${cs('p','△CDE')}）があります。`,hl:f=>{f.hTri(['A','B','E'],COL.o,.22);f.hTri(['C','D','E'],COL.p,.18);}},
+    {reset:true,text:`① <b>△ABE∽△CDE</b>（AB//DC で錯角が等しい）。<br>${cs('r','AB：DC')}＝${cs('b','AE：EC')} より、15：10＝3：2。つまり <b>AE：EC＝3：2</b>。`,hl:f=>{f.hTri(['A','B','E'],COL.o,.15);f.hTri(['C','D','E'],COL.p,.12);f.hSeg('A','B',COL.r,6);f.hSeg('D','C',COL.r,6);f.hSeg('A','E',COL.b,6);f.hSeg('E','C',COL.b,6);}},
+    {reset:true,text:`② <b>△CEF∽△CAB</b>（EF//AB で同位角が等しい）。<br>CE：CA の比を調べます。AE：EC＝3：2 なので、<b>CE：CA＝2：(3＋2)＝2：5</b>。`,hl:f=>{f.hTri(['C','E','F'],COL.o,.25);f.hTri(['C','A','B'],COL.p,.12);f.hSeg('E','C',COL.g,6);f.hSeg('A','C',COL.g,4,.45);}},
+    {text:`CE：CA＝EF：AB より、<b>${cs('g','2')}：${cs('g','5')}＝${cs('r','x')}：${cs('r','15')}</b>。5x＝30、<b>x＝6（cm）</b>`,hl:f=>{f.hTri(['C','E','F'],COL.o,.25);f.hTri(['C','A','B'],COL.p,.12);f.hSeg('E','C',COL.g,6);f.hSeg('A','C',COL.g,4,.45);f.hSeg('E','F',COL.r,6);f.hSeg('A','B',COL.r,4,.45);}}]});
+  r.append(e2);
+  const pc=card(tagH('練習','　EF の長さを求めよう'));
+  const hT='補助線 DG（ABに平行）をひくと、<b>EH＝AD</b>、<b>GC＝BC−AD</b>。△DHF∽△DGC で HF を求め、<b>EF＝EH＋HF</b>。';
+  const hlT=f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hLab('G',COL.o);f.hLab('H',COL.o);f.hTri(['D','H','F'],COL.o,.25);f.hTri(['D','G','C'],COL.p,.15);};
+  const hH='① △ABE∽△CDE で AE：EC＝AB：DC。② △CEF∽△CAB で CE：CA＝EF：AB。（CE：CA は AE：EC の比から作ります）';
+  const hlH=f=>{f.hTri(['A','B','E'],COL.o,.15);f.hTri(['C','D','E'],COL.p,.12);f.hSeg('A','B',COL.r,6);f.hSeg('D','C',COL.r,6);f.hTri(['C','E','F'],COL.b,.2);};
+  Quiz(pc,'u7',[
+    NQ('AD//EF//BC のとき、EF の長さ x を求めなさい。',f=>figTrapEF(f,{AD:9,BC:15,t:1/3,lab:{AD:'9cm',BC:'15cm',AE:'3cm',EB:'6cm',EF:'x cm'}}),[380,250],11,{pre:'EF ＝ ',ex:'EH＝AD＝9cm、GC＝15−9＝6cm。DH：DG＝3：9。HF：6＝3：9 より HF＝2。EF＝9＋2＝11cm。',hint:{t:hT,hl:hlT}}),
+    NQ('AD//EF//BC のとき、EF の長さ x を求めなさい。',f=>figTrapEF(f,{AD:6,BC:11,t:.8,lab:{AD:'6cm',BC:'11cm',AE:'4cm',EB:'1cm',EF:'x cm'}}),[380,250],10,{pre:'EF ＝ ',ex:'EH＝AD＝6cm、GC＝11−6＝5cm。DH：DG＝AE：AB＝4：5。HF：5＝4：5 より HF＝4。EF＝6＋4＝10cm。',hint:{t:hT,hl:hlT}}),
+    NQ('AD//EF//BC のとき、EF の長さ x を求めなさい。',f=>figTrapEF(f,{AD:6,BC:12,t:1/3,lab:{AD:'6cm',BC:'12cm',AE:'3cm',EB:'6cm',EF:'x cm'}}),[380,250],8,{pre:'EF ＝ ',ex:'EH＝6cm、GC＝12−6＝6cm。DH：DG＝3：9。HF：6＝3：9 より HF＝2。EF＝6＋2＝8cm。',hint:{t:hT,hl:hlT}}),
+    NQ('AB//EF//DC のとき、EF の長さ x を求めなさい。',f=>figHour(f,{AB:12,DC:6,lab:{AB:'12cm',DC:'6cm',EF:'x cm'}}),[380,250],4,{pre:'EF ＝ ',ex:'△ABE∽△CDE より AE：EC＝12：6＝2：1。CE：CA＝1：3。△CEF∽△CAB より x：12＝1：3、x＝4cm。',hint:{t:hH,hl:hlH}}),
+    NQ('AB//EF//DC のとき、EF の長さ x を求めなさい。',f=>figHour(f,{AB:12,DC:36,lab:{AB:'12cm',DC:'36cm',EF:'x cm'}}),[380,250],9,{pre:'EF ＝ ',ex:'△ABE∽△CDE より AE：EC＝12：36＝1：3。CE：CA＝3：4。x：12＝3：4、4x＝36、x＝9cm。',hint:{t:hH,hl:hlH}}),
+    NQ('AB//EF//DC のとき、EF の長さ x を求めなさい。',f=>figHour(f,{AB:18,DC:12,lab:{AB:'18cm',DC:'12cm',EF:'x cm'}}),[380,250],7.2,{pre:'EF ＝ ',ex:'AE：EC＝18：12＝3：2。CE：CA＝2：5。x：18＝2：5、5x＝36、x＝7.2cm。',hint:{t:hH,hl:hlH}})
+  ]);
+  r.append(pc);
+}
+
+/* ===== 第8章 中点連結定理 ===== */
+function buildU8(r){
+  r.append(card(tagH('ポイント','　中点連結定理'),`<div class="point"><ul>
+   <li>△ABC で、AB の中点を M、AC の中点を N とすると、<br><b>MN//BC</b>　かつ　<b>MN＝（1/2）×BC</b>　　（これを「<b>中点連結定理</b>」といいます）</li>
+   <li>台形ABCD（AD//BC）で、AB・DC の中点を M・N とすると <b>MN＝（AD＋BC）÷2</b></li></ul></div>`));
+  const pf=card(tagH('証明','　なぜ MN＝（1/2）BC になるの？'));
+  pf.append(h('p',{class:'ex-q',html:'△ABCで、AB・AC の中点を M・N とするとき、MN//BC、MN＝（1/2）BC となることを、ボタンで順番に見ていきましょう。'}));
+  Demo(pf,{size:[420,250],fig:figMidProof,steps:[
+    {text:`M は AB の中点、N は AC の中点です（図の同じ印は同じ長さ）。<br>これから MN＝（1/2）BC を示します。`,hl:f=>{f.hPt('M',COL.r);f.hPt('N',COL.r);}},
+    {reset:true,text:`MN を N のほうへ延ばし、<b>MN＝ND</b> となる点Dをとります。`,hl:f=>{f.hLn(f.P.N,f.P.D,COL.o,4,1,'7 5');f.hPt('D',COL.o);f.hLab('D',COL.o);f.hSeg('M','N',COL.r,6);}},
+    {text:`四角形AMCDで、<b>AN＝NC、MN＝ND</b>。対角線 ${cs('b','AC')} と ${cs('r','MD')} が<b>おたがいの中点で交わる</b>ので、四角形AMCDは<b>平行四辺形</b>です。`,hl:f=>{f.hLn(f.P.N,f.P.D,COL.o,4,1,'7 5');f.hPt('D',COL.o);f.hLab('D',COL.o);f.hSeg('A','C',COL.b,5);f.hLn(f.P.M,f.P.D,COL.r,5,.9);f.hLn(f.P.M,f.P.C,COL.g,3.5,1,'7 5');f.hLn(f.P.D,f.P.C,COL.g,4,.9);f.hLn(f.P.A,f.P.D,COL.g,4,.9);}},
+    {reset:true,text:`平行四辺形の対辺なので <b>AM＝DC</b>、<b>AM//DC</b>。さらに AM＝MB なので、<b>MB＝DC</b>、<b>MB//DC</b>。`,hl:f=>{f.hLn(f.P.N,f.P.D,COL.o,4,1,'7 5');f.hPt('D',COL.o);f.hLab('D',COL.o);f.hLn(f.P.D,f.P.C,COL.g,6,1);f.hSeg('A','M',COL.g,6);f.hSeg('M','B',COL.g,6);}},
+    {text:`1組の対辺が<b>平行で等しい</b>ので、四角形MBCDも<b>平行四辺形</b>。だから <b>MD＝BC</b>、<b>MD//BC</b>。`,hl:f=>{f.hLn(f.P.N,f.P.D,COL.o,4,1,'7 5');f.hPt('D',COL.o);f.hLab('D',COL.o);f.hLn(f.P.M,f.P.D,COL.r,6,1);f.hSeg('B','C',COL.r,6);f.hLn(f.P.D,f.P.C,COL.g,4,.8);f.hSeg('M','B',COL.g,4,.8);}},
+    {text:`MN は MD の半分（MN＝ND）なので、<b>MN＝（1/2）MD＝（1/2）BC</b>、そして <b>MN//BC</b>。これで証明できました！`,hl:f=>{f.hSeg('M','N',COL.r,6);f.hSeg('B','C',COL.r,4,.5);}}]});
+  r.append(pf);
+  const e1=card(tagH('例題1','　2つの三角形で使う'));
+  e1.append(h('p',{class:'ex-q',html:'D・E は AB・AC の中点、F・G は BH・CH の中点です。BC＝6cm のとき、DE と FG の長さを求めなさい。'}));
+  Demo(e1,{size:[380,250],fig:f=>figMid2(f,{lab:{BC:'6cm'}}),steps:[
+    {text:`${cs('r','△ABC')}で、D・E は AB・AC の中点。中点連結定理より <b>DE＝（1/2）BC＝3cm</b>。`,hl:f=>{f.hTri(['A','B','C'],COL.r,.1);f.hSeg('D','E',COL.r,6);f.hSeg('B','C',COL.r,4,.5);}},
+    {reset:true,text:`${cs('b','△HBC')}で、F・G は BH・CH の中点。中点連結定理より <b>FG＝（1/2）BC＝3cm</b>。<br>答え：DE＝3cm、FG＝3cm`,hl:f=>{f.hTri(['H','B','C'],COL.b,.1);f.hSeg('F','G',COL.b,6);f.hSeg('B','C',COL.b,4,.5);}}]});
+  r.append(e1);
+  const e2=card(tagH('例題2','　台形の中点を結ぶ線分'));
+  e2.append(h('p',{class:'ex-q',html:'AD//BC の台形ABCDで、AB・DC の中点を M・N とします。AD＝6cm、BC＝10cm のとき、MN の長さを求めなさい。'}));
+  Demo(e2,{size:[380,250],fig:f=>figTrapMid(f,{AD:6,BC:10,lab:{AD:'6cm',BC:'10cm',MN:'x cm'}}),steps:[
+    {text:`対角線 BD をひき、BD の中点を O とします（図の点線）。M、O、N は一直線に並びます。`,hl:f=>{f.hSeg('B','D',COL.o,4);f.hPt('O',COL.o);}},
+    {reset:true,text:`${cs('r','△ABD')}で、M・O は AB・DB の中点。中点連結定理より <b>MO＝（1/2）AD＝3cm</b>。`,hl:f=>{f.hTri(['A','B','D'],COL.r,.12);f.hSeg('M','O',COL.r,6);f.hSeg('A','D',COL.r,4,.5);}},
+    {reset:true,text:`${cs('b','△DBC')}で、O・N は DB・DC の中点。中点連結定理より <b>ON＝（1/2）BC＝5cm</b>。`,hl:f=>{f.hTri(['D','B','C'],COL.b,.12);f.hSeg('O','N',COL.b,6);f.hSeg('B','C',COL.b,4,.5);}},
+    {text:`<b>MN＝MO＋ON＝${cs('r','3')}＋${cs('b','5')}＝8（cm）</b>。<br>じつは <b>MN＝（AD＋BC）÷2＝（6＋10）÷2＝8</b> と計算できます。`,hl:f=>{f.hSeg('M','O',COL.r,6);f.hSeg('O','N',COL.b,6);}}]});
+  r.append(e2);
+  const pc=card(tagH('練習','　中点連結定理を使おう'));
+  Quiz(pc,'u8',[
+    {type:'num',stem:'△ABC で D・E は AB・AC の中点、△HBC で F・G は BH・CH の中点です。FG＝4.5cm のとき、BC と DE の長さを求めなさい。',size:[380,250],fig:f=>figMid2(f,{lab:{FG:'4.5cm'}}),
+      inputs:[{pre:'BC ＝ ',ans:9,suf:' cm　'},{pre:'DE ＝ ',ans:4.5,suf:' cm'}],explain:'△HBCで FG＝（1/2）BC なので BC＝4.5×2＝9cm。△ABCで DE＝（1/2）BC＝4.5cm。',
+      hint:{t:'まず △HBC（ふたつ目の三角形）で中点連結定理。FG は BC の半分です。そのあと △ABC で DE を求めましょう。',hl:f=>{f.hTri(['H','B','C'],COL.b,.1);f.hSeg('F','G',COL.b,6);f.hSeg('B','C',COL.b,4,.5);}}},
+    NQ('AD//BC の台形ABCDで、M・N は AB・DC の中点です。AD＝8cm、BC＝14cm のとき、MN の長さを求めなさい。',f=>figTrapMid(f,{AD:8,BC:14,lab:{AD:'8cm',BC:'14cm',MN:'x cm'}}),[380,250],11,{pre:'MN ＝ ',ex:'MO＝8÷2＝4cm、ON＝14÷2＝7cm。MN＝4＋7＝11cm。（（8＋14）÷2＝11）',hint:{t:'対角線BDをひいて、△ABDと△DBCの2つで中点連結定理を使います。MN＝MO＋ON。',hl:f=>{f.hTri(['A','B','D'],COL.r,.12);f.hSeg('M','O',COL.r,6);f.hTri(['D','B','C'],COL.b,.1);f.hSeg('O','N',COL.b,6);}}}),
+    NQ('AD//BC の台形ABCDで、M・N は AB・DC の中点です。AD＝12cm、BC＝18cm のとき、MN の長さを求めなさい。',f=>figTrapMid(f,{AD:12,BC:18,lab:{AD:'12cm',BC:'18cm',MN:'x cm'}}),[380,250],15,{pre:'MN ＝ ',ex:'MO＝12÷2＝6cm、ON＝18÷2＝9cm。MN＝6＋9＝15cm。'}),
+    NQ('△ABC で D・E は AB・AC の中点です。DE＝5cm のとき、BC の長さを求めなさい。',f=>figMid1(f,{lab:{DE:'5cm',BC:'x cm'}}),[380,250],10,{pre:'BC ＝ ',ex:'DE＝（1/2）BC なので BC＝DE×2＝10cm。'}),
+    {type:'num',stem:'△ABC で D・E は AB・AC の中点、△HBC で F・G は BH・CH の中点です。BC＝12cm のとき、DE と FG の長さを求めなさい。',size:[380,250],fig:f=>figMid2(f,{lab:{BC:'12cm'}}),
+      inputs:[{pre:'DE ＝ ',ans:6,suf:' cm　'},{pre:'FG ＝ ',ans:6,suf:' cm'}],explain:'どちらも BC の半分で、DE＝FG＝12÷2＝6cm。'}
+  ]);
+  r.append(pc);
+}
+
+/* ===== 第9章 総合確認テスト ===== */
+function buildU9(r){
+  r.append(card(tagH('総合確認テスト','　全10問・制限時間 25分'),`<p>これまでの内容の総まとめです。<b>「スタート」</b>を押すとタイマーが動きます。図や式をノートにかいて考えてもOKです。わからないときは「💡ヒント」を使いましょう。</p>`));
+  const startBox=h('div',{class:'card'});
+  const start=h('button',{class:'btn',type:'button'},'▶ スタート');startBox.append(start);r.append(startBox);
+  const body=h('div',{class:'hidden'});
+  const timer=h('div',{class:'timer'});const tv=h('span',{},'残り 25:00');const bFin=h('button',{class:'btn sm',type:'button'},'結果を見る');timer.append(h('span',{},'⏱'),tv,bFin);body.append(timer);
+  const hpNest=hintPH('△ADE∽△ABC。AD：AB＝DE：BC。AB は AD＋DB に注意。',[['A','D','A','B','r'],['D','E','B','C','b']]);
+  const T=[
+    pairQ('△ABCと△DEFは相似ですか。相似なら、使える相似条件を選びましょう。',{p:triSAS(4,5,60),s:['4cm',null,'5cm'],a:['60°']},{p:triSAS(8,10,60),s:['8cm',null,'10cm'],a:['60°']},1,'AB：DE＝4：8、AC：DF＝5：10 はどちらも 1：2。その間の角が 60° で等しい。2組の辺の比とその間の角がそれぞれ等しいので相似です。'),
+    NQ('DE//BC のとき、DE の長さ x を求めなさい。',f=>figNest(f,{t:.6,lab:{AD:'6cm',AB:'10cm',BC:'15cm',DE:'x cm'}}),[380,250],9,{ex:'AD：AB＝DE：BC より 6：10＝x：15。10x＝90、x＝9。',hint:hpNest}),
+    NQ('DE//BC のとき、DB の長さ x を求めなさい。',f=>figNest(f,{t:2/3,lab:{AD:'6cm',DB:'x cm',DE:'8cm',BC:'12cm'}}),[380,250],3,{ex:'AB＝6＋x。6：(6＋x)＝8：12。8(6＋x)＝72、6＋x＝9、x＝3。',hint:hpNest}),
+    NQ('ℓ//m//n のとき、x を求めなさい。',f=>figPar3(f,{ra:5,rb:3,a:'5cm',b:'x cm',c:'10cm',d:'6cm'}),[390,250],3,{ex:'5：x＝10：6。10x＝30、x＝3。（5：10＝1：2 と見て、x：6＝1：2 としてもOK）',hint:{t:'a：b＝c：d。赤どうし、青どうしが対応です。',hl:f=>{f.hSeg('A','B',COL.r);f.hSeg('D','E',COL.r);f.hSeg('B','C',COL.b);f.hSeg('E','F',COL.b);}}}),
+    NQ('AD//EF//BC のとき、EF の長さ x を求めなさい。',f=>figTrapEF(f,{AD:4,BC:10,t:1/3,lab:{AD:'4cm',BC:'10cm',AE:'3cm',EB:'6cm',EF:'x cm'}}),[380,250],6,{pre:'EF ＝ ',ex:'EH＝AD＝4cm、GC＝10−4＝6cm。DH：DG＝3：9。HF：6＝3：9 より HF＝2。EF＝4＋2＝6cm。',hint:{t:'補助線 DG（ABに平行）。EH＝AD、GC＝BC−AD、△DHF∽△DGC。',hl:f=>{f.hLn(f.P.D,f.P.G,COL.o,3.5,1,'7 5');f.hPt('G',COL.o);f.hPt('H',COL.o);f.hLab('G',COL.o);f.hLab('H',COL.o);f.hTri(['D','H','F'],COL.o,.25);f.hTri(['D','G','C'],COL.p,.15);}}}),
+    NQ('AB//EF//DC のとき、EF の長さ x を求めなさい。',f=>figHour(f,{AB:8,DC:12,lab:{AB:'8cm',DC:'12cm',EF:'x cm'}}),[380,250],4.8,{pre:'EF ＝ ',ex:'△ABE∽△CDE より AE：EC＝8：12＝2：3。CE：CA＝3：5。△CEF∽△CAB より x：8＝3：5。5x＝24、x＝4.8cm。',hint:{t:'① AE：EC＝AB：DC。② CE：CA＝EF：AB。',hl:f=>{f.hTri(['A','B','E'],COL.o,.15);f.hTri(['C','D','E'],COL.p,.12);f.hSeg('A','B',COL.r,6);f.hSeg('D','C',COL.r,6);f.hTri(['C','E','F'],COL.b,.2);}}}),
+    NQ('AD//BC の台形ABCDで、M・N は AB・DC の中点です。AD＝10cm、BC＝16cm のとき、MN の長さを求めなさい。',f=>figTrapMid(f,{AD:10,BC:16,lab:{AD:'10cm',BC:'16cm',MN:'x cm'}}),[380,250],13,{pre:'MN ＝ ',ex:'（10＋16）÷2＝13cm。（MO＝5、ON＝8、MN＝13）'}),
+    {type:'num',stem:'△ABC で D・E は AB・AC の中点、△HBC で F・G は BH・CH の中点です。FG＝5cm のとき、BC と DE の長さを求めなさい。',size:[380,250],fig:f=>figMid2(f,{lab:{FG:'5cm'}}),
+      inputs:[{pre:'BC ＝ ',ans:10,suf:' cm　'},{pre:'DE ＝ ',ans:5,suf:' cm'}],explain:'BC＝FG×2＝10cm。DE＝BC÷2＝5cm。'},
+    NQ('台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝12cm、BC＝20cm です。対角線BD・ACとEFの交点をG・Hとするとき、GH の長さを求めなさい。',f=>figTrapDiag(f,{AD:12,BC:20,diag:'both',lab:{AD:'12cm',BC:'20cm'}}),[380,250],4,{pre:'GH ＝ ',ex:'EH＝20÷2＝10cm、EG＝12÷2＝6cm。GH＝10−6＝4cm。',hint:{t:'EH は △ABC、EG は △ABD で中点連結定理。GH＝EH−EG。',hl:HL(TRI(['A','B','C'],COL.r,.1),SEG('E','H',COL.r),TRI(['A','B','D'],COL.b,.1),SEG('E','G',COL.b))}}),
+    NQ('△ABCで、D は辺BCの中点、点E・F は辺ACの三等分点です。線分ADとBEの交点をGとします。DF＝8cm のとき、BG の長さを求めなさい。',f=>figTri3(f,{lab:'8cm'}),[380,250],12,{pre:'BG ＝ ',ex:'△BCEでBE＝2×8＝16cm。△AFDでGE＝8÷2＝4cm。BG＝16−4＝12cm。',hint:{t:'△BCE で BE を、△AFD で GE を求めて、BG＝BE−GE。',hl:HL(TRI(['B','C','E'],COL.r,.1),SEG('D','F',COL.r),SEG('B','E',COL.r,4,.5),TRI(['A','F','D'],COL.b,.1),SEG('E','G',COL.b))}})
+  ];
+  Quiz(body,'u9',T);
+  const res=h('div',{class:'res'});body.append(res);r.append(body);
+  let sec=1500,iv=null;
+  const fmt=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+  const result=()=>{let d=0;for(let i=0;i<T.length;i++)if(PROG.set.has(`u9-q${i}`))d++;
+    res.innerHTML=`${d>=T.length?'🎉 ':''}結果：<span class="cg">${d}</span>／${T.length} 問 正解<br><small style="font-weight:400">${d>=8?'すばらしい！相似はバッチリです。':d>=6?'あと少しです。まちがえた問題の単元をもう一度見直しましょう。':'もう一度、例題のボタンを押しながら復習しましょう。'}</small>`;res.scrollIntoView({behavior:'smooth',block:'center'});};
+  bFin.onclick=()=>{clearInterval(iv);result();};
+  start.onclick=()=>{startBox.classList.add('hidden');body.classList.remove('hidden');sec=1500;tv.textContent='残り '+fmt(sec);
+    iv=setInterval(()=>{sec--;tv.textContent=sec>0?'残り '+fmt(sec):'時間です！見直しましょう';if(sec<=0)clearInterval(iv);},1000);};
+}
+
+/* ===== 追加：幾何ヘルパー ===== */
+const cmul=(a,b)=>[a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0]];
+const cdiv=(a,b)=>{const d=b[0]*b[0]+b[1]*b[1];return [(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d];};
+const vsub=(a,b)=>[a[0]-b[0],a[1]-b[1]],vadd=(a,b)=>[a[0]+b[0],a[1]+b[1]];
+const spiral=(A,P,Q,R)=>{const m=cdiv(vsub(Q,A),vsub(P,A));return vadd(A,cmul(m,vsub(R,A)));};
+const rotP=(p,c,th)=>vadd(c,cmul([Math.cos(th),Math.sin(th)],vsub(p,c)));
+const isect=(p1,p2,p3,p4)=>{const d1=vsub(p2,p1),d2=vsub(p4,p3),den=d1[0]*d2[1]-d1[1]*d2[0];const t=((p3[0]-p1[0])*d2[1]-(p3[1]-p1[1])*d2[0])/den;return [p1[0]+d1[0]*t,p1[1]+d1[1]*t];};
+const foot=(p,a,b)=>{const d=vsub(b,a),t=((p[0]-a[0])*d[0]+(p[1]-a[1])*d[1])/(d[0]*d[0]+d[1]*d[1]);return [a[0]+d[0]*t,a[1]+d[1]*t];};
+function G(f,pts,segs,o={}){
+  for(const n in pts)f.pt(n,pts[n][0],pts[n][1],!(o.hide||[]).includes(n));
+  f.center(o.cen||Object.keys(pts).filter(n=>!(o.hide||[]).includes(n)));
+  (Array.isArray(segs)?segs:segs.split(' ')).forEach(s=>{if(s)f.seg(s[0],s[1],{d:(o.dash||[]).includes(s)?'6 5':'none'});});
+  (o.dots||[]).forEach(n=>f.dot(n));
+  return f;
+}
+const S=(a,o)=>({a,o});
+const ANG=(...v)=>v;
+const SIMS=['∽','＝','≡','≠'];
+const hsH=(list,c)=>f=>list.forEach(l=>f.hSeg(l[0],l[1],c));
+/* 証明ステップの短縮記法 */
+const st=(text,hl,line,reset)=>({text,hl,line,reset});
+/* 共通の角のある図：BC上にD */
+function figCB(f,o){
+  const [A,B,C]=o.tri,D=lerp(B,C,o.t);
+  G(f,{A,B,C,D},['AB','BC','CA','AD'],{dots:['D']});
+  Object.entries(o.lab||{}).forEach(([k,v])=>f.len(k[0],k[1],v,{off:15,at:k==='BC'?(Math.abs(o.t-.5)<.2?.8:.5):.5,dir:k==='BC'?'down':(k==='BD'||k==='DC')?'up':undefined}));
+}
+/* 三角形ABCでAB上にD（共通の角A） */
+function figAD(f,o){
+  const [A,B,C]=o.tri,D=lerp(A,B,o.t);
+  G(f,{A,B,C,D},['AB','BC','CA','CD'],{dots:['D']});
+  Object.entries(o.lab||{}).forEach(([k,v])=>f.len(k[0],k[1],v,{off:15,at:k==='AB'?.85:.5}));
+}
+/* 例題3型：D on BC, E = spiral */
+function figAdd(f,o){
+  const n=o.n||['A','B','C','D','E'],A=[225,38],B=[55,214],C=[345,214];
+  const D=lerp(B,C,o.t||.62);
+  let E;
+  if(o.mode==='mid')E=spiral(A,C,D,B);      // ∠ACB=∠ADE
+  else E=spiral(A,B,D,C);                      // ∠ABC=∠ADE
+  const P={};P[n[0]]=A;P[n[1]]=B;P[n[2]]=C;P[n[3]]=D;P[n[4]]=E;
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D).pt(n[4],...E);
+  f.center([n[0],n[1],n[2]]);
+  f.poly([n[0],n[1],n[2]]);f.seg(n[0],n[3]);f.seg(n[3],n[4]);f.seg(n[4],n[0]);f.dot(n[3]);
+}
+/* 例題4型：正三角形が2つ（Aが共通の頂点）。D は BC 上、E は AC の外側 */
+function figEq2(f,o={}){
+  const n=o.n||['A','B','C','D','E','F'],B=[70,250],C=[310,250],A=[190,250-240*Math.sin(Math.PI/3)];
+  const D=lerp(B,C,o.t||.36);
+  let th=Math.PI/3;if(dist(rotP(B,A,th),C)>2)th=-th;
+  const E=rotP(D,A,th),F=isect(D,E,A,C);
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...D,true,0,16).pt(n[4],...E).pt(n[5],...F,true,12,-6);
+  f.center([n[0],n[1],n[2]]);
+  f.poly([n[0],n[1],n[2]]);f.seg(n[0],n[3]);f.seg(n[3],n[4]);f.seg(n[4],n[0]);f.dot(n[3]);f.dot(n[5]);
+}
+/* 例題5型：直角三角形と直線ℓ */
+function figEll(f){
+  const A=[200,92],t=9*Math.PI/180,u=[Math.cos(t),Math.sin(t)],nn=[-Math.sin(t),Math.cos(t)];
+  const B=vadd(A,vadd([-66*u[0],-66*u[1]],[80*nn[0],80*nn[1]])),C=vadd(A,vadd([80*u[0]*1.15,80*u[1]*1.15],[66*nn[0]*1.15,66*nn[1]*1.15]));
+  const D=foot(B,A,vadd(A,u)),E=foot(C,A,vadd(A,u));
+  f.pt('A',...A,true,4,-16).pt('B',...B).pt('C',...C).pt('D',...D,true,-4,-15).pt('E',...E,true,6,-15);
+  f.cen=[A[0],A[1]+80];
+  const L1=vadd(A,[-170*u[0],-170*u[1]]),L2=vadd(A,[190*u[0],190*u[1]]);
+  f.pt('l1',...L1,false).pt('l2',...L2,false);f.seg('l1','l2');f.txt(L1[0]+8,L1[1]-14,'ℓ',{s:17,w:700});
+  f.seg('A','B');f.seg('A','C');f.seg('B','C');f.seg('B','D');f.seg('C','E');f.dot('D');f.dot('E');f.dot('A');
+  f.right('A','B','C',11);f.right('D','A','B',10);f.right('E','A','C',10);
+}
+/* 長方形の折り返し */
+function figFold(f){
+  const A=[60,22],B=[60,222],D=[210,22],C=[210,222],h=200,w=150,ey=22+Math.sqrt(h*h-w*w),Ep=[210,ey],t=(w*w+(222-ey)*(222-ey)*0+0);
+  const bt=(Math.pow(w,2)+Math.pow(222-ey,2))/(2*w),P=[60+bt,222];
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D).pt('E',...Ep).pt('P',...P,true,0,15);
+  f.center(['A','B','C','D']);f.poly(['A','B','C','D']);f.seg('A','E');f.seg('A','P');f.seg('P','E');f.dot('E');f.dot('P');
+  f.right('D','A','E',11);f.right('E','A','P',11);
+}
+/* 正三角形ABCでAがBC上のFに重なる折り返し */
+function figFoldEq(f,n){
+  const B=[60,252],C=[320,252],A=[190,252-260*Math.sin(Math.PI/3)];
+  const F=lerp(B,C,.33),M=lerp(A,F,.5),dir=[-(F[1]-A[1]),F[0]-A[0]];
+  const far1=vadd(M,[dir[0]*3,dir[1]*3]),far2=vadd(M,[-dir[0]*3,-dir[1]*3]);
+  const Dp=isect(far1,far2,A,B),Ep=isect(far1,far2,A,C);
+  n=n||['A','B','C','D','E','F'];
+  f.pt(n[0],...A).pt(n[1],...B).pt(n[2],...C).pt(n[3],...Dp).pt(n[4],...Ep).pt(n[5],...F);
+  f.center([n[0],n[1],n[2]]);f.poly([n[0],n[1],n[2]]);f.seg(n[3],n[4]);f.seg(n[3],n[5]);f.seg(n[4],n[5]);f.dot(n[3]);f.dot(n[4]);f.dot(n[5]);
+}
+/* 正三角形ABCでADE=60° */
+function figEq60(f){
+  const B=[60,252],C=[320,252],A=[190,252-260*Math.sin(Math.PI/3)],D=lerp(B,C,.32);
+  const v=vsub(A,D),th=-60*Math.PI/180,r=rotP(vadd(D,v),D,th),far=vadd(D,[(r[0]-D[0])*4,(r[1]-D[1])*4]);
+  const E=isect(D,far,A,C);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D,true,0,15).pt('E',...E);
+  f.center(['A','B','C']);f.poly(['A','B','C']);f.seg('A','D');f.seg('D','E');f.dot('D');f.dot('E');
+  f.arc('D','A','E',22,'60°',{tr:16});
+}
+/* 線分AB上のPから出る直角（∠CPD=90°） */
+function figPerp(f){
+  const A=[40,200],B=[340,200],P=[180,200],C=[40,60],D=[340,40];
+  f.pt('A',...A).pt('B',...B).pt('P',...P,true,0,15).pt('C',...C).pt('D',...D);
+  f.center(['A','B','C','D']);f.seg('A','B');f.seg('A','C');f.seg('B','D');f.seg('P','C');f.seg('P','D');f.dot('P');
+  f.right('A','B','C',11);f.right('B','A','D',11);f.right('P','C','D',11);
+}
+
+/* ===== 第10章 相似の証明（応用） ===== */
+const triHL=(t1,t2)=>f=>{f.hTri(t1,COL.o,.2);f.hTri(t2,COL.p,.14);};
+const ENDL=(T1,T2)=>[{k:'concl',t:['①，②より，',S(CONDS[2],CONDS),'ので，']},{k:'sim',t:[`△${T1}`,S('∽',SIMS),`△${T2}といえる。`]}];
+/* 角を計算して等しくする型（2組の角） */
+function angProof(o){
+  const th=triHL(o.t1,o.t2);
+  const lines=[{k:'head',t:[`△${o.T1}と△${o.T2}で，`]},...o.lines,...ENDL(o.T1,o.T2)];
+  const hints=[
+    {title:'ヒント1　等しい角をみつけよう',steps:[
+      st(`まず、2つの三角形を見つけます。${cs('o','△'+o.T1)}と${cs('p','△'+o.T2)}です。`,th,'head'),
+      ...o.h1]},
+    {title:'ヒント2　角をたし算・ひき算しよう',steps:o.h2},
+    {title:'ヒント3　相似条件を決めよう',steps:[
+      st(`等しい角が<b>2組</b>見つかりました（①と②）。→ 相似条件「<b>2組の角がそれぞれ等しい</b>」が使えます。`,o.h3,'concl'),
+      st(`最後に、対応する頂点を同じ順に書いて <b>△${o.T1}∽△${o.T2}</b> とまとめます。`,th,'sim')]}];
+  return {id:o.id,stem:o.stem,size:o.size||[380,250],fig:o.fig,lines,hints};
+}
+const A4=['∠A','∠B','∠C','∠D'];
+function buildU10(r){
+  r.append(card(tagH('ポイント','　証明の応用：相似の証明のパターン'),`<div class="point">
+   相似の証明は、次の<b>5つのパターン</b>に分けると見やすくなります。
+   <ul><li><b>① 共通の角 ＋ 辺の比</b>：重なった三角形。「2組の辺の比とその間の角」</li>
+   <li><b>② 共通の角 ＋ 直角（垂線）</b>：「2組の角」</li>
+   <li><b>③ 角のたし算・ひき算</b>：同じ角を<b>たす</b>（またはひく）と、「間の角」や角が等しくなる</li>
+   <li><b>④ 正三角形がからむ</b>：60° を使い、<b>60°−（同じ角）</b>で角が等しくなる</li>
+   <li><b>⑤ 90°・180° からひく</b>：直角三角形・一直線（180°）の角を計算する</li></ul>
+   <div class="note" style="margin-top:6px">「ヒント」を押すと、図に<b>色つきの点・角・辺</b>がつきます。<span class="cr">赤</span>・<span class="cb">青</span>・<span class="cg">緑</span>が同じなら「等しい」です。</div></div>`));
+  /* ---- ① 共通の角（辺の比） ---- */
+  r.append(card(tagH('① 共通の角のある証明（辺の比）')));
+  const a1=card(tagH('例題1'));
+  ProofBuilder(a1,'u10',sasProof({id:'a1',stem:'【例題1】右の図で、△ABC∽△DBA となることを証明しなさい。',size:[380,250],
+    fig:f=>figCB(f,{tri:[[150,48],[40,220],[340,220]],t:8/18,lab:{AB:'12cm',BD:'8cm',BC:'18cm'}}),T1:'ABC',T2:'DBA',t1:['A','B','C'],t2:['D','B','A'],
+    p1:{a:['A','B'],b:['D','B'],la:12,lb:8},p2:{a:['B','C'],b:['B','A'],la:18,lb:12},
+    ang:{kind:'common',v:'B',r1:['A','D'],r2:['A','C'],nm:'∠B',opts:A4}}));
+  r.append(a1);
+  const a1p=card(tagH('練習','　共通の角（辺の比）'));
+  ProofBuilder(a1p,'u10',sasProof({id:'p1',stem:'(1) 右の図で、△ABC∽△DBA となることを証明しなさい。',size:[380,250],
+    fig:f=>figCB(f,{tri:[[125,48],[40,220],[340,220]],t:.25,lab:{AB:'12cm',BD:'6cm',BC:'24cm'}}),T1:'ABC',T2:'DBA',t1:['A','B','C'],t2:['D','B','A'],
+    p1:{a:['A','B'],b:['D','B'],la:12,lb:6},p2:{a:['B','C'],b:['B','A'],la:24,lb:12},
+    ang:{kind:'common',v:'B',r1:['A','D'],r2:['A','C'],nm:'∠B',opts:A4}}));
+  ProofBuilder(a1p,'u10',sasProof({id:'p2',stem:'(2) 右の図で、△ABC∽△ACD となることを証明しなさい。（共通の角は頂点Cです）',size:[380,250],
+    fig:f=>figCB(f,{tri:[[250,48],[40,220],[340,220]],t:1-9/16,lab:{AC:'12cm',DC:'9cm',BC:'16cm'}}),T1:'ABC',T2:'ACD',t1:['A','B','C'],t2:['A','C','D'],
+    p1:{a:['B','C'],b:['A','C'],la:16,lb:12},p2:{a:['A','C'],b:['D','C'],la:12,lb:9},
+    ang:{kind:'common',v:'C',r1:['A','D'],r2:['A','B'],nm:'∠C',opts:A4}}));
+  ProofBuilder(a1p,'u10',sasProof({id:'p3',stem:'(3) 右の図で、△ABC∽△ACD となることを証明しなさい。（辺AB上に点Dがあります。共通の角は頂点Aです）',size:[380,250],
+    fig:f=>figAD(f,{tri:[[60,40],[150,222],[340,170]],t:18/32,lab:{AD:'18cm',AC:'24cm',AB:'32cm'}}),T1:'ABC',T2:'ACD',t1:['A','B','C'],t2:['A','C','D'],
+    p1:{a:['A','B'],b:['A','C'],la:32,lb:24},p2:{a:['A','C'],b:['A','D'],la:24,lb:18},
+    ang:{kind:'common',v:'A',r1:['C','D'],r2:['B','C'],nm:'∠A',opts:A4}}));
+  r.append(a1p);
+  /* ---- ② 共通の角＋直角 ---- */
+  r.append(card(tagH('② 共通の角のある証明（直角）')));
+  const a2=card(tagH('例題2'));
+  ProofBuilder(a2,'u10',aaProof({id:'a2',stem:'【例題2】∠C＝90°の直角三角形ABCで、辺BC上の点Dから斜辺ABに垂線DEをひきます。△ABC∽△DBE となることを証明しなさい。',size:[380,250],
+    fig:f=>{const B=[50,215],C=[310,215],A=[310,40],D=[190,215],E=foot(D,A,B);G(f,{A,B,C,D,E},['AB','BC','CA','DE'],{dots:['D','E']});f.right('C','A','B',12);f.right('E','D','B',11);},
+    T1:'ABC',T2:'DBE',t1:['A','B','C'],t2:['D','B','E'],
+    e1:{v1:'C',r1:['A','B'],v2:'E',r2:['D','B'],n1:'∠ACB',n2:'∠DEB',val:'90°',opts:['∠DEB','∠BDE','∠EDC','∠ABC']},
+    c:{v:'B',r1:['E','D'],r2:['A','C'],nm:'∠B',opts:['∠A','∠B','∠C','∠D','∠E']}}));
+  r.append(a2);
+  const a2p=card(tagH('練習','　直角三角形に垂線'));a2p.append(h('p',{html:'∠BAC＝90°の直角三角形ABCで、AからBCに垂線ADをひきます。'}));
+  ProofBuilder(a2p,'u10',aaProof({id:'p1',stem:'(1) △ABC∽△ABD となることを証明しなさい。',size:[380,250],fig:f=>figAlt(f,{n:['A','B','C','D']}),T1:'ABC',T2:'ABD',t1:['A','B','C'],t2:['A','B','D'],
+    e1:{v1:'A',r1:['B','C'],v2:'D',r2:['B','A'],n1:'∠BAC',n2:'∠BDA',val:'90°',opts:['∠BDA','∠ABC','∠ACB','∠BAD']},c:{v:'B',r1:['A','D'],r2:['A','C'],nm:'∠B',opts:A4}}));
+  ProofBuilder(a2p,'u10',aaProof({id:'p2',stem:'(2) △ABC∽△ADC となることを証明しなさい。',size:[380,250],fig:f=>figAlt(f,{n:['A','B','C','D']}),T1:'ABC',T2:'ADC',t1:['A','B','C'],t2:['A','D','C'],
+    e1:{v1:'A',r1:['B','C'],v2:'D',r2:['A','C'],n1:'∠BAC',n2:'∠ADC',val:'90°',opts:['∠ADC','∠ABC','∠ACB','∠CAD']},c:{v:'C',r1:['A','D'],r2:['A','B'],nm:'∠C',opts:A4}}));
+  a2p.append(h('div',{class:'note',html:'(1)(2) から、△ABC∽△ABD かつ △ABC∽△ADC です。<b>どちらも △ABC と相似</b>なので、△ABD∽△ADC もいえます。（3つの三角形はすべて相似！）'}));
+  Quiz(a2p,'u10b',[{type:'choice',stem:'△ABC∽△ABD かつ △ABC∽△ADC のとき、△ABD と △ADC の関係はどれですか。',choices:['△ABD∽△ADC（相似）','△ABD≡△ADC（合同）','関係はいえない'],ans:0,explain:'同じ三角形（△ABC）と相似な2つの三角形は、たがいに相似です。ただし対応する頂点の順は △ABD∽△CAD となります。'}]);
+  ProofBuilder(a2p,'u10',{id:'p3',stem:'(3) 長方形ABCDで、頂点Bから対角線ACに垂線BEをひきます。△ABE∽△CAD となることを証明しなさい。',size:[380,250],
+    fig:f=>{const A=[50,40],D=[330,40],B=[50,205],C=[330,205],E=foot(B,A,C);G(f,{A,B,C,D,E},['AB','BC','CD','DA','AC','BE'],{dots:['E']});f.right('E','A','B',11);f.right('D','A','C',11);},
+    lines:[{k:'head',t:['△ABEと△CADで，']},{k:'r',t:['∠AEB ＝ ',S('∠ADC',['∠ADC','∠ABC','∠BAD','∠DCA']),' ＝ 90° ……①']},
+      {k:'p',t:['AB∥DC より，∠BAE ＝ ',S('∠DCA',['∠DCA','∠CAD','∠ACB','∠ADC']),'（',S('錯角',['錯角','同位角','対頂角']),'）……②']},...ENDL('ABE','CAD')],
+    hints:[{title:'ヒント1　直角に目をつけよう',steps:[st(`2つの三角形：${cs('o','△ABE')}と${cs('p','△CAD')}。`,triHL(['A','B','E'],['C','A','D']),'head'),
+      st(`${cs('r','赤い点')}の角：∠AEB（BE⊥AC）と ∠ADC（長方形の角）は、どちらも <b>90°</b>（証明の①）。`,f=>{f.hAng('E','A','B',26,COL.r);f.hAng('D','A','C',26,COL.r);},'r',true)]},
+      {title:'ヒント2　平行線の角に目をつけよう',steps:[
+        st(`長方形なので ${cs('b','AB∥DC')}（青い辺）。この2本の平行線を、対角線${cs('o','AC')}が横切っています。`,f=>{f.hSeg('A','B',COL.b);f.hSeg('D','C',COL.b);f.hSeg('A','C',COL.o,3.5,.8);},'p',true),
+        st(`${cs('g','緑の点')}の角 ∠BAE と ∠DCA は<b>錯角</b>（Z の形）なので等しくなります（証明の②）。`,f=>{f.hSeg('A','B',COL.b);f.hSeg('D','C',COL.b);f.hSeg('A','C',COL.o,3.5,.8);f.hAng('A','B','E',34,COL.g);f.hAng('C','D','A',34,COL.g);},'p')]},
+      {title:'ヒント3　相似条件を決めよう',steps:[st(`等しい角が2組（赤と緑）。→「<b>2組の角がそれぞれ等しい</b>」を使います。`,f=>{f.hAng('E','A','B',26,COL.r,false);f.hAng('D','A','C',26,COL.r,false);f.hAng('A','B','E',34,COL.g,false);f.hAng('C','D','A',34,COL.g,false);},'concl'),
+        st(`対応する頂点の順に <b>△ABE∽△CAD</b>。`,triHL(['A','B','E'],['C','A','D']),'sim')]}]});
+  r.append(a2p);
+}
+
+const W=(v,p,q,r,c,d=true)=>f=>f.hAng(v,p,q,r,c,d);
+const ALL=(...fs)=>f=>fs.forEach(g=>g(f));
+const ST3=(T1,T2,t1,t2,hl)=>({title:'ヒント3　相似条件を決めよう',steps:[
+  st('等しい角が<b>2組</b>見つかりました（①と②）。→ 相似条件「<b>2組の角がそれぞれ等しい</b>」が使えます。',hl,'concl'),
+  st(`最後に、対応する頂点を同じ順に書いて <b>△${T1}∽△${T2}</b> とまとめます。`,triHL(t1,t2),'sim')]});
+const OA=(...v)=>v;
+/* 角のたし算型（例題3・練習・確認） */
+function addProof(o){
+  /* o.n=[A,B,C,D,E] の名前、o.mode */
+  const [A,B,C,D,E]=o.n,mid=o.mode==='mid';
+  const t1=[A,B,C],t2=mid?[A,E,D]:[A,D,E];
+  const T1=t1.join(''),T2=t2.join('');
+  const opts=a=>[...new Set([a,...o.pool])];
+  let lines,h1,h2;
+  if(mid){
+    lines=[{k:'g1',t:[`∠${C==='C'?A+C+B:A+C+B} ＝ `,S(`∠${A}${D}${E}`,opts(`∠${A}${D}${E}`)),' ……①']}];
+  }
+  const angs={ACB:`∠${A}${C}${B}`};
+  if(mid){
+    const eqA=`∠${A}${C}${B}`,eqB=`∠${A}${D}${E}`,big1=`∠${B}${A}${C}`,big2=`∠${E}${A}${D}`,com=`∠${B}${A}${D}`,r1=`∠${D}${A}${C}`,r2=`∠${E}${A}${B}`;
+    lines=[{k:'g1',t:[`${eqA} ＝ `,S(eqB,opts(eqB)),' ……①']},
+      {k:'s1',t:[`${big1} ＝ ${com} ＋ `,S(r1,opts(r1))]},
+      {k:'s2',t:[`${big2} ＝ ${com} ＋ `,S(r2,opts(r2))]},
+      {k:'g2',t:[`ここで ${r1} ＝ ${r2} なので，${big1} ＝ `,S(big2,opts(big2)),' ……②']}];
+    h1=[st(`${cs('r','赤い点')}の角：${eqA} と ${eqB} は、問題文で<b>等しい</b>と書いてあります（証明の①）。`,ALL(W(C,A,B,28,COL.r),W(D,A,E,28,COL.r)),'g1',true)];
+    h2=[st(`次に、${cs('g','緑')}の角 ${big1} と ${cs('p','紫')}の角 ${big2} を調べます。これが<b>2つの三角形の間の角</b>です。`,ALL(W(A,B,C,76,COL.g,false),W(A,E,D,56,COL.p,false)),null,true),
+      st(`どちらの角にも、${cs('o','オレンジ')}の角 ${com} が<b>ふくまれています</b>（共通の部分）。`,ALL(W(A,B,C,76,COL.g,false),W(A,E,D,56,COL.p,false),W(A,B,D,38,COL.o)),'s1'),
+      st(`のこりの部分が、${cs('b','青')}の角 ${r1} と ${r2} です。問題文より、この2つは<b>等しい</b>。`,ALL(W(A,B,C,76,COL.g,false),W(A,E,D,56,COL.p,false),W(A,B,D,38,COL.o,false),W(A,D,C,64,COL.b),W(A,E,B,64,COL.b)),'s2'),
+      st(`だから、<b>等しい角（青）</b>に、同じ角（オレンジ）をたした ${big1} と ${big2} も等しくなります（証明の②）。`,ALL(W(A,B,C,76,COL.g),W(A,E,D,56,COL.g)),'g2')];
+    return {id:o.id,stem:o.stem,size:o.size||[380,250],fig:o.fig,lines:[{k:'head',t:[`△${T1}と△${T2}で，`]},...lines,...ENDL(T1,T2)],
+      hints:[{title:'ヒント1　等しい角をみつけよう',steps:[st(`2つの三角形：${cs('o','△'+T1)}と${cs('p','△'+T2)}。`,triHL(t1,t2),'head'),...h1]},{title:'ヒント2　角をたし算しよう',steps:h2},ST3(T1,T2,t1,t2,ALL(W(C,A,B,28,COL.r,false),W(D,A,E,28,COL.r,false),W(A,B,C,76,COL.g,false),W(A,E,D,56,COL.g,false)))]};
+  }
+  /* 練習(1)型：∠ABC=∠ADE、∠BAD=∠CAE */
+  const eqA=`∠${A}${B}${C}`,eqB=`∠${A}${D}${E}`,big1=`∠${B}${A}${C}`,big2=`∠${D}${A}${E}`,com=`∠${D}${A}${C}`,r1=`∠${B}${A}${D}`,r2=`∠${C}${A}${E}`;
+  lines=[{k:'g1',t:[`${eqA} ＝ `,S(eqB,opts(eqB)),' ……①']},
+    {k:'s1',t:[`${big1} ＝ ${r1} ＋ `,S(com,opts(com))]},
+    {k:'s2',t:[`${big2} ＝ ${com} ＋ `,S(r2,opts(r2))]},
+    {k:'g2',t:[`ここで ${r1} ＝ ${r2} なので，${big1} ＝ `,S(big2,opts(big2)),' ……②']}];
+  h1=[st(`${cs('r','赤い点')}の角：${eqA} と ${eqB} は、問題文より<b>等しい</b>（証明の①）。`,ALL(W(B,A,C,28,COL.r),W(D,A,E,28,COL.r)),'g1',true)];
+  h2=[st(`次に、${cs('g','緑')}の角 ${big1} と ${cs('p','紫')}の角 ${big2} を調べます。これが<b>2つの三角形の間の角</b>です。`,ALL(W(A,B,C,76,COL.g,false),W(A,D,E,56,COL.p,false)),null,true),
+    st(`どちらの角にも、${cs('o','オレンジ')}の角 ${com} が<b>ふくまれています</b>（共通の部分）。`,ALL(W(A,B,C,76,COL.g,false),W(A,D,E,56,COL.p,false),W(A,D,C,38,COL.o)),'s1'),
+    st(`のこりが、${cs('b','青')}の角 ${r1} と ${r2} です。問題文より<b>等しい</b>。`,ALL(W(A,B,C,76,COL.g,false),W(A,D,E,56,COL.p,false),W(A,D,C,38,COL.o,false),W(A,B,D,64,COL.b),W(A,C,E,64,COL.b)),'s2'),
+    st(`だから ${big1} と ${big2} も等しくなります（証明の②）。`,ALL(W(A,B,C,76,COL.g),W(A,D,E,56,COL.g)),'g2')];
+  return {id:o.id,stem:o.stem,size:o.size||[380,250],fig:o.fig,lines:[{k:'head',t:[`△${T1}と△${T2}で，`]},...lines,...ENDL(T1,T2)],
+    hints:[{title:'ヒント1　等しい角をみつけよう',steps:[st(`2つの三角形：${cs('o','△'+T1)}と${cs('p','△'+T2)}。`,triHL(t1,t2),'head'),...h1]},{title:'ヒント2　角をたし算しよう',steps:h2},ST3(T1,T2,t1,t2,ALL(W(B,A,C,28,COL.r,false),W(D,A,E,28,COL.r,false),W(A,B,C,76,COL.g,false),W(A,D,E,56,COL.g,false)))]};
+}
+/* 正三角形が2つの型 */
+function eqProof(o){
+  const [A,L,Rr,D,E,F]=o.n; // L=左の頂点, Rr=右の頂点
+  const first=o.mode==='ex',t1=first?[A,L,D]:[A,E,F],t2=first?[A,E,F]:[A,L,D];
+  // ex: △ABD∽△AEF   (L=B,Rr=C) ; prac: △AEF∽△ACD (L=C,Rr=B)
+  const T1=t1.join(''),T2=t2.join('');
+  const X=first?Rr:Rr;      // F は A-Rr 上
+  const opts=a=>[...new Set([a,`∠${A}${E}${F}`,`∠${A}${L}${D}`,`∠${D}${A}${Rr}`,`∠${L}${A}${D}`,`∠${E}${A}${D}`,`∠${A}${D}${E}`,'∠'+A+Rr+L])];
+  const eqSame=first?`∠${A}${L}${D}`:`∠${A}${E}${F}`,eqOther=first?`∠${A}${E}${F}`:`∠${A}${L}${D}`;
+  const wA=first?`∠${L}${A}${D}`:`∠${E}${A}${F}`,wB=first?`∠${E}${A}${F}`:`∠${L}${A}${D}`;
+  const c=`∠${D}${A}${Rr}`, base=first?`∠${L}${A}${Rr}`:`∠${L}${A}${Rr}`;
+  // ex: ∠BAD = ∠BAC − ∠DAC ; ∠EAF = ∠EAD − ∠DAC (c = ∠DAC = ∠D A Rr)
+  // prac: ∠EAF = ∠EAD − ∠BAD(c'=∠DA Rr)…
+  let lines,h2;
+  if(first){
+    lines=[{k:'eq',t:[`△${A}${L}${Rr}，△${A}${D}${E} は正三角形なので，∠${A}${L}${D} ＝ `,S(`∠${A}${E}${F}`,opts(`∠${A}${E}${F}`)),' ＝ ',S('60°',['30°','45°','60°','90°']),' ……①']},
+      {k:'a1',t:[`∠${L}${A}${D} ＝ ∠${L}${A}${Rr} － `,S(`∠${D}${A}${Rr}`,opts(`∠${D}${A}${Rr}`))]},
+      {k:'a2',t:[`∠${E}${A}${F} ＝ ∠${E}${A}${D} － `,S(`∠${D}${A}${Rr}`,opts(`∠${D}${A}${Rr}`))]},
+      {k:'a3',t:[`∠${L}${A}${Rr} ＝ ∠${E}${A}${D} ＝ 60° なので，∠${L}${A}${D} ＝ `,S(`∠${E}${A}${F}`,opts(`∠${E}${A}${F}`)),' ……②']}];
+    h2=[st(`${cs('g','緑')}の角 ∠${L}${A}${Rr}（60°）から、${cs('b','青')}の角 ∠${D}${A}${Rr} をひいたのこりが ${cs('r','赤')}の ∠${L}${A}${D} です。<br>∠${L}${A}${D} ＝ 60° － ∠${D}${A}${Rr}`,ALL(W(A,L,Rr,76,COL.g,false),W(A,D,Rr,52,COL.b,false),W(A,L,D,40,COL.r)),'a1',true),
+      st(`こんどは ${cs('p','紫')}の角 ∠${E}${A}${D}（60°）から、同じ ${cs('b','青')}の角 ∠${D}${A}${Rr} をひくと、のこりは ${cs('r','赤')}の ∠${E}${A}${F}。<br>∠${E}${A}${F} ＝ 60° － ∠${D}${A}${Rr}`,ALL(W(A,E,D,76,COL.p,false),W(A,D,Rr,52,COL.b,false),W(A,E,F,40,COL.r)),'a2'),
+      st(`どちらも「60° － ∠${D}${A}${Rr}」なので、<b>∠${L}${A}${D} ＝ ∠${E}${A}${F}</b> です（証明の②）。`,ALL(W(A,L,D,40,COL.r),W(A,E,F,40,COL.r)),'a3')];
+  }else{
+    lines=[{k:'eq',t:[`△${A}${Rr}${L}，△${A}${E}${D} は正三角形なので，∠${A}${E}${F} ＝ `,S(`∠${A}${L}${D}`,opts(`∠${A}${L}${D}`)),' ＝ ',S('60°',['30°','45°','60°','90°']),' ……①']},
+      {k:'a1',t:[`∠${E}${A}${F} ＝ ∠${E}${A}${D} － `,S(`∠${D}${A}${Rr}`,opts(`∠${D}${A}${Rr}`))]},
+      {k:'a2',t:[`∠${L}${A}${D} ＝ ∠${L}${A}${Rr} － `,S(`∠${D}${A}${Rr}`,opts(`∠${D}${A}${Rr}`))]},
+      {k:'a3',t:[`∠${E}${A}${D} ＝ ∠${L}${A}${Rr} ＝ 60° なので，∠${E}${A}${F} ＝ `,S(`∠${L}${A}${D}`,opts(`∠${L}${A}${D}`)),' ……②']}];
+    h2=[st(`${cs('p','紫')}の角 ∠${E}${A}${D}（60°）から、${cs('b','青')}の角 ∠${D}${A}${Rr} をひいたのこりが ${cs('r','赤')}の ∠${E}${A}${F}。`,ALL(W(A,E,D,76,COL.p,false),W(A,D,Rr,52,COL.b,false),W(A,E,Rr,40,COL.r)),'a1',true),
+      st(`${cs('g','緑')}の角 ∠${L}${A}${Rr}（60°）から、同じ ${cs('b','青')}の角をひいたのこりが ${cs('r','赤')}の ∠${L}${A}${D}。`,ALL(W(A,L,Rr,76,COL.g,false),W(A,D,Rr,52,COL.b,false),W(A,L,D,40,COL.r)),'a2'),
+      st(`どちらも「60° － ∠${D}${A}${Rr}」なので <b>∠${E}${A}${F} ＝ ∠${L}${A}${D}</b>（証明の②）。`,ALL(W(A,E,Rr,40,COL.r),W(A,L,D,40,COL.r)),'a3')];
+  }
+  const eqW=first?ALL(W(L,A,D,26,COL.r),W(E,A,D,26,COL.r)):ALL(W(E,A,D,26,COL.r),W(L,A,D,26,COL.r));
+  const eqTxt=first?`${cs('r','赤い点')}の角 ∠${A}${L}${D}（正三角形ABCの角）と ∠${A}${E}${F}（正三角形ADEの角）は、どちらも<b>60°</b>（証明の①）。`:`${cs('r','赤い点')}の角 ∠${A}${E}${F}（正三角形の角）と ∠${A}${L}${D}（正三角形の角）は、どちらも<b>60°</b>（証明の①）。`;
+  const hl3=ALL(first?W(L,A,D,26,COL.r,false):W(L,A,D,26,COL.r,false),W(E,A,D,26,COL.r,false));
+  return {id:o.id,stem:o.stem,size:o.size,fig:o.fig,lines:[{k:'head',t:[`△${T1}と△${T2}で，`]},...lines,...ENDL(T1,T2)],
+    hints:[{title:'ヒント1　60°の角をみつけよう',steps:[st(`2つの三角形：${cs('o','△'+T1)}と${cs('p','△'+T2)}。`,triHL(t1,t2),'head'),
+      st(eqTxt,first?ALL(W(L,A,Rr==='C'?'C':Rr,26,COL.r),W(E,A,D,26,COL.r)):ALL(W(E,A,D,26,COL.r),W(L,A,Rr,26,COL.r)),'eq',true)]},
+      {title:'ヒント2　60°からひいてみよう',steps:h2},
+      {title:'ヒント3　相似条件を決めよう',steps:[st('等しい角が<b>2組</b>見つかりました（①と②）。→「<b>2組の角がそれぞれ等しい</b>」を使います。',hl3,'concl'),st(`最後に <b>△${T1}∽△${T2}</b> とまとめます。`,triHL(t1,t2),'sim')]}]};
+}
+function buildU10c(r){
+  r.append(card(tagH('③ 角のたし算の証明','　（間の角を作る）')));
+  r.append(card(null,'<p>2つの三角形が<b>半分重なって</b>いて、「間の角」が見えないときは、<b>同じ角（共通の部分）に、等しい角をたす</b>と、間の角が等しくなります。</p><div class="point">　［大きい角］＝［共通の角］＋［等しい角］ → 大きい角どうしが等しい</div>'));
+  const p3=['∠BAD','∠DAC','∠EAB','∠EAD','∠BAC','∠ADE','∠AED','∠ABC'];
+  const e3=card(tagH('例題3'));
+  ProofBuilder(e3,'u10',addProof({id:'e3',mode:'mid',n:['A','B','C','D','E'],pool:p3,stem:'【例題3】図で、点Dは辺BC上にあり、∠ACB＝∠ADE、∠DAC＝∠EAB です。△ABC∽△AED を証明しなさい。',
+    fig:f=>figAdd(f,{mode:'mid'})}));
+  r.append(e3);
+  const p3c=card(tagH('練習','　角のたし算'));
+  ProofBuilder(p3c,'u10',addProof({id:'p4',mode:'b',n:['A','B','C','D','E'],pool:['∠BAD','∠DAC','∠CAE','∠DAE','∠BAC','∠ABC','∠ADE','∠ACB'],stem:'(1) △ABCの辺BC上に点Dをとり、∠ABC＝∠ADE、∠BAD＝∠CAE となる △ADE をつくります。△ABC∽△ADE を証明しなさい。',
+    fig:f=>figAdd(f,{mode:'b',t:.55})}));
+  ProofBuilder(p3c,'u10',addProof({id:'p5',mode:'mid',n:['P','Q','R','S','T'],pool:['∠QPS','∠SPR','∠TPQ','∠TPS','∠QPR','∠PST','∠PTS','∠PQR'],stem:'(2)【確認問題】図で、点Sは辺QR上にあり、∠PRQ＝∠PST、∠RPS＝∠TPQ です。△PQR∽△PTS を証明しなさい。',
+    fig:f=>figAdd(f,{mode:'mid',n:['P','Q','R','S','T'],t:.45})}));
+  r.append(p3c);
+  /* ④ 正三角形 */
+  r.append(card(tagH('④ 正三角形がからむ証明','　（60° からひく）')));
+  r.append(card(null,'<p>正三角形の1つの角は <b>60°</b>。2つの正三角形が同じ点Aから出ていると、<b>60°から同じ角をひいた</b>角どうしが等しくなります。</p>'));
+  const e4=card(tagH('例題4'));
+  ProofBuilder(e4,'u10',eqProof({id:'e4',mode:'ex',n:['A','B','C','D','E','F'],stem:'【例題4】△ABCと△ADEは正三角形で、点Dは辺BC上にあります。辺DEと辺ACの交点をFとするとき、△ABD∽△AEF となることを証明しなさい。',size:[380,310],fig:f=>figEq2(f,{})}));
+  r.append(e4);
+  const p4=card(tagH('練習','　正三角形'));
+  ProofBuilder(p4,'u10',eqProof({id:'p6',mode:'pr',n:['A','C','B','D','E','F'],stem:'(1) △ABCと△AEDは正三角形で、点Dは辺BC上にあります。辺DEと辺ABの交点をFとするとき、△AEF∽△ACD となることを証明しなさい。',size:[380,310],fig:f=>figEq2(f,{n:['A','C','B','D','E','F']})}));
+  r.append(p4);
+}
+
+const ANGL=['∠DAB','∠BAC','∠CAE','∠DBA','∠BDA','∠AEC','∠ACE'];
+const OPT=(a,...rest)=>[...new Set([a,...rest])];
+const D9=['45°','60°','90°','180°'];
+const D12=['60°','90°','120°','180°'];
+function buildU10d(r){
+  r.append(card(tagH('⑤ 90°・180° から必要な角をひく証明')));
+  r.append(card(null,`<p>三角形の内角の和は <b>180°</b>、直線の角は <b>180°</b> です。直角（90°）がふくまれるときは、</p>
+   <div class="point">・直角三角形の<b>とがった2つの角の和</b>＝90°　→　<b>∠ア＝90°−∠イ</b><br>・一直線の角＝180°　→　<b>180°−（わかっている角）</b></div><p>と式をつくり、「<b>90°−（同じ角）</b>」の形にそろえると、等しい角が見つかります。</p>`));
+  const e5=card(tagH('例題5'));
+  ProofBuilder(e5,'u10',angProof({id:'e5',stem:'【例題5】直角三角形ABCの頂点Aを通る直線ℓに、B，Cから垂線BD，CEをひきます（∠BAC＝90°）。△DBA∽△EAC を証明しなさい。',size:[380,250],fig:figEll,
+    T1:'DBA',T2:'EAC',t1:['D','B','A'],t2:['E','A','C'],
+    lines:[{k:'r',t:['∠BDA ＝ ',S('∠AEC',OPT('∠AEC','∠BAC','∠DAB','∠ACE')),' ＝ 90° ……①']},
+      {k:'a1',t:['△DBAの内角の和より，∠DBA ＝ 180° － ∠BDA － ∠DAB ＝ ',S('90°',D9),' － ∠DAB']},
+      {k:'a2',t:['D，A，E は直線ℓ上の点なので，∠CAE ＝ 180° － ∠DAB － ∠BAC ＝ 180° － ∠DAB － 90° ＝ 90° － ',S('∠DAB',OPT('∠DAB','∠DBA','∠BAC','∠CAE'))]},
+      {k:'a3',t:['よって ∠DBA ＝ ',S('∠CAE',OPT('∠CAE','∠DAB','∠AEC','∠ACE')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠BDA と ∠AEC は、垂線でできた<b>直角（90°）</b>です（証明の①）。`,ALL(W('D','B','A',26,COL.r),W('E','A','C',26,COL.r)),'r',true)],
+    h2:[st(`直角三角形DBAで、${cs('b','青')}の角 ∠DBA と ${cs('o','オレンジ')}の角 ∠DAB をたすと 90°。<br>だから <b>∠DBA ＝ 90° － ∠DAB</b>。`,ALL(W('B','D','A',34,COL.b),W('A','D','B',44,COL.o),W('D','B','A',20,COL.r,false)),'a1',true),
+      st(`直線ℓ（180°）の上に ${cs('o','∠DAB')}、${cs('g','∠BAC（90°）')}、${cs('b','∠CAE')} が並んでいます。<br>180°−90°＝90° なので <b>∠CAE ＝ 90° － ∠DAB</b>。`,ALL(W('A','D','B',44,COL.o,false),W('A','B','C',44,COL.g,false),W('A','C','E',44,COL.b)),'a2'),
+      st(`どちらも「90°−∠DAB」なので、${cs('b','青い2つの角')} ∠DBA と ∠CAE は<b>等しい</b>（証明の②）。`,ALL(W('B','D','A',34,COL.b),W('A','C','E',44,COL.b)),'a3')],
+    h3:ALL(W('D','B','A',26,COL.r,false),W('E','A','C',26,COL.r,false),W('B','D','A',34,COL.b,false),W('A','C','E',44,COL.b,false))}));
+  r.append(e5);
+  const p5=card(tagH('練習','　90°・180° からひく'));
+  ProofBuilder(p5,'u10',angProof({id:'p7',stem:'(1) 直角三角形ABC（∠BAC＝90°）の頂点Aから辺BCに垂線ADをひきます。△ABD∽△CAD を証明しなさい。',fig:f=>figAlt(f,{n:['A','B','C','D']}),
+    T1:'ABD',T2:'CAD',t1:['A','B','D'],t2:['C','A','D'],
+    lines:[{k:'r',t:['∠ADB ＝ ',S('∠CDA',OPT('∠CDA','∠BAC','∠ABD','∠DAC')),' ＝ 90° ……①']},
+      {k:'a1',t:['△ABDの内角の和より，∠ABD ＝ 180° － 90° － ∠BAD ＝ 90° － ',S('∠BAD',OPT('∠BAD','∠DAC','∠ABD','∠BAC'))]},
+      {k:'a2',t:['∠DAC ＝ ∠BAC － ∠BAD ＝ ',S('90°',D9),' － ∠BAD']},
+      {k:'a3',t:['よって ∠ABD ＝ ',S('∠DAC',OPT('∠DAC','∠BAD','∠CDA','∠ACD')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠ADB と ∠CDA は、垂線でできた<b>直角</b>（証明の①）。`,ALL(W('D','A','B',26,COL.r),W('D','C','A',26,COL.r)),'r',true)],
+    h2:[st(`直角三角形ABDで、${cs('b','青')}の角 ∠ABD ＋ ${cs('o','オレンジ')}の角 ∠BAD ＝ 90°。→ <b>∠ABD ＝ 90° － ∠BAD</b>`,ALL(W('B','A','D',34,COL.b),W('A','B','D',44,COL.o)),'a1',true),
+      st(`直角（${cs('g','∠BAC＝90°')}）から ${cs('o','∠BAD')} をひいたのこりが ${cs('b','∠DAC')}。→ <b>∠DAC ＝ 90° － ∠BAD</b>`,ALL(W('A','B','C',66,COL.g,false),W('A','B','D',44,COL.o,false),W('A','D','C',54,COL.b)),'a2'),
+      st(`どちらも「90°−∠BAD」なので、${cs('b','青い2つの角')}は<b>等しい</b>（証明の②）。`,ALL(W('B','A','D',34,COL.b),W('A','D','C',54,COL.b)),'a3')],
+    h3:ALL(W('D','A','B',26,COL.r,false),W('D','C','A',26,COL.r,false),W('B','A','D',34,COL.b,false),W('A','D','C',54,COL.b,false))}));
+  ProofBuilder(p5,'u10',angProof({id:'p8',stem:'(2) 線分AB上に点Pをとり、∠PAC＝∠PBD＝90° の直角三角形をつくります。∠CPD＝90° のとき、△ACP∽△BPD を証明しなさい。',fig:figPerp,
+    T1:'ACP',T2:'BPD',t1:['A','C','P'],t2:['B','P','D'],
+    lines:[{k:'r',t:['∠PAC ＝ ',S('∠PBD',OPT('∠PBD','∠CPD','∠ACP','∠DPB')),' ＝ 90° ……①']},
+      {k:'a1',t:['△ACPの内角の和より，∠ACP ＝ 180° － 90° － ∠CPA ＝ 90° － ',S('∠CPA',OPT('∠CPA','∠DPB','∠ACP','∠CPD'))]},
+      {k:'a2',t:['A，P，B は一直線上なので，∠DPB ＝ 180° － ∠CPA － ∠CPD ＝ 180° － ∠CPA － ',S('90°',D9),' ＝ 90° － ∠CPA']},
+      {k:'a3',t:['よって ∠ACP ＝ ',S('∠DPB',OPT('∠DPB','∠CPA','∠PBD','∠PDB')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠PAC と ∠PBD は、どちらも問題文の<b>直角（90°）</b>（証明の①）。`,ALL(W('A','P','C',26,COL.r),W('B','P','D',26,COL.r)),'r',true)],
+    h2:[st(`直角三角形ACPで、${cs('b','青')}の角 ∠ACP ＋ ${cs('o','オレンジ')}の角 ∠CPA ＝ 90°。→ <b>∠ACP ＝ 90° － ∠CPA</b>`,ALL(W('C','A','P',34,COL.b),W('P','C','A',44,COL.o)),'a1',true),
+      st(`直線AB（180°）の上に ${cs('o','∠CPA')}、${cs('g','∠CPD（90°）')}、${cs('b','∠DPB')} が並んでいます。→ <b>∠DPB ＝ 90° － ∠CPA</b>`,ALL(W('P','C','A',44,COL.o,false),W('P','C','D',44,COL.g,false),W('P','D','B',44,COL.b)),'a2'),
+      st(`どちらも「90°−∠CPA」なので、${cs('b','青い2つの角')}は<b>等しい</b>（証明の②）。`,ALL(W('C','A','P',34,COL.b),W('P','D','B',44,COL.b)),'a3')],
+    h3:ALL(W('A','P','C',26,COL.r,false),W('B','P','D',26,COL.r,false),W('C','A','P',34,COL.b,false),W('P','D','B',44,COL.b,false))}));
+  ProofBuilder(p5,'u10',angProof({id:'p9',stem:'(3) 正三角形ABCで、∠ADE＝60° となるように、辺BC上に点D、辺AC上に点Eをとります。△ABD∽△DCE を証明しなさい。',size:[380,275],fig:figEq60,
+    T1:'ABD',T2:'DCE',t1:['A','B','D'],t2:['D','C','E'],
+    lines:[{k:'b',t:['△ABCは正三角形なので，∠ABD ＝ ',S('∠DCE',OPT('∠DCE','∠ADB','∠EDC','∠BAD')),' ＝ 60° ……①']},
+      {k:'a1',t:['△ABDの内角の和より，∠BAD ＝ 180° － 60° － ∠ADB ＝ ',S('120°',D12),' － ∠ADB']},
+      {k:'a2',t:['B，D，C は一直線上なので，∠EDC ＝ 180° － ∠ADE － ∠ADB ＝ 180° － 60° － ∠ADB ＝ ',S('120°',D12),' － ∠ADB']},
+      {k:'a3',t:['よって ∠BAD ＝ ',S('∠EDC',OPT('∠EDC','∠ADB','∠DEC','∠ADE')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠ABD と ∠DCE は、正三角形の角なのでどちらも<b>60°</b>（証明の①）。`,ALL(W('B','A','D',26,COL.r),W('C','D','E',26,COL.r)),'b',true)],
+    h2:[st(`△ABDの内角の和は180°。${cs('r','∠ABD（60°）')}、${cs('o','∠ADB')}、${cs('b','∠BAD')}。→ <b>∠BAD ＝ 120° － ∠ADB</b>`,ALL(W('B','A','D',26,COL.r,false),W('D','A','B',44,COL.o),W('A','B','D',34,COL.b)),'a1',true),
+      st(`直線BC（180°）の上に ${cs('o','∠ADB')}、${cs('g','∠ADE（60°）')}、${cs('b','∠EDC')} が並んでいます。→ <b>∠EDC ＝ 120° － ∠ADB</b>`,ALL(W('D','A','B',44,COL.o,false),W('D','A','E',44,COL.g,false),W('D','E','C',44,COL.b)),'a2'),
+      st(`どちらも「120°−∠ADB」なので、${cs('b','青い2つの角')}は<b>等しい</b>（証明の②）。`,ALL(W('A','B','D',34,COL.b),W('D','E','C',44,COL.b)),'a3')],
+    h3:ALL(W('B','A','D',26,COL.r,false),W('C','D','E',26,COL.r,false),W('A','B','D',34,COL.b,false),W('D','E','C',44,COL.b,false))}));
+  r.append(p5);
+  /* ⑥ 折り返し */
+  r.append(card(tagH('⑥ 折り返しの証明')));
+  r.append(card(null,'<p>折り返すと、<b>折り返す前の図形</b>と<b>折り返した後の図形</b>は合同です。だから<b>対応する角・辺が等しく</b>なります。「折り返した角は、元の角と同じ」と考えて、直角や 60° を見つけましょう。</p>'));
+  const f6=card(tagH('練習','　折り返し'));
+  ProofBuilder(f6,'u10',angProof({id:'p10',stem:'(1) 長方形ABCDの紙を、辺BC上の点Pと頂点Aを結ぶ線分APを折り目として、頂点Bが辺DC上の点Eに重なるように折り返しました。△ADE∽△ECP を証明しなさい。',size:[380,250],fig:figFold,
+    T1:'ADE',T2:'ECP',t1:['A','D','E'],t2:['E','C','P'],
+    lines:[{k:'r',t:['∠ADE ＝ ',S('∠PEA',OPT('∠PEA','∠AED','∠EAD','∠PEC')),' ＝ 90° ……①（折り返したので ∠PEA ＝ ∠PBA ＝ 90°）']},
+      {k:'a1',t:['△ADEの内角の和より，∠EAD ＝ 180° － ',S('90°',D9),' － ∠AED ＝ 90° － ∠AED']},
+      {k:'a2',t:['D，E，C は一直線上なので，∠PEC ＝ 180° － ∠PEA － ∠AED ＝ 180° － 90° － ∠AED ＝ ',S('90°',D9),' － ∠AED']},
+      {k:'a3',t:['よって ∠EAD ＝ ',S('∠PEC',OPT('∠PEC','∠AED','∠PEA','∠ECP')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠ADE は長方形の角で 90°。∠PEA は、折り返す前の ∠PBA（90°）と同じ。どちらも<b>90°</b>（証明の①）。`,ALL(W('D','A','E',26,COL.r),W('E','P','A',26,COL.r)),'r',true)],
+    h2:[st(`直角三角形ADEで、${cs('b','青')}の角 ∠EAD ＋ ${cs('o','オレンジ')}の角 ∠AED ＝ 90°。→ <b>∠EAD ＝ 90° － ∠AED</b>`,ALL(W('A','E','D',34,COL.b),W('E','A','D',44,COL.o)),'a1',true),
+      st(`直線DC（180°）の上に ${cs('o','∠AED')}、${cs('g','∠PEA（90°）')}、${cs('b','∠PEC')} が並んでいます。→ <b>∠PEC ＝ 90° － ∠AED</b>`,ALL(W('E','A','D',44,COL.o,false),W('E','P','A',44,COL.g,false),W('E','P','C',44,COL.b)),'a2'),
+      st(`どちらも「90°−∠AED」なので、${cs('b','青い2つの角')}は<b>等しい</b>（証明の②）。`,ALL(W('A','E','D',34,COL.b),W('E','P','C',44,COL.b)),'a3')],
+    h3:ALL(W('D','A','E',26,COL.r,false),W('E','P','A',26,COL.r,false),W('A','E','D',34,COL.b,false),W('E','P','C',44,COL.b,false))}));
+  ProofBuilder(f6,'u10',angProof({id:'p11',stem:'(2)【確認問題】正三角形ABCの紙を、頂点Aが辺BC上の点Fに重なるように、線分DEを折り目として折りました。△FDB∽△EFC を証明しなさい。',size:[380,275],fig:f=>figFoldEq(f),
+    T1:'FDB',T2:'EFC',t1:['F','D','B'],t2:['E','F','C'],
+    lines:[{k:'b',t:['△ABCは正三角形なので，∠DBF ＝ ',S('∠ECF',OPT('∠ECF','∠BFD','∠DFE','∠EFC')),' ＝ 60° ……①']},
+      {k:'a1',t:['△DBFの内角の和より，∠BDF ＝ 180° － 60° － ∠BFD ＝ ',S('120°',D12),' － ∠BFD']},
+      {k:'a2',t:['折り返したので ∠DFE ＝ ∠DAE ＝ 60°。B，F，C は一直線上なので，∠EFC ＝ 180° － ∠BFD － ',S('60°',D9),' ＝ 120° － ∠BFD']},
+      {k:'a3',t:['よって ∠BDF ＝ ',S('∠EFC',OPT('∠EFC','∠BFD','∠DFE','∠FEC')),' ……②']}],
+    h1:[st(`${cs('r','赤い点')}の角：∠DBF と ∠ECF は、正三角形の角なのでどちらも<b>60°</b>（証明の①）。`,ALL(W('B','D','F',26,COL.r),W('C','F','E',26,COL.r)),'b',true)],
+    h2:[st(`△DBFの内角の和は180°。${cs('r','∠DBF（60°）')}、${cs('o','∠BFD')}、${cs('b','∠BDF')}。→ <b>∠BDF ＝ 120° － ∠BFD</b>`,ALL(W('B','D','F',26,COL.r,false),W('F','B','D',44,COL.o),W('D','B','F',34,COL.b)),'a1',true),
+      st(`折り返したので、${cs('g','∠DFE')} は折る前の ∠DAE と同じ <b>60°</b>。直線BC（180°）の上に ${cs('o','∠BFD')}、${cs('g','∠DFE')}、${cs('b','∠EFC')} が並びます。→ <b>∠EFC ＝ 120° － ∠BFD</b>`,ALL(W('F','B','D',44,COL.o,false),W('F','D','E',44,COL.g,false),W('F','E','C',44,COL.b)),'a2'),
+      st(`どちらも「120°−∠BFD」なので、${cs('b','青い2つの角')}は<b>等しい</b>（証明の②）。`,ALL(W('D','B','F',34,COL.b),W('F','E','C',44,COL.b)),'a3')],
+    h3:ALL(W('B','D','F',26,COL.r,false),W('C','F','E',26,COL.r,false),W('D','B','F',34,COL.b,false),W('F','E','C',44,COL.b,false))}));
+  r.append(f6);
+}
+
+/* ===== 第11章 中点連結定理（応用） ===== */
+function figTrapDiag(f,o){
+  const bc=300,ad=bc*o.AD/o.BC,B=[40,210],C=[340,210],A=[B[0]+(bc-ad)*.3,50],D=[A[0]+ad,50];
+  const E=lerp(A,B,.5),F=lerp(D,C,.5);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D).pt('E',...E).pt('F',...F);
+  f.center(['A','B','C','D']);
+  f.poly(['A','B','C','D']);f.seg('E','F');f.dot('E');f.dot('F');
+  const dg=o.diag||'AC';
+  if(dg==='AC'||dg==='both'){f.seg('A','C');}
+  if(dg==='BD'||dg==='both'){f.seg('B','D');}
+  if(dg==='AC'){const G=isect(E,F,A,C);f.pt('G',...G,true,0,-14);f.dot('G');}
+  if(dg==='BD'){const G=isect(E,F,B,D);f.pt('G',...G,true,0,-14);f.dot('G');}
+  if(dg==='both'){const G=isect(E,F,B,D),H=isect(E,F,A,C);f.pt('G',...G,true,0,14).pt('H',...H,true,0,14);f.dot('G');f.dot('H');}
+  f.par('A','D');f.par('B','C');f.par('E','F');
+  f.tick('A','E',1);f.tick('E','B',1);f.tick('D','F',2);f.tick('F','C',2);
+  const L=o.lab||{};
+  if(L.AD)f.len('A','D',L.AD,{dir:'up',off:15});
+  if(L.BC)f.len('B','C',L.BC,{dir:'down',off:15});
+}
+/* 三角形：頂点A，左 n[1]，右 n[2]。D は左-右の中点、E,F は A-右 の三等分点（E がA寄り）。G=AD∩(左-E) */
+function figTri3(f,o={}){
+  const n=o.n||['A','B','C','D','E','F','G'],A=[170,34],L=[40,212],R=[340,212];
+  const D=lerp(L,R,.5),E=lerp(A,R,1/3),F=lerp(A,R,2/3),G=isect(A,D,L,E);
+  f.pt(n[0],...A).pt(n[1],...L).pt(n[2],...R).pt(n[3],...D,true,0,16).pt(n[4],...E).pt(n[5],...F).pt(n[6],...G,true,-6,-14);
+  f.center([n[0],n[1],n[2]]);
+  f.poly([n[0],n[1],n[2]]);f.seg(n[0],n[3]);f.seg(n[1],n[4]);f.seg(n[3],n[5]);
+  [3,4,5,6].forEach(i=>f.dot(n[i]));
+  f.tick(n[1],n[3],1);f.tick(n[3],n[2],1);
+  f.tick(n[0],n[4],2);f.tick(n[4],n[5],2);f.tick(n[5],n[2],2);
+  if(o.lab)f.len(n[3],n[5],o.lab,{off:15,side:-1});
+}
+/* 三角形：D は A-左 の中点、E,F は 左-右 の三等分点。G=D-右 ∩ A-F */
+function figTri3b(f,o={}){
+  const A=[190,34],B=[40,212],C=[340,212];
+  const D=lerp(A,B,.5),E=lerp(B,C,1/3),F=lerp(B,C,2/3),G=isect(D,C,A,F);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D).pt('E',...E,true,0,16).pt('F',...F,true,0,16).pt('G',...G,true,8,-12);
+  f.center(['A','B','C']);
+  f.poly(['A','B','C']);f.seg('D','C');f.seg('A','F');f.seg('D','E');
+  ['D','E','F','G'].forEach(k=>f.dot(k));
+  f.tick('A','D',1);f.tick('D','B',1);f.tick('B','E',2);f.tick('E','F',2);f.tick('F','C',2);
+  if(o.lab)f.len('F','G',o.lab,{off:14,side:-1});
+}
+function figMM(f){ /* 駿台：M はAB中点、D,E は BC の三等分点、AE∩CM=F */
+  const A=[190,34],B=[40,212],C=[340,212],M=lerp(A,B,.5),D=lerp(B,C,1/3),E=lerp(B,C,2/3),F=isect(A,E,C,M);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('M',...M).pt('D',...D,true,0,16).pt('E',...E,true,0,16).pt('F',...F,true,10,-10);
+  f.center(['A','B','C']);f.poly(['A','B','C']);f.seg('M','C');f.seg('A','E');f.seg('M','D');
+  ['M','D','E','F'].forEach(k=>f.dot(k));f.tick('A','M',1);f.tick('M','B',1);f.tick('B','D',2);f.tick('D','E',2);f.tick('E','C',2);
+  f.len('M','D','4cm',{off:14,side:-1});
+}
+function figDF(f){ /* 創価：D は BC 中点、E は CA 中点、F は CE 中点、G=AD∩BE */
+  const A=[170,34],B=[40,212],C=[340,212],D=lerp(B,C,.5),E=lerp(C,A,.5),F=lerp(C,E,.5),G=isect(A,D,B,E);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D,true,0,16).pt('E',...E,true,14,-4).pt('F',...F,true,14,4).pt('G',...G,true,-8,-12);
+  f.center(['A','B','C']);f.poly(['A','B','C']);f.seg('A','D');f.seg('B','E');f.seg('D','F');
+  ['D','E','F','G'].forEach(k=>f.dot(k));f.tick('B','D',1);f.tick('D','C',1);f.tick('C','F',2);f.tick('F','E',2);f.tick('A','E',3);f.tick('E','C',3);
+}
+function figGE(f){ /* マリスト：D は BC 中点、E は AC 中点、F=AD∩BE、G は E を通り BC に平行な直線と AD の交点 */
+  const A=[190,34],B=[40,212],C=[340,212],D=lerp(B,C,.5),E=lerp(A,C,.5),F=isect(A,D,B,E);
+  const G=isect(A,D,E,[E[0]-100,E[1]]);
+  f.pt('A',...A).pt('B',...B).pt('C',...C).pt('D',...D,true,0,16).pt('E',...E,true,14,-2).pt('F',...F,true,10,10).pt('G',...G,true,-12,-8);
+  f.center(['A','B','C']);f.poly(['A','B','C']);f.seg('A','D');f.seg('B','E');f.seg('G','E');
+  ['D','E','F','G'].forEach(k=>f.dot(k));f.tick('B','D',1);f.tick('D','C',1);f.tick('A','E',2);f.tick('E','C',2);
+}
+const HL=(...fs)=>f=>fs.forEach(g=>g(f));
+const TRI=(ns,c,a=.14)=>f=>f.hTri(ns,c,a);
+const SEG=(a,b,c,w=6,op=1)=>f=>f.hSeg(a,b,c,w,op);
+function buildU11(r){
+  r.append(card(tagH('ポイント','　中点連結定理の使い方'),`<div class="point"><ul>
+   <li><b>中点連結定理</b>：△ABCで、AB・ACの中点をM・Nとすると　<b>MN∥BC</b>、<b>MN＝（1/2）BC</b></li>
+   <li><b>使い方のコツ</b>：① 中点を2つふくむ<b>三角形</b>を見つける　② その三角形の<b>底辺</b>の半分が、中点どうしを結ぶ線分</li>
+   <li>平行線が1本あっても、<b>片方が中点なら、もう一方も中点</b>になります（平行線と比）。</li>
+   <li>台形では<b>対角線</b>をひいて、2つの三角形に分けて考えます。</li></ul></div>`));
+  /* --- 台形（対角線） --- */
+  r.append(card(tagH('① 台形と中点連結定理')));
+  const e1=card(tagH('例題1','　台形の中点を結ぶ線分'));
+  e1.append(h('p',{class:'ex-q',html:'台形ABCD（AD∥BC）で、辺AB・DCの中点をE・Fとします。AD＝8cm、BC＝12cm のとき、EF の長さを求めなさい。'}));
+  Demo(e1,{size:[380,250],fig:f=>figTrapDiag(f,{AD:8,BC:12,diag:'AC',lab:{AD:'8cm',BC:'12cm'}}),steps:[
+    {text:`EFを求めるには、<b>対角線ACをひいて</b>、EFとの交点をGとします。EGとGFを別々に求めて、たします。`,hl:HL(SEG('A','C',COL.o,4),f=>f.hPt('G',COL.o))},
+    {reset:true,text:`${cs('r','△ABC')}で、E は AB の中点、EG∥BC。だから G は AC の中点。中点連結定理より<br><b>EG＝（1/2）BC＝（1/2）×12＝6（cm）</b>`,hl:HL(TRI(['A','B','C'],COL.r,.1),SEG('E','G',COL.r),SEG('B','C',COL.r,4,.5))},
+    {text:`${cs('b','△ACD')}で、F は DC の中点、GF∥AD。中点連結定理より<br><b>GF＝（1/2）AD＝（1/2）×8＝4（cm）</b>`,hl:HL(TRI(['A','C','D'],COL.b,.1),SEG('G','F',COL.b),SEG('A','D',COL.b,4,.5))},
+    {text:`<b>EF＝EG＋GF＝${cs('r','6')}＋${cs('b','4')}＝10（cm）</b>　答え：10cm　（<b>（AD＋BC）÷2</b> でも求められます）`,hl:HL(SEG('E','G',COL.r),SEG('G','F',COL.b))}]});
+  r.append(e1);
+  const p1=card(tagH('練習1','　台形の中点を結ぶ線分'));
+  const hT=(ns1,s1,s2,t)=>({t,hl:HL(SEG('A','C',COL.o,4),TRI(['A','B','C'],COL.r,.1),SEG('E','G',COL.r),TRI(['A','C','D'],COL.b,.1),SEG('G','F',COL.b))});
+  const hint1='対角線ACをひいて、△ABC（EG＝BC の半分）と△ACD（GF＝AD の半分）に分けます。';
+  Quiz(p1,'u11',[
+    NQ('(1) 台形ABCD（AD∥BC）で、辺AB・DCの中点をE・Fとします。AD＝10cm、BC＝16cm のとき、EF の長さを求めなさい。',f=>figTrapDiag(f,{AD:10,BC:16,diag:'AC',lab:{AD:'10cm',BC:'16cm'}}),[380,250],13,{pre:'EF ＝ ',ex:'△ABCでEG＝16÷2＝8cm、△ACDでGF＝10÷2＝5cm。EF＝8＋5＝13cm。',hint:hT(0,0,0,hint1)}),
+    NQ('(2) 台形ABCD（AD∥BC）で、辺AB・DCの中点をE・Fとします。AD＝12cm、BC＝24cm のとき、EF の長さを求めなさい。',f=>figTrapDiag(f,{AD:12,BC:24,diag:'AC',lab:{AD:'12cm',BC:'24cm'}}),[380,250],18,{pre:'EF ＝ ',ex:'EG＝24÷2＝12cm、GF＝12÷2＝6cm。EF＝12＋6＝18cm。',hint:hT(0,0,0,hint1)}),
+    {type:'choice',stem:'(3)<br>AD∥BCの台形ABCDで、AD∥EF、Eは辺ABの中点です。AD＝16cm、BC＝18cm。対角線BDとEFの交点をGとするとき、BD：GD を求めなさい。',size:[380,250],fig:f=>figTrapDiag(f,{AD:16,BC:18,diag:'BD',lab:{AD:'16cm',BC:'18cm'}}),
+      choices:['1：1','2：1','3：1','3：2'],ans:1,explain:'EG∥AD で E は AB の中点なので、G は BD の中点です。だから BD：GD＝2：1。',hint:{t:'△ABDで、E は AB の中点、EG∥AD。G は BD の何になるでしょう？',hl:HL(TRI(['A','B','D'],COL.r,.1),SEG('E','G',COL.r),SEG('B','D',COL.o,4))}},
+    NQ('(3)の続き：EF の長さを求めなさい。',f=>figTrapDiag(f,{AD:16,BC:18,diag:'BD',lab:{AD:'16cm',BC:'18cm'}}),[380,250],17,{pre:'EF ＝ ',ex:'G は BD の中点。△ABDでEG＝16÷2＝8cm、△BCDでGF＝18÷2＝9cm。EF＝8＋9＝17cm。',hint:{t:'EG は △ABD、GF は △BCD で中点連結定理を使います。',hl:HL(TRI(['A','B','D'],COL.r,.1),SEG('E','G',COL.r),TRI(['B','C','D'],COL.b,.1),SEG('G','F',COL.b))}})
+  ]);
+  r.append(p1);
+  const e2=card(tagH('例題2','　2本の対角線　GH の長さ'));
+  e2.append(h('p',{class:'ex-q',html:'台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝10cm、BC＝18cm です。対角線BD・ACとEFの交点をG・Hとするとき、GH の長さを求めなさい。'}));
+  Demo(e2,{size:[380,250],fig:f=>figTrapDiag(f,{AD:10,BC:18,diag:'both',lab:{AD:'10cm',BC:'18cm'}}),steps:[
+    {text:`EF上に、対角線BDとの交点${cs('b','G')}、対角線ACとの交点${cs('r','H')}があります。<b>GH＝EH−EG</b> と考えます。`,hl:HL(SEG('B','D',COL.b,3.5,.8),SEG('A','C',COL.r,3.5,.8),f=>{f.hPt('G',COL.b);f.hPt('H',COL.r);})},
+    {reset:true,text:`${cs('r','△ABC')}で、E は AB の中点、EH∥BC。中点連結定理より<br><b>EH＝（1/2）BC＝（1/2）×18＝9（cm）</b>`,hl:HL(TRI(['A','B','C'],COL.r,.1),SEG('E','H',COL.r),SEG('B','C',COL.r,4,.5))},
+    {text:`${cs('b','△ABD')}で、E は AB の中点、EG∥AD。中点連結定理より<br><b>EG＝（1/2）AD＝（1/2）×10＝5（cm）</b>`,hl:HL(TRI(['A','B','D'],COL.b,.1),SEG('E','G',COL.b),SEG('A','D',COL.b,4,.5))},
+    {text:`<b>GH＝EH−EG＝${cs('r','9')}−${cs('b','5')}＝4（cm）</b>　答え：4cm`,hl:HL(SEG('E','H',COL.r,5,.5),SEG('E','G',COL.b,5,.5),SEG('G','H',COL.g,8))}]});
+  r.append(e2);
+  const p2=card(tagH('練習2','　GH の長さ'));
+  const hint2='EH は △ABC で、EG は △ABD で、それぞれ中点連結定理。GH＝EH−EG です。';
+  const hl2=HL(TRI(['A','B','C'],COL.r,.1),SEG('E','H',COL.r),TRI(['A','B','D'],COL.b,.1),SEG('E','G',COL.b));
+  Quiz(p2,'u11',[
+    NQ('(1) 台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝8cm、BC＝20cm です。対角線との交点をG・Hとするとき、GH の長さを求めなさい。',f=>figTrapDiag(f,{AD:8,BC:20,diag:'both',lab:{AD:'8cm',BC:'20cm'}}),[380,250],6,{pre:'GH ＝ ',ex:'EH＝20÷2＝10cm、EG＝8÷2＝4cm。GH＝10−4＝6cm。',hint:{t:hint2,hl:hl2}}),
+    NQ('(2) 台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝6cm、BC＝12cm です。GH の長さを求めなさい。',f=>figTrapDiag(f,{AD:6,BC:12,diag:'both',lab:{AD:'6cm',BC:'12cm'}}),[380,250],3,{pre:'GH ＝ ',ex:'EH＝12÷2＝6cm、EG＝6÷2＝3cm。GH＝6−3＝3cm。',hint:{t:hint2,hl:hl2}}),
+    NQ('(3)【確認問題】台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝14cm、BC＝22cm です。GH の長さを求めなさい。',f=>figTrapDiag(f,{AD:14,BC:22,diag:'both',lab:{AD:'14cm',BC:'22cm'}}),[380,250],4,{pre:'GH ＝ ',ex:'EH＝22÷2＝11cm、EG＝14÷2＝7cm。GH＝11−7＝4cm。',hint:{t:hint2,hl:hl2}}),
+    NQ('(4)【確認問題】台形ABCD（AD∥BC）で、AE＝EB、AD∥EF∥BC、AD＝16cm、BC＝24cm のとき、EF の長さを求めなさい。',f=>figTrapDiag(f,{AD:16,BC:24,diag:'AC',lab:{AD:'16cm',BC:'24cm'}}),[380,250],20,{pre:'EF ＝ ',ex:'EG＝24÷2＝12cm、GF＝16÷2＝8cm。EF＝12＋8＝20cm。（（16＋24）÷2＝20）',hint:hT(0,0,0,hint1)})
+  ]);
+  r.append(p2);
+}
+
+function buildU11b(r){
+  r.append(card(tagH('② 三等分点と中点連結定理')));
+  r.append(card(null,'<p>線分を<b>3等分する点</b>（三等分点）が出てきたら、<b>「中点」が見つかる三角形</b>をさがします。たとえば AE＝EF＝FC のとき、<b>F は EC の中点</b>、<b>E は AF の中点</b>です。中点連結定理を<b>2回</b>使って、少しずつ長さを求めます。</p>'));
+  const e3=card(tagH('例題3','　三等分点（中点連結定理を2回）'));
+  e3.append(h('p',{class:'ex-q',html:'△ABCで、D は辺BCの中点、点E・F は辺ACの三等分点です（AE＝EF＝FC）。線分ADとBEの交点をGとします。DF＝6cm のとき、BG の長さを求めなさい。'}));
+  Demo(e3,{size:[380,250],fig:f=>figTri3(f,{lab:'6cm'}),steps:[
+    {text:`BG＝BE−GE と考えます。まず BE と GE を、中点連結定理で順番に求めます。`,hl:HL(SEG('B','E',COL.o,4),f=>f.hPt('G',COL.o))},
+    {reset:true,text:`${cs('r','△BCE')}で、D は BC の中点、F は EC の中点（EF＝FC）。中点連結定理より DF∥BE、<br><b>BE＝2×DF＝2×6＝12（cm）</b>`,hl:HL(TRI(['B','C','E'],COL.r,.1),SEG('D','F',COL.r),SEG('B','E',COL.r,4,.5))},
+    {text:`${cs('b','△AFD')}で、E は AF の中点（AE＝EF）。EG∥FD なので G は AD の中点。中点連結定理より<br><b>GE＝（1/2）×DF＝（1/2）×6＝3（cm）</b>`,hl:HL(TRI(['A','F','D'],COL.b,.1),SEG('E','G',COL.b),SEG('D','F',COL.b,4,.5))},
+    {text:`<b>BG＝BE−GE＝${cs('r','12')}−${cs('b','3')}＝9（cm）</b>　答え：9cm`,hl:HL(SEG('B','G',COL.g,8),SEG('G','E',COL.b,6))}]});
+  r.append(e3);
+  const p3=card(tagH('練習3','　三等分点'));
+  Quiz(p3,'u11',[
+    NQ('(1) △ABCで、D は辺BCの中点、点E・F は辺ACの三等分点です。DF＝10cm のとき、BG の長さを求めなさい。',f=>figTri3(f,{lab:'10cm'}),[380,250],15,{pre:'BG ＝ ',ex:'△BCEでBE＝2×10＝20cm。△AFDでGE＝10÷2＝5cm。BG＝20−5＝15cm。',hint:{t:'△BCE で BE を、△AFD で GE を求めて、BG＝BE−GE。',hl:HL(TRI(['B','C','E'],COL.r,.1),SEG('D','F',COL.r),SEG('B','E',COL.r,4,.5),TRI(['A','F','D'],COL.b,.1),SEG('E','G',COL.b))}}),
+    NQ('(2) △ABCで、D は辺BCの中点、点E・F は辺ABの三等分点です（AE＝EF＝FB）。DF＝12cm のとき、CG の長さを求めなさい。（G は AD と CE の交点）',f=>figTri3(f,{n:['A','C','B','D','E','F','G'],lab:'12cm'}),[380,250],18,{pre:'CG ＝ ',ex:'△BCEで、D は BC の中点、F は BE の中点。EC＝2×DF＝24cm。△AFDでGE＝12÷2＝6cm。CG＝24−6＝18cm。',hint:{t:'△BCE で EC を、△AFD で GE を求めて、CG＝CE−GE。',hl:HL(TRI(['C','B','E'],COL.r,.1),SEG('D','F',COL.r),SEG('C','E',COL.r,4,.5),TRI(['A','F','D'],COL.b,.1),SEG('E','G',COL.b))}}),
+    NQ('(3) △ABCで、D は辺ABの中点、点E・F は辺BCの三等分点です（BE＝EF＝FC）。FG＝4cm のとき、AG の長さを求めなさい。（G は DC と AF の交点）',f=>figTri3b(f,{lab:'4cm'}),[380,250],12,{pre:'AG ＝ ',ex:'△CDEで、F は CE の中点、FG∥DE なので DE＝2×FG＝8cm。△ABFで、D・E は AB・BF の中点だから AF＝2×DE＝16cm。AG＝AF−FG＝16−4＝12cm。',hint:{t:'△CDE で DE を、△ABF で AF を求めて、AG＝AF−FG。',hl:HL(TRI(['C','D','E'],COL.r,.1),SEG('F','G',COL.r),SEG('D','E',COL.r,4,.5),TRI(['A','B','F'],COL.b,.1),SEG('A','F',COL.b,4,.5))}})
+  ]);
+  r.append(p3);
+  const p4=card(tagH('入試問題に挑戦','　（長さ・比を求める）'));
+  Quiz(p4,'u11',[
+    NQ('(4)【駿台甲府高校】△ABCで、辺ABの中点をM、辺BCを三等分する点をD・E とし（BD＝DE＝EC）、線分AEとCMの交点をFとします。MD＝4cm のとき、AF の長さを求めなさい。',figMM,[380,250],6,{pre:'AF ＝ ',ex:'△ABEで、M・D は AB・BE の中点なので AE＝2×MD＝8cm。△CMDで、E は DC の中点、FE∥MD なので FE＝（1/2）MD＝2cm。AF＝8−2＝6cm。',hint:{t:'△ABE で AE を、△CMD で FE を求めます。AF＝AE−FE。',hl:HL(TRI(['A','B','E'],COL.r,.1),SEG('M','D',COL.r),SEG('A','E',COL.r,4,.5),TRI(['M','D','C'],COL.b,.1),SEG('F','E',COL.b))}}),
+    {type:'choice',stem:'(5)【創価高校】△ABCで、辺BC・CAの中点をD・E、線分CEの中点をFとし、線分ADと線分BEの交点をGとします。DF：GE を求めなさい。',size:[380,250],fig:figDF,
+      choices:['3：2','2：3','3：1','1：2'],ans:0,explain:'△BCEで、D・F は BC・EC の中点なので DF∥BE。AE：EF＝2：1 より AE：AF＝2：3。△AGE∽△ADF より GE：DF＝2：3。よって DF：GE＝3：2。',
+      hint:{t:'DF∥BE です。AE＝EC、EF＝FC から AE：AF の比を出して、△AGE∽△ADF を使います。',hl:HL(TRI(['B','C','E'],COL.r,.1),SEG('D','F',COL.r),SEG('B','E',COL.r,4,.5),TRI(['A','G','E'],COL.b,.15),TRI(['A','D','F'],COL.p,.1))}},
+    {type:'choice',stem:'(6)【熊本マリスト学園高校】△ABCで、辺BCの中点をD、辺ACの中点をEとし、AD・BEの交点をFとします。また、Eを通り辺BCに平行な直線とADの交点をGとします。AG：GF を求めなさい。',size:[380,250],fig:figGE,
+      choices:['3：1','2：1','4：1','3：2'],ans:0,explain:'△ADCで、E は AC の中点、EG∥DC なので G は AD の中点（GE＝（1/2）DC＝（1/2）BD）。△GFE∽△DFB（GE：DB＝1：2）より GF：FD＝1：2。AG＝GD＝GF＋FD＝3GF なので AG：GF＝3：1。',
+      hint:{t:'△ADC で EG は中点連結定理（G は AD の中点）。そのあと △GFE∽△DFB で GF：FD を出します。',hl:HL(TRI(['A','D','C'],COL.r,.1),SEG('E','G',COL.r),TRI(['G','F','E'],COL.b,.2),TRI(['D','F','B'],COL.p,.12))}}
+  ]);
+  r.append(p4);
+}
+
+/* ================= 起動 ================= */
+const UNITS=[
+  ['① 相似とは','u1','相似とは',buildU1],['② 相似条件','u2','三角形の相似条件',buildU2],
+  ['③ 証明（辺の比）','u3','相似の証明①',buildU3],['④ 証明（角）','u4','相似の証明②',buildU4],
+  ['⑤ 長さ（DE//BC）','u5','相似を使って長さを求める①',buildU5],['⑥ 長さ（全体・平行線）','u6','相似を使って長さを求める②',buildU6],
+  ['⑦ 長さ（台形）','u7','相似を使って長さを求める③',buildU7],['⑧ 中点連結定理','u8','中点連結定理',buildU8],
+  ['⑨ 証明の応用','u10','相似の証明（応用）',r=>{buildU10(r);buildU10c(r);buildU10d(r);}],
+  ['⑩ 中点連結定理の応用','u11','中点連結定理（応用）',r=>{buildU11(r);buildU11b(r);}],
+  ['⑪ 総合テスト','u9','総合確認テスト',buildU9]];
+function init(){
+  PROG.load();
+  const nav=document.getElementById('nav'),main=document.getElementById('main');
+  UNITS.forEach(([label,u,title,fn],i)=>{
+    const sec=h('section',{class:'unit',id:u});
+    sec.append(h('h2',{style:'margin:14px 0 0;font-size:1.3rem',html:`${'①②③④⑤⑥⑦⑧⑨⑩⑪'[i]} ${title}`}));
+    try{fn(sec);}catch(e){console.error(u,e);sec.append(h('div',{class:'warn',html:'このページの読み込みでエラーが起きました：'+e.message}));}
+    if(i<UNITS.length-1){const nx=h('div',{class:'pbtn',style:'justify-content:flex-end;margin:14px 0'},h('button',{class:'btn',type:'button',onclick:()=>show(u2(i+1))},`つぎへ：${UNITS[i+1][0]} ▶`));sec.append(nx);}
+    main.append(sec);
+    nav.append(h('button',{type:'button','data-u':u,onclick:()=>show(u)},label,h('span',{class:'bd'})));
+  });
+  function u2(i){return UNITS[i][1];}
+  function show(u){document.querySelectorAll('.unit').forEach(e=>e.classList.toggle('on',e.id===u));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.u===u));window.scrollTo({top:0,behavior:'smooth'});}
+  window.__show=show;
+  show('u1');updateBadges();
+}
+init();
+</script>
+</body>
+</html>
